@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: UD Digi;
+  src: url("../fonts/UDDIGIKYOKASHON-B.TTC");
+}
+body {
+  font-family: UD digi;
+  background: linear-gradient(111deg, #9198E5, #E66465);
+  background-repeat: no-repeat;
+  min-height: 950px;
+  height: 100vh;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 1024px;
+  }
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --color-01: #da3535;
+}
+
+header {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+header .background-blur {
+  background-color: #ffffff30;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(1px);
+}
+header .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+header .container nav.the-header-nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+header .container nav.the-header-nav ul li {
+  background-color: #009688;
+  padding: 0px 5px 0 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+header .container nav.the-header-nav ul li a {
+  display: flex;
+  align-items: center;
+  color: var(--color-01);
+}
+header .container nav.the-header-nav ul li a div {
+  background-color: #FFF;
+  padding: 5px;
+}
+header .container nav.the-header-nav ul li a div i {
+  display: inline-block;
+  font-size: 30px;
+}
+header .container nav.the-header-nav ul li a span {
+  font-size: 17px;
+  margin-left: 4px;
+}
+
+/*# sourceMappingURL=main.css.map */

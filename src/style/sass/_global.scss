@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: UD Digi;
+    src: url('../fonts/UDDIGIKYOKASHON-B.TTC');
+}
+body {
+    font-family: UD digi;
+    background: linear-gradient(111deg,#9198E5, #E66465);
+    background-repeat: no-repeat;
+    min-height: 950px;
+    height: 100vh;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media (min-width: 1024px){
+    .container {
+        width: 1024px;
+    }
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
