@@ -114,5 +114,104 @@ main.the-main-input-output {
         }
       }
     }
+    div.data-canter {
+      padding: 20px;
+      position: relative;
+      width: 70%;
+      height: 600px;
+      border-radius: 7px;
+      overflow: hidden;
+      div.background-blur {
+        background-color: #ffffff30;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: blur(1px);
+      }
+      div.input-output-datas {
+        height: 90%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        column-gap: 20px;
+        >div {
+          min-width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-flow: column nowrap;
+          row-gap: 20px;
+          h4 {
+            font-size: 35px;
+            color: var(--color-01);
+            font-weight: 600;
+          }
+        }
+        div.select-input-file {
+          div.checkbox {
+            width: 80%;
+            ul {
+              li {
+                background-color: var(--color-01);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                column-gap: 10px;
+                margin: 10px 0;
+                border-radius: 7px;
+                overflow: hidden;
+                padding-right: 10px;
+                i {
+                  background-color: var(--color-03);
+                  height: 60px;
+                  width: 60px;
+                  font-size: 40px;
+                  line-height: 60px;
+                  text-align: center;
+                  color: var(--color-05);
+                }
+                p {
+                  font-size: 23px;
+                  font-weight: 500;
+                  color: var(--color-02);
+                  flex-grow: 1;
+                }
+                div.check {
+                  height: 30px;
+                  width: 30px;
+                  background-color: var(--color-02);
+                  border-radius: 50%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  span {
+                    height: 40%;
+                    width: 40%;
+                    
+                    border-radius: 50%;
+                    display: block;
+                  }
+                  span[active="1"] {
+                    background-color: var(--color-03);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      div.buttons-mover {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
   }
 }

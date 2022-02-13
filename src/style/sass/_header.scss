@@ -32,10 +32,10 @@ header.the-header-peage {
             transition: 0.3s;
             font-weight: 600;
             font-size: 20px;
-          }
-          a:hover {
-            background-color: var(--color-01);
-            color: var(--color-02);
+            &:hover {
+              background-color: var(--color-01);
+              color: var(--color-02);
+            }
           }
         }
       }

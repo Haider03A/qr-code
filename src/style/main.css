@@ -2,6 +2,8 @@
   --color-01: #E4E4E4;
   --color-02: #373737;
   --color-03: #6EBE89;
+  --color-04: #ffffff;
+  --color-05: #ffffff8e;
 }
 
 * {
@@ -47,6 +49,16 @@ li {
 
 a {
   text-decoration: none;
+}
+
+button.main-button {
+  border: none;
+  padding: 6px 16px;
+  font-size: 20px;
+  background-color: var(--color-03);
+  color: var(--color-04);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 header.the-header-peage {
@@ -196,6 +208,100 @@ main.the-main-input-output div.container div.line-prosess div.lines span.one-tow
 }
 main.the-main-input-output div.container div.line-prosess div.lines span.tow-three[active="2"] {
   width: 50%;
+}
+main.the-main-input-output div.container div.data-canter {
+  padding: 20px;
+  position: relative;
+  width: 70%;
+  height: 600px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+main.the-main-input-output div.container div.data-canter div.background-blur {
+  background-color: #ffffff30;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(1px);
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas {
+  height: 90%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 20px;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas > div {
+  min-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas > div h4 {
+  font-size: 35px;
+  color: var(--color-01);
+  font-weight: 600;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox {
+  width: 80%;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li {
+  background-color: var(--color-01);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  margin: 10px 0;
+  border-radius: 7px;
+  overflow: hidden;
+  padding-right: 10px;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li i {
+  background-color: var(--color-03);
+  height: 60px;
+  width: 60px;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: var(--color-05);
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li p {
+  font-size: 23px;
+  font-weight: 500;
+  color: var(--color-02);
+  flex-grow: 1;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li div.check {
+  height: 30px;
+  width: 30px;
+  background-color: var(--color-02);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li div.check span {
+  height: 40%;
+  width: 40%;
+  border-radius: 50%;
+  display: block;
+}
+main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li div.check span[active="1"] {
+  background-color: var(--color-03);
+}
+main.the-main-input-output div.container div.data-canter div.buttons-mover {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

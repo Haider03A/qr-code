@@ -2,6 +2,8 @@
     --color-01: #E4E4E4;
     --color-02: #373737;
     --color-03: #6EBE89;
+    --color-04: #ffffff;
+    --color-05: #ffffff8e;
   }
 * {
     padding: 0;
@@ -44,4 +46,13 @@ li {
 }
 a {
     text-decoration: none;
+}
+button.main-button {
+    border: none;
+    padding: 6px 16px;
+    font-size: 20px;
+    background-color: var(--color-03);
+    color: var(--color-04);
+    border-radius: 5px;
+    cursor: pointer;
 }
