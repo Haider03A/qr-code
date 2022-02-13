@@ -1,3 +1,9 @@
+:root {
+  --color-01: #E4E4E4;
+  --color-02: #373737;
+  --color-03: #6EBE89;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +15,7 @@
   src: url("../fonts/UDDIGIKYOKASHON-B.TTC");
 }
 body {
-  font-family: UD digi;
+  font-family: "Rajdhani", sans-serif;
   background: linear-gradient(111deg, #9198E5, #E66465);
   background-repeat: no-repeat;
   min-height: 950px;
@@ -43,16 +49,12 @@ a {
   text-decoration: none;
 }
 
-:root {
-  --color-01: #da3535;
-}
-
-header {
+header.the-header-peage {
   position: relative;
   height: 100px;
   width: 100%;
 }
-header .background-blur {
+header.the-header-peage .background-blur {
   background-color: #ffffff30;
   position: absolute;
   height: 100%;
@@ -62,41 +64,138 @@ header .background-blur {
   z-index: -1;
   filter: blur(1px);
 }
-header .container {
+header.the-header-peage .container {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
 }
-header .container nav.the-header-nav ul {
+header.the-header-peage .container nav.the-header-nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 5px;
 }
-header .container nav.the-header-nav ul li {
-  background-color: #009688;
-  padding: 0px 5px 0 0;
+header.the-header-peage .container nav.the-header-nav ul li a {
+  padding: 5px;
   border-radius: 5px;
-  overflow: hidden;
+  color: var(--color-01);
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 20px;
 }
-header .container nav.the-header-nav ul li a {
+header.the-header-peage .container nav.the-header-nav ul li a:hover {
+  background-color: var(--color-01);
+  color: var(--color-02);
+}
+
+main.the-main-input-output {
+  padding: 30px;
+}
+main.the-main-input-output div.container {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+}
+main.the-main-input-output div.container div.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+main.the-main-input-output div.container div.title h1 {
+  font-size: 40px;
+  color: var(--color-01);
+  font-weight: 600;
+}
+main.the-main-input-output div.container div.title div.qr-code-img {
+  padding: 5px;
+  background-color: var(--color-01);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.the-main-input-output div.container div.line-prosess {
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main.the-main-input-output div.container div.line-prosess div.item-line {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  row-gap: 5px;
+}
+main.the-main-input-output div.container div.line-prosess div.item-line span {
+  display: block;
+  text-align: center;
+}
+main.the-main-input-output div.container div.line-prosess div.item-line span.number {
+  background-color: var(--color-01);
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 2px 2px 9px #0006;
+}
+main.the-main-input-output div.container div.line-prosess div.item-line span.text {
+  color: var(--color-01);
+  font-weight: 400;
+}
+main.the-main-input-output div.container div.line-prosess div.item-line:first-child span.number {
+  background-color: var(--color-03);
   color: var(--color-01);
 }
-header .container nav.the-header-nav ul li a div {
-  background-color: #FFF;
-  padding: 5px;
+main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(2) span.number[active="1"],
+main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(2) span.number[active="2"] {
+  background-color: var(--color-03);
+  color: var(--color-01);
 }
-header .container nav.the-header-nav ul li a div i {
-  display: inline-block;
-  font-size: 30px;
+main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(2) span.number:nth-child(3)[active="2"] {
+  background-color: var(--color-03);
+  color: var(--color-01);
 }
-header .container nav.the-header-nav ul li a span {
-  font-size: 17px;
-  margin-left: 4px;
+main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(3) span.number[active="2"] {
+  background-color: var(--color-03);
+  color: var(--color-01);
+}
+main.the-main-input-output div.container div.line-prosess div.lines {
+  position: absolute;
+  width: calc(100% - 100px);
+  height: 8px;
+  background-color: var(--color-01);
+  top: 13.5px;
+  left: 50px;
+  z-index: -1;
+}
+main.the-main-input-output div.container div.line-prosess div.lines span {
+  float: left;
+  display: block;
+}
+main.the-main-input-output div.container div.line-prosess div.lines span.one-tow {
+  height: 100%;
+  background-color: var(--color-03);
+}
+main.the-main-input-output div.container div.line-prosess div.lines span.tow-three {
+  height: 100%;
+  background-color: var(--color-03);
+}
+main.the-main-input-output div.container div.line-prosess div.lines span.one-tow[active="1"],
+main.the-main-input-output div.container div.line-prosess div.lines span.one-tow[active="2"] {
+  width: 50%;
+}
+main.the-main-input-output div.container div.line-prosess div.lines span.tow-three[active="2"] {
+  width: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,8 @@
+:root {
+    --color-01: #E4E4E4;
+    --color-02: #373737;
+    --color-03: #6EBE89;
+  }
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +13,7 @@
     src: url('../fonts/UDDIGIKYOKASHON-B.TTC');
 }
 body {
-    font-family: UD digi;
+    font-family: 'Rajdhani', sans-serif;
     background: linear-gradient(111deg,#9198E5, #E66465);
     background-repeat: no-repeat;
     min-height: 950px;

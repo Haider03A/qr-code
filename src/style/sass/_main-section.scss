@@ -1,0 +1,118 @@
+$height-line-prosess: 8px;
+$height-number-span-prosess: 35px;
+
+main.the-main-input-output {
+  padding: 30px;
+  div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+    div.title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 10px;
+      h1 {
+        font-size: 40px;
+        color: var(--color-01);
+        font-weight: 600;
+      }
+      div.qr-code-img {
+        padding: 5px;
+        background-color: var(--color-01);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    div.line-prosess {
+      position: relative;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      div.item-line {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        row-gap: 5px;
+        span {
+          display: block;
+          text-align: center;
+        }
+        span.number {
+          background-color: var(--color-01);
+          border-radius: 5px;
+          width: 35px;
+          height: $height-number-span-prosess;
+          line-height: $height-number-span-prosess;
+          font-size: 20px;
+          font-weight: 600;
+          box-shadow: 2px 2px 9px #0006;
+        }
+        span.text {
+          color: var(--color-01);
+          font-weight: 400;
+        }
+      }
+      div.item-line:first-child{
+        span.number {
+          background-color: var(--color-03);
+          color: var(--color-01);
+        }
+      }
+      div.item-line:nth-child(2) {
+        span.number[active="1"],
+        span.number[active="2"]{
+          background-color: var(--color-03);
+          color: var(--color-01);
+        }
+        span.number:nth-child(3)[active="2"] {
+          background-color: var(--color-03);
+          color: var(--color-01);
+        }
+        
+      }
+      div.item-line:nth-child(3) {
+        span.number[active="2"] {
+          background-color: var(--color-03);
+          color: var(--color-01);
+        }
+        
+      }
+      div.lines {
+        position: absolute;
+        width: calc(100% - 100px);
+        height: $height-line-prosess;
+        background-color: var(--color-01);
+        top: calc(35px / 2 - $height-line-prosess / 2);
+        left: 50px;
+        z-index: -1;
+        span {
+          float: left;
+          display: block;
+        }
+        span.one-tow {
+          height: 100%;
+          background-color: var(--color-03);
+        }
+        span.tow-three {
+          height: 100%;
+          background-color: var(--color-03);
+        }
+        span.one-tow[active="1"],
+        span.one-tow[active="2"] {
+          width: 50%;
+        }
+        span.tow-three[active="2"] {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

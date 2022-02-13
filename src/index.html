@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./fonts/icomoon/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>QR-Code Creater</title>
   </head>
   <body>
-    <header>
+    <header class="the-header-peage">
       <div class="background-blur"></div>
       <div class="container">
         <div class="logo">
@@ -18,41 +24,49 @@
         <nav class="the-header-nav">
           <ul class="perint-items">
             <li class="item">
-              <a href="home">
-                <div class="icon">
-                  <i class="icon-home"></i>
-                </div>
-                <span class="text">Home</span>
-              </a>
+              <a href="home">Home</a>
             </li>
             <li class="item">
-              <a href="services">
-                <div class="icon">
-                  <i class="icon-miscellaneous_services"></i>
-                </div>
-                <span class="text">Services</span>
-              </a>
+              <a href="services"> Services </a>
             </li>
             <li class="item">
-              <a href="about">
-                <div class="icon">
-                  <i class="icon-info"></i>
-                </div>
-                <span class="text">About</span>
-              </a>
+              <a href="about"> About </a>
             </li>
             <li class="item">
-              <a href="sall-as">
-                <div class="icon">
-                  <i class="icon-wondering"></i>
-                </div>
-                <span class="text">support</span>
-              </a>
+              <a href="sall-as"> Support </a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
+    <main class="the-main-input-output">
+      <div class="container">
+        <div class="title">
+          <h1>Converter to Qr Code</h1>
+          <div class="qr-code-img">
+            <img src="./images/qrcode.svg" alt="qrcode">
+          </div>
+        </div>
+        <div class="line-prosess">
+          <div class="item-line">
+            <span class="number">1</span>
+            <span class="text">Select data type to input</span>
+          </div>
+          <div class="item-line">
+            <span class="number">2</span>
+            <span class="text">Input data</span>
+          </div>
+          <div class="item-line">
+            <span class="number">3</span>
+            <span class="text">Qr code style</span>
+          </div>
+          <div class="lines">
+            <span class="one-tow"></span>
+            <span class="tow-three"></span>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>
