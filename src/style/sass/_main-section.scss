@@ -1,7 +1,7 @@
 $height-line-prosess: 8px;
 $height-number-span-prosess: 35px;
 
-main.the-main-input-output {
+main {
   padding: 30px;
   div.container {
     display: flex;
@@ -9,7 +9,7 @@ main.the-main-input-output {
     align-items: center;
     flex-flow: column nowrap;
     row-gap: 20px;
-    div.title {
+    >header {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,7 +19,7 @@ main.the-main-input-output {
         color: var(--color-01);
         font-weight: 600;
       }
-      div.qr-code-img {
+      >figure{
         padding: 5px;
         background-color: var(--color-01);
         border-radius: 5px;
@@ -28,13 +28,14 @@ main.the-main-input-output {
         align-items: center;
       }
     }
-    div.line-prosess {
+
+    .line-prosess {
       position: relative;
       width: 80%;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      div.item-line {
+      .item-line {
         width: 100px;
         display: flex;
         justify-content: center;
@@ -54,38 +55,37 @@ main.the-main-input-output {
           font-size: 20px;
           font-weight: 600;
           box-shadow: 2px 2px 9px #0006;
+          transition: .4s;
         }
         span.text {
           color: var(--color-01);
           font-weight: 400;
         }
       }
-      div.item-line:first-child{
-        span.number {
+      .item-line:first-child{
+        span.number[active="0"],
+        span.number[active="1"],
+        span.number[active="2"] {
           background-color: var(--color-03);
           color: var(--color-01);
         }
       }
-      div.item-line:nth-child(2) {
+      .item-line:nth-child(2) {
         span.number[active="1"],
         span.number[active="2"]{
           background-color: var(--color-03);
           color: var(--color-01);
         }
-        span.number:nth-child(3)[active="2"] {
-          background-color: var(--color-03);
-          color: var(--color-01);
-        }
         
       }
-      div.item-line:nth-child(3) {
+      .item-line:nth-child(3) {
         span.number[active="2"] {
           background-color: var(--color-03);
           color: var(--color-01);
         }
         
       }
-      div.lines {
+      .lines {
         position: absolute;
         width: calc(100% - 100px);
         height: $height-line-prosess;
@@ -97,31 +97,32 @@ main.the-main-input-output {
           float: left;
           display: block;
         }
-        span.one-tow {
+        .one-tow {
           height: 100%;
           background-color: var(--color-03);
         }
-        span.tow-three {
+        .tow-three {
           height: 100%;
           background-color: var(--color-03);
         }
-        span.one-tow[active="1"],
-        span.one-tow[active="2"] {
+        .one-tow[active="1"],
+        .one-tow[active="2"] {
           width: 50%;
         }
-        span.tow-three[active="2"] {
+        .tow-three[active="2"] {
           width: 50%;
         }
       }
     }
-    div.data-canter {
+    
+    section.data-canter {
       padding: 20px;
       position: relative;
       width: 70%;
       height: 600px;
-      border-radius: 7px;
+      border-radius: 26px;
       overflow: hidden;
-      div.background-blur {
+      .background-blur {
         background-color: #ffffff30;
         position: absolute;
         height: 100%;
@@ -138,6 +139,7 @@ main.the-main-input-output {
         display: flex;
         align-items: flex-start;
         column-gap: 20px;
+        // transform: translateX(calc(-100% - 20px));
         >div {
           min-width: 100%;
           display: flex;
@@ -145,13 +147,14 @@ main.the-main-input-output {
           align-items: center;
           flex-flow: column nowrap;
           row-gap: 20px;
+          transition: .3s;
           h4 {
             font-size: 35px;
             color: var(--color-01);
             font-weight: 600;
           }
         }
-        div.select-input-file {
+        div.select-input-type {
           div.checkbox {
             width: 80%;
             ul {
@@ -165,6 +168,12 @@ main.the-main-input-output {
                 border-radius: 7px;
                 overflow: hidden;
                 padding-right: 10px;
+                cursor: pointer;
+                i,
+                p,
+                div.check {
+                  pointer-events: none;
+                }
                 i {
                   background-color: var(--color-03);
                   height: 60px;
@@ -203,6 +212,44 @@ main.the-main-input-output {
             }
           }
         }
+        div.box-file {
+          width: 70%;
+          height: 300px;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+          border-radius: 26px;
+          border: 3px dashed var(--color-05);
+          .input-fake {
+            padding: 7px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            i, 
+            p {
+              color: var(--color-01);
+              text-align: center;
+            }
+            i {
+              font-size: 70px;
+            }
+            p {
+              font-size: 20px;
+            }
+          }
+          input[type=file] {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            cursor: pointer;
+          }
+        }
       }
       div.buttons-mover {
         height: 10%;
@@ -211,6 +258,14 @@ main.the-main-input-output {
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        button {
+          transition: .3s;
+        }
+        button.back-button[active="0"],
+        button.next-button[active="2"] {
+          opacity: 0;
+          pointer-events: none;
+        }
       }
     }
   }

@@ -19,6 +19,7 @@
 		'icon-cloud-upload': '&#xf0ee;',
 		'icon-keyboard-o': '&#xf11c;',
 		'icon-file-code-o': '&#xe902;',
+		'icon-cloud_done': '&#xe903;',
 		'icon-miscellaneous_services': '&#xe901;',
 		'icon-home': '&#xe900;',
 		'icon-qrcode': '&#xe938;',

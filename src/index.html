@@ -15,13 +15,16 @@
     <title>QR-Code Creater</title>
   </head>
   <body>
-    <header class="the-header-peage">
+    <!-- Header of page -->
+    <header class="header-of-page">
       <div class="background-blur"></div>
       <div class="container">
-        <div class="logo">
-          <img src="./images/logo.svg" alt="logo" />
-        </div>
-        <nav class="the-header-nav">
+        <nav>
+          <figure class="logo">
+            <a href="#">
+              <img src="./images/logo.svg" alt="logo" />
+            </a>
+          </figure>
           <ul class="perint-items">
             <li class="item">
               <a href="home">Home</a>
@@ -39,37 +42,40 @@
         </nav>
       </div>
     </header>
-    <main class="the-main-input-output">
+    <!-- Main content of page -->
+    <main>
       <div class="container">
-        <div class="title">
+        <header>
           <h1>Converter to Qr Code</h1>
-          <div class="qr-code-img">
+          <figure>
             <img src="./images/qrcode.svg" alt="qrcode" />
-          </div>
-        </div>
-        <div class="line-prosess">
+          </figure>
+        </header>
+
+        <section class="line-prosess">
           <div class="item-line">
-            <span class="number">1</span>
+            <span class="active0 number" active="0">1</span>
             <span class="text">Select data type to input</span>
           </div>
           <div class="item-line">
-            <span class="number">2</span>
+            <span class="active0 number">2</span>
             <span class="text">Input data</span>
           </div>
           <div class="item-line">
-            <span class="number">3</span>
+            <span class="active0 number">3</span>
             <span class="text">Qr code style</span>
           </div>
           <div class="lines">
-            <span class="one-tow"></span>
-            <span class="tow-three"></span>
+            <span class="active0 one-tow"></span>
+            <span class="active0 tow-three"></span>
           </div>
-        </div>
-        <div class="data-canter">
+        </section>
+
+        <section class="data-canter">
           <div class="background-blur"></div>
 
           <div class="input-output-datas">
-            <div class="select-input-file">
+            <div class="select-input-type">
               <h4>Select input data type</h4>
               <div class="checkbox">
                 <ul>
@@ -77,21 +83,21 @@
                     <i class="icon-keyboard-o"></i>
                     <p>Enter manual</p>
                     <div class="check">
-                      <span></span>
+                      <span numberSelectCheckBoxs="1"></span>
                     </div>
                   </li>
                   <li>
                     <i class="icon-file-excel"></i>
                     <p>Import Excel file</p>
                     <div class="check">
-                      <span active="1"></span>
+                      <span active="1" numberSelectCheckBoxs="2"></span>
                     </div>
                   </li>
                   <li>
                     <i class="icon-file-code-o"></i>
                     <p>Import JSON file</p>
                     <div class="check">
-                      <span></span>
+                      <span numberSelectCheckBoxs="3"></span>
                     </div>
                   </li>
                 </ul>
@@ -100,7 +106,14 @@
 
             <div class="input-file">
               <h4>Input file</h4>
-              <div class="borwse-file"></div>
+              <div class="box-file">
+                <div class="input-fake">
+                  <i class="icon-cloud-upload"></i>
+                  <p>Drop your file here or Click to borwse</p>
+                </div>
+                <input type="file" id="input-file" />
+              </div>
+              <div class="warning-box"></div>
             </div>
 
             <div class="qr-code-style">
@@ -110,10 +123,12 @@
           </div>
 
           <div class="buttons-mover">
-            <button class="main-button back-button">Back</button>
-            <button class="main-button netx-button">Next</button>
+            <button class="active0 main-button back-button" active="0">
+              Back
+            </button>
+            <button class="active0 main-button next-button">Next</button>
           </div>
-        </div>
+        </section>
       </div>
     </main>
     <script src="./js/main.js"></script>

@@ -61,12 +61,14 @@ button.main-button {
   cursor: pointer;
 }
 
-header.the-header-peage {
+header.header-of-page {
   position: relative;
   height: 100px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
-header.the-header-peage .background-blur {
+header.header-of-page .background-blur {
   background-color: #ffffff30;
   position: absolute;
   height: 100%;
@@ -76,20 +78,24 @@ header.the-header-peage .background-blur {
   z-index: -1;
   filter: blur(1px);
 }
-header.the-header-peage .container {
+header.header-of-page nav {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
 }
-header.the-header-peage .container nav.the-header-nav ul {
+header.header-of-page nav figure a {
+  display: flex;
+  align-items: center;
+}
+header.header-of-page nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 5px;
 }
-header.the-header-peage .container nav.the-header-nav ul li a {
+header.header-of-page nav ul li a {
   padding: 5px;
   border-radius: 5px;
   color: var(--color-01);
@@ -97,33 +103,33 @@ header.the-header-peage .container nav.the-header-nav ul li a {
   font-weight: 600;
   font-size: 20px;
 }
-header.the-header-peage .container nav.the-header-nav ul li a:hover {
+header.header-of-page nav ul li a:hover {
   background-color: var(--color-01);
   color: var(--color-02);
 }
 
-main.the-main-input-output {
+main {
   padding: 30px;
 }
-main.the-main-input-output div.container {
+main div.container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
   row-gap: 20px;
 }
-main.the-main-input-output div.container div.title {
+main div.container > header {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 10px;
 }
-main.the-main-input-output div.container div.title h1 {
+main div.container > header h1 {
   font-size: 40px;
   color: var(--color-01);
   font-weight: 600;
 }
-main.the-main-input-output div.container div.title div.qr-code-img {
+main div.container > header > figure {
   padding: 5px;
   background-color: var(--color-01);
   border-radius: 5px;
@@ -131,14 +137,14 @@ main.the-main-input-output div.container div.title div.qr-code-img {
   justify-content: center;
   align-items: center;
 }
-main.the-main-input-output div.container div.line-prosess {
+main div.container .line-prosess {
   position: relative;
   width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
-main.the-main-input-output div.container div.line-prosess div.item-line {
+main div.container .line-prosess .item-line {
   width: 100px;
   display: flex;
   justify-content: center;
@@ -146,11 +152,11 @@ main.the-main-input-output div.container div.line-prosess div.item-line {
   flex-flow: column nowrap;
   row-gap: 5px;
 }
-main.the-main-input-output div.container div.line-prosess div.item-line span {
+main div.container .line-prosess .item-line span {
   display: block;
   text-align: center;
 }
-main.the-main-input-output div.container div.line-prosess div.item-line span.number {
+main div.container .line-prosess .item-line span.number {
   background-color: var(--color-01);
   border-radius: 5px;
   width: 35px;
@@ -159,29 +165,28 @@ main.the-main-input-output div.container div.line-prosess div.item-line span.num
   font-size: 20px;
   font-weight: 600;
   box-shadow: 2px 2px 9px #0006;
+  transition: 0.4s;
 }
-main.the-main-input-output div.container div.line-prosess div.item-line span.text {
+main div.container .line-prosess .item-line span.text {
   color: var(--color-01);
   font-weight: 400;
 }
-main.the-main-input-output div.container div.line-prosess div.item-line:first-child span.number {
+main div.container .line-prosess .item-line:first-child span.number[active="0"],
+main div.container .line-prosess .item-line:first-child span.number[active="1"],
+main div.container .line-prosess .item-line:first-child span.number[active="2"] {
   background-color: var(--color-03);
   color: var(--color-01);
 }
-main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(2) span.number[active="1"],
-main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(2) span.number[active="2"] {
+main div.container .line-prosess .item-line:nth-child(2) span.number[active="1"],
+main div.container .line-prosess .item-line:nth-child(2) span.number[active="2"] {
   background-color: var(--color-03);
   color: var(--color-01);
 }
-main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(2) span.number:nth-child(3)[active="2"] {
+main div.container .line-prosess .item-line:nth-child(3) span.number[active="2"] {
   background-color: var(--color-03);
   color: var(--color-01);
 }
-main.the-main-input-output div.container div.line-prosess div.item-line:nth-child(3) span.number[active="2"] {
-  background-color: var(--color-03);
-  color: var(--color-01);
-}
-main.the-main-input-output div.container div.line-prosess div.lines {
+main div.container .line-prosess .lines {
   position: absolute;
   width: calc(100% - 100px);
   height: 8px;
@@ -190,34 +195,34 @@ main.the-main-input-output div.container div.line-prosess div.lines {
   left: 50px;
   z-index: -1;
 }
-main.the-main-input-output div.container div.line-prosess div.lines span {
+main div.container .line-prosess .lines span {
   float: left;
   display: block;
 }
-main.the-main-input-output div.container div.line-prosess div.lines span.one-tow {
+main div.container .line-prosess .lines .one-tow {
   height: 100%;
   background-color: var(--color-03);
 }
-main.the-main-input-output div.container div.line-prosess div.lines span.tow-three {
+main div.container .line-prosess .lines .tow-three {
   height: 100%;
   background-color: var(--color-03);
 }
-main.the-main-input-output div.container div.line-prosess div.lines span.one-tow[active="1"],
-main.the-main-input-output div.container div.line-prosess div.lines span.one-tow[active="2"] {
+main div.container .line-prosess .lines .one-tow[active="1"],
+main div.container .line-prosess .lines .one-tow[active="2"] {
   width: 50%;
 }
-main.the-main-input-output div.container div.line-prosess div.lines span.tow-three[active="2"] {
+main div.container .line-prosess .lines .tow-three[active="2"] {
   width: 50%;
 }
-main.the-main-input-output div.container div.data-canter {
+main div.container section.data-canter {
   padding: 20px;
   position: relative;
   width: 70%;
   height: 600px;
-  border-radius: 7px;
+  border-radius: 26px;
   overflow: hidden;
 }
-main.the-main-input-output div.container div.data-canter div.background-blur {
+main div.container section.data-canter .background-blur {
   background-color: #ffffff30;
   position: absolute;
   height: 100%;
@@ -227,7 +232,7 @@ main.the-main-input-output div.container div.data-canter div.background-blur {
   z-index: -1;
   filter: blur(1px);
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas {
+main div.container section.data-canter div.input-output-datas {
   height: 90%;
   width: 100%;
   margin: 0 auto;
@@ -235,23 +240,24 @@ main.the-main-input-output div.container div.data-canter div.input-output-datas 
   align-items: flex-start;
   column-gap: 20px;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas > div {
+main div.container section.data-canter div.input-output-datas > div {
   min-width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-flow: column nowrap;
   row-gap: 20px;
+  transition: 0.3s;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas > div h4 {
+main div.container section.data-canter div.input-output-datas > div h4 {
   font-size: 35px;
   color: var(--color-01);
   font-weight: 600;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox {
   width: 80%;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li {
   background-color: var(--color-01);
   display: flex;
   justify-content: flex-start;
@@ -261,8 +267,14 @@ main.the-main-input-output div.container div.data-canter div.input-output-datas 
   border-radius: 7px;
   overflow: hidden;
   padding-right: 10px;
+  cursor: pointer;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li i {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li i,
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li p,
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li div.check {
+  pointer-events: none;
+}
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li i {
   background-color: var(--color-03);
   height: 60px;
   width: 60px;
@@ -271,13 +283,13 @@ main.the-main-input-output div.container div.data-canter div.input-output-datas 
   text-align: center;
   color: var(--color-05);
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li p {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li p {
   font-size: 23px;
   font-weight: 500;
   color: var(--color-02);
   flex-grow: 1;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li div.check {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li div.check {
   height: 30px;
   width: 30px;
   background-color: var(--color-02);
@@ -286,22 +298,68 @@ main.the-main-input-output div.container div.data-canter div.input-output-datas 
   justify-content: center;
   align-items: center;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li div.check span {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li div.check span {
   height: 40%;
   width: 40%;
   border-radius: 50%;
   display: block;
 }
-main.the-main-input-output div.container div.data-canter div.input-output-datas div.select-input-file div.checkbox ul li div.check span[active="1"] {
+main div.container section.data-canter div.input-output-datas div.select-input-type div.checkbox ul li div.check span[active="1"] {
   background-color: var(--color-03);
 }
-main.the-main-input-output div.container div.data-canter div.buttons-mover {
+main div.container section.data-canter div.input-output-datas div.box-file {
+  width: 70%;
+  height: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 3px dashed var(--color-05);
+}
+main div.container section.data-canter div.input-output-datas div.box-file .input-fake {
+  padding: 7px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+main div.container section.data-canter div.input-output-datas div.box-file .input-fake i,
+main div.container section.data-canter div.input-output-datas div.box-file .input-fake p {
+  color: var(--color-01);
+  text-align: center;
+}
+main div.container section.data-canter div.input-output-datas div.box-file .input-fake i {
+  font-size: 70px;
+}
+main div.container section.data-canter div.input-output-datas div.box-file .input-fake p {
+  font-size: 20px;
+}
+main div.container section.data-canter div.input-output-datas div.box-file input[type=file] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+main div.container section.data-canter div.buttons-mover {
   height: 10%;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+main div.container section.data-canter div.buttons-mover button {
+  transition: 0.3s;
+}
+main div.container section.data-canter div.buttons-mover button.back-button[active="0"],
+main div.container section.data-canter div.buttons-mover button.next-button[active="2"] {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=main.css.map */

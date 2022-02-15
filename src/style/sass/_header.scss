@@ -1,7 +1,9 @@
-header.the-header-peage {
+header.header-of-page {
   position: relative;
   height: 100px;
   width: 100%;
+  display: flex;
+  align-items: center;
   .background-blur {
     background-color: #ffffff30;
     position: absolute;
@@ -12,13 +14,18 @@ header.the-header-peage {
     z-index: -1;
     filter: blur(1px);
   }
-  .container {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-flow: row nowrap;
-    nav.the-header-nav {
+    nav {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: row nowrap;
+      figure {
+        a {
+          display: flex;
+          align-items: center;
+        }
+      }
       ul {
         display: flex;
         justify-content: center;
@@ -41,4 +48,3 @@ header.the-header-peage {
       }
     }
   }
-}
