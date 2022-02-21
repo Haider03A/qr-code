@@ -387,14 +387,16 @@ main section.perint-section .enter-manual form .main-inputs-and-submit-but {
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label {
   font-size: 20px;
+  font-weight: 500;
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label input {
   display: block;
   border: none;
-  height: 35px;
+  height: 40px;
   padding: 4px;
   color: var(--color-02);
   font-size: 20px;
+  border-radius: 10px;
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label input:focus {
   outline: none;
