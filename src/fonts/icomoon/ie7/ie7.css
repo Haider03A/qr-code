@@ -1,3 +1,6 @@
+.icon-cloud-error {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
+}
 .icon-lock {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf023;');
 }
@@ -24,6 +27,9 @@
 }
 .icon-home {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe900;');
+}
+.icon-file-excel {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xeae2;');
 }
 .icon-qrcode {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe938;');

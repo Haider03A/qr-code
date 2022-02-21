@@ -13,6 +13,7 @@
 		el.innerHTML = '<span style="font-family: \'icomoon\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'icon-cloud-error': '&#xe904;',
 		'icon-lock': '&#xf023;',
 		'icon-edit': '&#xf044;',
 		'icon-pencil-square-o': '&#xf044;',
@@ -22,6 +23,7 @@
 		'icon-cloud_done': '&#xe903;',
 		'icon-miscellaneous_services': '&#xe901;',
 		'icon-home': '&#xe900;',
+		'icon-file-excel': '&#xeae2;',
 		'icon-qrcode': '&#xe938;',
 		'icon-wondering': '&#xe9fb;',
 		'icon-info': '&#xea0c;',

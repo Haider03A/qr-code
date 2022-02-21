@@ -1,270 +1,320 @@
-$height-line-prosess: 8px;
-$height-number-span-prosess: 35px;
-
 main {
-  padding: 30px;
-  div.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  header {
+    margin: 20px 0;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column nowrap;
-    row-gap: 20px;
-    >header {
+    column-gap: 10px;
+    h1 {
+      color: var(--color-01);
+      font-size: 38px;
+      font-weight: 600;
+    }
+    figure {
       display: flex;
-      justify-content: center;
       align-items: center;
-      column-gap: 10px;
-      h1 {
-        font-size: 40px;
-        color: var(--color-01);
-        font-weight: 600;
-      }
-      >figure{
-        padding: 5px;
-        background-color: var(--color-01);
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+      background-color: var(--color-01);
+      padding: 7px;
+      border-radius: 7px;
     }
-
-    .line-prosess {
-      position: relative;
-      width: 80%;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      .item-line {
-        width: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column nowrap;
-        row-gap: 5px;
-        span {
-          display: block;
-          text-align: center;
-        }
-        span.number {
-          background-color: var(--color-01);
-          border-radius: 5px;
-          width: 35px;
-          height: $height-number-span-prosess;
-          line-height: $height-number-span-prosess;
-          font-size: 20px;
-          font-weight: 600;
-          box-shadow: 2px 2px 9px #0006;
-          transition: .4s;
-        }
-        span.text {
-          color: var(--color-01);
-          font-weight: 400;
-        }
-      }
-      .item-line:first-child{
-        span.number[active="0"],
-        span.number[active="1"],
-        span.number[active="2"] {
-          background-color: var(--color-03);
-          color: var(--color-01);
-        }
-      }
-      .item-line:nth-child(2) {
-        span.number[active="1"],
-        span.number[active="2"]{
-          background-color: var(--color-03);
-          color: var(--color-01);
-        }
-        
-      }
-      .item-line:nth-child(3) {
-        span.number[active="2"] {
-          background-color: var(--color-03);
-          color: var(--color-01);
-        }
-        
-      }
-      .lines {
-        position: absolute;
-        width: calc(100% - 100px);
-        height: $height-line-prosess;
-        background-color: var(--color-01);
-        top: calc(35px / 2 - $height-line-prosess / 2);
-        left: 50px;
-        z-index: -1;
-        span {
-          float: left;
-          display: block;
-        }
-        .one-tow {
-          height: 100%;
-          background-color: var(--color-03);
-        }
-        .tow-three {
-          height: 100%;
-          background-color: var(--color-03);
-        }
-        .one-tow[active="1"],
-        .one-tow[active="2"] {
-          width: 50%;
-        }
-        .tow-three[active="2"] {
-          width: 50%;
-        }
-      }
-    }
-    
-    section.data-canter {
+  }
+  section.perint-section {
+    width: 70%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    > section {
       padding: 20px;
-      position: relative;
-      width: 70%;
-      height: 600px;
-      border-radius: 26px;
-      overflow: hidden;
-      .background-blur {
-        background-color: #ffffff30;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        filter: blur(1px);
+      min-width: 100%;
+      height: 100%;
+      transform: translateX(calc((100%) * -2)); /* ---------------------- */
+      .title-section {
+        text-align: center;
+        font-size: 37px;
+        color: var(--color-05);
+        font-weight: 500;
+        margin-bottom: 30px;
       }
-      div.input-output-datas {
-        height: 90%;
-        width: 100%;
+      form {
+        width: 80%;
         margin: 0 auto;
-        display: flex;
-        align-items: flex-start;
-        column-gap: 20px;
-        // transform: translateX(calc(-100% - 20px));
-        >div {
-          min-width: 100%;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          flex-flow: column nowrap;
-          row-gap: 20px;
-          transition: .3s;
-          h4 {
-            font-size: 35px;
-            color: var(--color-01);
-            font-weight: 600;
-          }
-        }
-        div.select-input-type {
-          div.checkbox {
-            width: 80%;
-            ul {
-              li {
-                background-color: var(--color-01);
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                column-gap: 10px;
-                margin: 10px 0;
-                border-radius: 7px;
-                overflow: hidden;
-                padding-right: 10px;
-                cursor: pointer;
-                i,
-                p,
-                div.check {
-                  pointer-events: none;
-                }
-                i {
-                  background-color: var(--color-03);
-                  height: 60px;
-                  width: 60px;
-                  font-size: 40px;
-                  line-height: 60px;
-                  text-align: center;
-                  color: var(--color-05);
-                }
-                p {
-                  font-size: 23px;
-                  font-weight: 500;
-                  color: var(--color-02);
-                  flex-grow: 1;
-                }
-                div.check {
-                  height: 30px;
-                  width: 30px;
-                  background-color: var(--color-02);
-                  border-radius: 50%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  span {
-                    height: 40%;
-                    width: 40%;
-                    
-                    border-radius: 50%;
-                    display: block;
-                  }
-                  span[active="1"] {
-                    background-color: var(--color-03);
-                  }
-                }
-              }
-            }
-          }
-        }
-        div.box-file {
-          width: 70%;
-          height: 300px;
+        height: 100%;
+      }
+    }
+    div.background-blur {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #ffffff42;
+      filter: blur(1px);
+      z-index: -1;
+    }
+    .select-input-type {
+      form {
+        fieldset {
+          height: 100%;
           display: flex;
           flex-flow: column nowrap;
           align-items: center;
-          position: relative;
-          overflow: hidden;
-          border-radius: 26px;
-          border: 3px dashed var(--color-05);
-          .input-fake {
-            padding: 7px;
-            height: 100%;
+          justify-content: space-between;
+          row-gap: 10px;
+          border: none;
+          div.inputs {
             width: 100%;
             display: flex;
             flex-flow: column nowrap;
-            justify-content: center;
+            row-gap: 20px;
+          }
+          label {
+            padding: 10px;
+            font-size: 36px;
+            width: 100%;
+            background-color: var(--color-05);
+            border-radius: 14px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            i, 
-            p {
-              color: var(--color-01);
-              text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+            input[type="radio"] {
+              position: absolute;
+              opacity: 0;
             }
-            i {
-              font-size: 70px;
+            span {
+              width: 30px;
+              height: 30px;
+              display: block;
+              border-radius: 50%;
+              position: relative;
+              background-color: var(--color-02);
             }
-            p {
-              font-size: 20px;
+            span::after {
+              position: absolute;
+              content: "";
+              height: 50%;
+              width: 50%;
+              border-radius: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              transition: 0.3s;
+            }
+            input:checked ~ span::after {
+              background-color: var(--color-03);
+            }
+            input:focus ~ span {
+              box-shadow: 0px 0px 0px 4px #00b0ff;
             }
           }
-          input[type=file] {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            cursor: pointer;
+          button {
+            margin-top: 20px;
+            align-self: flex-end;
           }
         }
       }
-      div.buttons-mover {
-        height: 10%;
-        width: 100%;
+    }
+    .input-file {
+      form {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+        flex-flow: column nowrap;
         align-items: center;
-        button {
-          transition: .3s;
+        justify-content: space-between;
+        .fack-input {
+          height: 60%;
+          width: 100%;
+          border: 4px dashed var(--color-05);
+          border-radius: 20px;
+          padding: 20px;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            cursor: pointer;
+            border-radius: 20px;
+            opacity: 0;
+          }
+          .focus-input-file {
+            position: absolute;
+            width: 98%;
+            height: 98%;
+            top: 1%;
+            left: 1%;
+            box-shadow: 0px 0px 0px 4px #00b0ff;
+            opacity: 0;
+            transition: .3s;
+            border-radius: 12px;
+          }
+          input:focus ~ .focus-input-file {
+            opacity: 1;
         }
-        button.back-button[active="0"],
-        button.next-button[active="2"] {
-          opacity: 0;
-          pointer-events: none;
+          .icons-and-file-name {
+              width: 100%;
+              display: flex;
+              flex-flow: column nowrap;
+              align-items: center;
+            i {
+              font-size: 70px;
+              color: var(--color-05);
+            }
+            i:nth-of-type(2) {
+            display: none;
+            color: var(--color-07);
+            }
+            i:last-of-type {
+              display: none;
+              color: var(--color-06);
+            }
+            span {
+                text-align: center;
+            }
+            .file-name {
+                width: 60%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .file-name,
+            .error {
+                font-size: 20px;
+                color: var(--color-02);
+                font-weight: 500;
+                display: none;
+            }
+          }
+          p {
+              font-size: 20px;
+              color: var(--color-02);
+          }
+        }
+        .fack-input::before {
+          content: "Enter file first";
+          position: absolute;
+          top: -20px;
+          left: 14px;
+          width: 90%;
+          height: 30px;
+          z-index: 199;
+          font-size: 18px;
+          color: var(--color-07);
+          background-color: var(--color-09);
+          padding: 3px;
+          border-radius: 8px;
+          line-height: 30px;
+          font-weight: 600;
+          animation: war .5s ;
+          display: none;
+        }
+        div.buttons {
+          width: 100%;
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          button[type=submit]:disabled {
+            cursor: no-drop;
+            background-color: var(--color-05);
+            transition: .3s;
+          }
+        }
+      }
+      form[data-changed="1"] {
+        .fack-input {
+          .icons-and-file-name {
+            i:first-of-type {
+              display: none;
+            }
+            i:last-of-type {
+              display: block;
+            }
+            .file-name {
+                display: block;
+            }
+          }
+          p {
+              display: none;
+          }
+        }
+      }
+      form[data-changed="2"] {
+        .fack-input {
+          .icons-and-file-name {
+              i:first-of-type {
+                  display: none;
+                }
+              i:nth-of-type(2) {
+                  display: block;
+                  }
+              .error {
+                  display: block;
+              }
+          }
+      }
+      }
+      form[data-changed="3"] {
+      .fack-input::before {
+        display: block;
+      }
+    }
+    }
+    .enter-manual {
+      form {
+        .main-inputs-and-submit-but {
+          height: 40%;
+          display: flex;
+          flex-flow: column nowrap;
+          row-gap: 15px;
+          label {
+            font-size: 20px;
+            input {
+              display: block;
+              border: none;
+              height: 35px;
+              padding: 4px;
+              color: var(--color-02);
+              font-size: 20px;
+            }
+            input:focus {
+              outline: none;
+            }
+          }
+          label:first-of-type {
+            width: 100%;
+            input {
+              width: 100%;
+            }
+          }
+
+          label:last-of-type {
+            width: 75%;
+            input {
+             width: 100%;
+            }
+          }
+          
+          .button-submit {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button[type=submit] {
+              
+            }
+          }
         }
       }
     }
