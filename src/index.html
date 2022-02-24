@@ -173,30 +173,26 @@
           <form>
             <legend class="title-section">Qr-code sstyle</legend>
             <div class="inputs-box">
-              <div class="dimensions-box">
                 <label for="qr-style-width" class="qr-style-width main-label">
                   Width:
-                <input id="qr-style-width" class="main-input-text" value="100px" />
+                <input id="qr-style-width" type="number" min="20" max="700" class="main-input-text" value="100" data-error="0"/>
                 </label>
                 <label for="qr-style-height" class="qr-style-height main-label">
                   Height:
-                  <input id="qr-style-height" class="main-input-text" value="100px" />
+                  <input id="qr-style-height" type="number" min="20" max="700" class="main-input-text" value="100" data-error="0"/>
                 </label>
                 <label for="qr-style-margin" class="qr-style-margin main-label">
                   Margin:
-                  <input id="qr-style-margin" class="main-input-text" value="10px" />
+                  <input id="qr-style-margin" type="number" min="0" max="15" class="main-input-text" value="10" data-error="0"/>
                 </label>
-              </div>
-              <div class="color-box">
                 <label for="qr-style-color" class="qr-style-color main-label">
                   Color Qr-code:
-                  <input id="qr-style-color" type="color" class="main-input-text" value="#000000"/>
+                  <input id="qr-style-color" type="color" class="main-input-text" value="#000000" data-error="0"/>
                 </label>
                 <label for="qr-style-background" class="qr-style-background main-label">
                   Background color Qr-code:
-                  <input id="qr-style-background" type="color" class="main-input-text" value="#ffffff"/>
+                  <input id="qr-style-background" type="color" class="main-input-text" value="#ffffff" data-error="0"/>
                 </label>
-              </div>
             </div>
             <div class="qr-fack">
               <i class="icon-qrcode"></i>
