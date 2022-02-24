@@ -10,6 +10,7 @@
   --color-09: #d49cb2;
   --color-10: #2196f3;
   --color-11: #e91e63;
+  --color-12: #37373750;
 }
 
 * {
@@ -88,6 +89,11 @@ input.main-input-text {
   border-radius: 10px;
   background-color: var(--color-05);
   transition: 0.3s;
+}
+
+input.main-input-text::placeholder {
+  color: var(--color-12);
+  font-size: 18px;
 }
 
 input.main-input-text:focus {
@@ -515,7 +521,7 @@ main section.perint-section .qr-code-style form .inputs-box {
   gap: 10px 33px;
 }
 main section.perint-section .qr-code-style form .inputs-box label input {
-  width: 100px;
+  width: 200px;
 }
 main section.perint-section .qr-code-style form .qr-fack {
   height: 50%;

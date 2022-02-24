@@ -10,6 +10,7 @@
     --color-09: #d49cb2;
     --color-10: #2196f3;
     --color-11: #e91e63;
+    --color-12: #37373750;
   }
 * {
     padding: 0;
@@ -83,6 +84,11 @@ input.main-input-text {
     border-radius: 10px;
     background-color: var(--color-05);
     transition: .3s;
+}
+
+input.main-input-text::placeholder {
+    color: var(--color-12);
+    font-size: 18px;
 }
 
 input.main-input-text:focus {
