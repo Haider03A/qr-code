@@ -62,6 +62,33 @@ button.main-button {
     border-radius: 5px;
     cursor: pointer;
 }
+label.main-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-05);
+    transition: .3s;
+}
+
+label.main-label:focus-within {
+    color: var(--color-04);
+}
+
+input.main-input-text {
+    display: block;
+    border: none;
+    height: 40px;
+    padding: 4px;
+    color: var(--color-02);
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: var(--color-05);
+    transition: .3s;
+}
+
+input.main-input-text:focus {
+    outline: none;
+    background-color: var(--color-04);
+  }
 
 @keyframes war {
     33.3% {

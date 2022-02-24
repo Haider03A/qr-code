@@ -24,7 +24,7 @@ main {
   }
   section.perint-section {
     width: 70%;
-    height: 600px;
+    height: 700px;
     position: relative;
     overflow: hidden;
     border-radius: 30px;
@@ -36,13 +36,13 @@ main {
       padding: 20px;
       min-width: 100%;
       height: 100%;
-      transform: translateX(calc((100%) * -2)); /* ---------------------- */
+      transform: translateX(calc((100%) * -4)); /* ---------------------- */
       .title-section {
         text-align: center;
         font-size: 37px;
         color: var(--color-05);
         font-weight: 500;
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
         height: 50px;
       }
       form {
@@ -279,29 +279,6 @@ main {
           display: flex;
           flex-flow: column nowrap;
           row-gap: 15px;
-          label {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--color-05);
-            
-            input {
-              display: block;
-              border: none;
-              height: 40px;
-              padding: 4px;
-              color: var(--color-02);
-              font-size: 20px;
-              border-radius: 10px;
-              background-color: var(--color-05);
-            }
-            input:focus {
-              outline: none;
-              background-color: var(--color-04);
-            }
-          }
-          label:focus-within {
-            color: var(--color-04);
-          }
           label:first-of-type {
             width: 100%;
             input {
@@ -386,6 +363,39 @@ main {
               button {
                 background-color: var(--color-11);
               }
+            }
+          }
+        }
+      }
+    }
+    .qr-code-style {
+      form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        row-gap: 20px;
+        .inputs-box {
+          display: flex;
+          justify-content: space-between;
+          height: 40%;
+          width: 100%;
+          column-gap: 20px;
+          .dimensions-box {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            row-gap: 10px;
+            input {
+              width: 100px;
+            }
+          }
+          .color-box {
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            row-gap: 10px;
+            input {
             }
           }
         }

@@ -139,13 +139,13 @@
           <form>
             <legend class="title-section">Enter manual</legend>
             <div class="main-inputs-and-submit-but">
-              <label for="qr-value" class="qr-value">
+              <label for="qr-value" class="qr-value main-label">
                 Value Qr-code
-                <input id="qr-value" value="1234123452" />
+                <input id="qr-value" class="main-input-text" value="1234123452" />
               </label>
-              <label for="qr-title" class="qr-title">
+              <label for="qr-title" class="qr-title main-label">
                 Title for Qr-code
-                <input id="qr-title" value="A50s" />
+                <input id="qr-title" class="main-input-text" value="A50s" />
               </label>
               <div class="button-submit">
                 <button type="submit" class="main-button">Add Qr-code</button>
@@ -169,7 +169,43 @@
           </form>
         </section>
         <section class="show-item"></section>
-        <section class="qr-code-style"></section>
+        <section class="qr-code-style">
+          <form>
+            <legend class="title-section">Qr-code sstyle</legend>
+            <div class="inputs-box">
+              <div class="dimensions-box">
+                <label for="qr-style-width" class="qr-style-width main-label">
+                  Width:
+                <input id="qr-style-width" class="main-input-text" value="100px" />
+                </label>
+                <label for="qr-style-height" class="qr-style-height main-label">
+                  Height:
+                  <input id="qr-style-height" class="main-input-text" value="100px" />
+                </label>
+                <label for="qr-style-margin" class="qr-style-margin main-label">
+                  Margin:
+                  <input id="qr-style-margin" class="main-input-text" value="10px" />
+                </label>
+              </div>
+              <div class="color-box">
+                <label for="qr-style-color" class="qr-style-color main-label">
+                  Color Qr-code:
+                  <input id="qr-style-color" type="color" class="main-input-text" value="#000000"/>
+                </label>
+                <label for="qr-style-background" class="qr-style-background main-label">
+                  Background color Qr-code:
+                  <input id="qr-style-background" type="color" class="main-input-text" value="#ffffff"/>
+                </label>
+              </div>
+            </div>
+            <div class="qr-fack">
+              <i class="icon-qrcode"></i>
+            </div>
+            <div class="back-button">
+              <button class="main-button">Back</button>
+            </div>
+          </form> 
+        </section>
       </section>
     </main>
     <script src="./js/main.js"></script>
