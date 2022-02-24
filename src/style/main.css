@@ -362,34 +362,11 @@ main section.perint-section .input-file form .fack-input p {
   font-size: 20px;
   color: var(--color-02);
 }
-main section.perint-section .input-file form .fack-input::before {
-  content: "Enter file first";
-  position: absolute;
-  top: -20px;
-  left: 14px;
-  width: 90%;
-  height: 30px;
-  z-index: 199;
-  font-size: 18px;
-  color: var(--color-07);
-  background-color: var(--color-09);
-  padding: 3px;
-  border-radius: 8px;
-  line-height: 30px;
-  font-weight: 600;
-  animation: war 0.5s;
-  display: none;
-}
 main section.perint-section .input-file form div.buttons {
   width: 100%;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-main section.perint-section .input-file form div.buttons button[type=submit]:disabled {
-  cursor: no-drop;
-  background-color: var(--color-05);
-  transition: 0.3s;
 }
 main section.perint-section .input-file form[data-changed="1"] .fack-input .icons-and-file-name i:first-of-type {
   display: none;
@@ -410,9 +387,6 @@ main section.perint-section .input-file form[data-changed="2"] .fack-input .icon
   display: block;
 }
 main section.perint-section .input-file form[data-changed="2"] .fack-input .icons-and-file-name .error {
-  display: block;
-}
-main section.perint-section .input-file form[data-changed="3"] .fack-input::before {
   display: block;
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but {
