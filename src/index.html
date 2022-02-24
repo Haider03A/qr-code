@@ -15,7 +15,6 @@
     <title>QR-Code Creater</title>
   </head>
   <body>
-    
     <!-- Header of page -->
     <header class="header-of-page">
       <div class="background-blur"></div>
@@ -46,7 +45,6 @@
 
     <!-- Main content of page -->
     <main class="container">
-
       <!-- Header of main contentt -->
       <header>
         <h1>Converter to Qr Code</h1>
@@ -86,29 +84,29 @@
               <legend class="title-section">Select input data type</legend>
               <div class="inputs">
                 <label for="enter-manual"
-                >Enter manual
-                <input
-                  type="radio"
-                  name="data-type"
-                  id="enter-manual"
-                  checked
-                />
-                <span class="check-mark"></span>
-              </label>
+                  >Enter manual
+                  <input
+                    type="radio"
+                    name="data-type"
+                    id="enter-manual"
+                    checked
+                  />
+                  <span class="check-mark"></span>
+                </label>
 
-              <label for="import-excel-file"
-                >Import Excel file
-                <input type="radio" name="data-type" id="import-excel-file" />
-                <span class="check-mark"></span>
-              </label>
+                <label for="import-excel-file"
+                  >Import Excel file
+                  <input type="radio" name="data-type" id="import-excel-file" />
+                  <span class="check-mark"></span>
+                </label>
 
-              <label for="import-json-file"
-                >Import JSON file
-                <input type="radio" name="data-type" id="import-json-file" />
-                <span class="check-mark"></span>
-              </label>
+                <label for="import-json-file"
+                  >Import JSON file
+                  <input type="radio" name="data-type" id="import-json-file" />
+                  <span class="check-mark"></span>
+                </label>
               </div>
-              <button class="main-button"type="submit">Next</button>
+              <button class="main-button" type="submit">Next</button>
             </fieldset>
           </form>
         </section>
@@ -116,8 +114,8 @@
         <section class="input-file">
           <form data-changed="0">
             <legend class="title-section">Input file</legend>
-            <div class="fack-input" >
-              <input type="file" name="input-file" id="input-file">
+            <div class="fack-input">
+              <input type="file" name="input-file" id="input-file" />
               <div class="focus-input-file"></div>
               <div class="icons-and-file-name">
                 <i class="icon-cloud-upload"></i>
@@ -130,7 +128,9 @@
             </div>
             <div class="buttons">
               <button class="main-button">Back</button>
-              <button class="main-button" id="next-but" type="submit" disabled>Next</button>
+              <button class="main-button" id="next-but" type="submit" disabled>
+                Next
+              </button>
             </div>
           </form>
         </section>
@@ -141,30 +141,28 @@
             <div class="main-inputs-and-submit-but">
               <label for="qr-value" class="qr-value">
                 Value Qr-code
-                <input id="qr-value">
+                <input id="qr-value" value="1234123452" />
               </label>
               <label for="qr-title" class="qr-title">
                 Title for Qr-code
-                <input id="qr-title" value="A50s">
+                <input id="qr-title" value="A50s" />
               </label>
               <div class="button-submit">
                 <button type="submit" class="main-button">Add Qr-code</button>
               </div>
             </div>
-            <div>
-              <div class="buttons">
-                <div class="style-and-tiem-buttons">
-                  <button class="main-button">Qr-code style</button>
-                  <button class="main-button"><span>0</span>show items</button>
+            <div class="buttons">
+              <div class="style-and-tiem-buttons">
+                <button class="main-button">Qr-code style</button>
+                <button class="main-button"><span>1</span>show items</button>
+              </div>
+              <div class="back-and-exports-buttons">
+                <div class="back-button">
+                  <button class="main-button">Back</button>
                 </div>
-                <div class="back-and-exports-buttons">
-                  <div class="back-button">
-                    <button class="main-button">Back</button>
-                  </div>
-                  <div class="exports-buttons">
-                    <button class="main-button">Export image</button>
-                    <button class="main-button">Export PDF</button>
-                  </div>
+                <div class="exports-buttons">
+                  <button class="main-button">Export image</button>
+                  <button class="main-button">Export PDF</button>
                 </div>
               </div>
             </div>

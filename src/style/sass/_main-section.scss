@@ -43,6 +43,7 @@ main {
         color: var(--color-05);
         font-weight: 500;
         margin-bottom: 30px;
+        height: 50px;
       }
       form {
         width: 80%;
@@ -281,6 +282,8 @@ main {
           label {
             font-size: 20px;
             font-weight: 500;
+            color: var(--color-05);
+            
             input {
               display: block;
               border: none;
@@ -289,10 +292,15 @@ main {
               color: var(--color-02);
               font-size: 20px;
               border-radius: 10px;
+              background-color: var(--color-05);
             }
             input:focus {
               outline: none;
+              background-color: var(--color-04);
             }
+          }
+          label:focus-within {
+            color: var(--color-04);
           }
           label:first-of-type {
             width: 100%;
@@ -314,7 +322,70 @@ main {
             justify-content: center;
             align-items: center;
             button[type=submit] {
-              
+              background-color: var(--color-10);
+            }
+          }
+        }
+        .buttons {
+          height: calc(100% - 40% - 50px - 30px );
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          padding: 20px 0;
+          button {
+            font-size: 20px;
+          }
+          .style-and-tiem-buttons {
+            display: flex;
+            justify-content: space-between;
+            button {
+              background-color: var(--color-02);
+              position: relative;
+              overflow: hidden;
+              span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: var(--color-04);
+                height: 100%;
+                width: 25%;
+              }
+            }
+            button:last-of-type {
+              position: relative;
+              overflow: hidden;
+              padding-left: 68px;
+              span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: var(--color-04);
+                height: 100%;
+                width: 25%;
+                color: var(--color-02);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+              }
+            }
+            
+          }
+          .back-and-exports-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row nowrap;
+            column-gap: 10px;
+            .back-button {
+              button {
+                font-size: 25px;
+              }
+            }
+            .exports-buttons {
+              button {
+                background-color: var(--color-11);
+              }
             }
           }
         }

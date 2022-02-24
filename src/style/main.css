@@ -8,6 +8,8 @@
   --color-07: #bd1a1a;
   --color-08: #000;
   --color-09: #d49cb2;
+  --color-10: #2196f3;
+  --color-11: #e91e63;
 }
 
 * {
@@ -172,6 +174,7 @@ main section.perint-section > section .title-section {
   color: var(--color-05);
   font-weight: 500;
   margin-bottom: 30px;
+  height: 50px;
 }
 main section.perint-section > section form {
   width: 80%;
@@ -388,6 +391,7 @@ main section.perint-section .enter-manual form .main-inputs-and-submit-but {
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label {
   font-size: 20px;
   font-weight: 500;
+  color: var(--color-05);
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label input {
   display: block;
@@ -397,9 +401,14 @@ main section.perint-section .enter-manual form .main-inputs-and-submit-but label
   color: var(--color-02);
   font-size: 20px;
   border-radius: 10px;
+  background-color: var(--color-05);
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label input:focus {
   outline: none;
+  background-color: var(--color-04);
+}
+main section.perint-section .enter-manual form .main-inputs-and-submit-but label:focus-within {
+  color: var(--color-04);
 }
 main section.perint-section .enter-manual form .main-inputs-and-submit-but label:first-of-type {
   width: 100%;
@@ -418,6 +427,67 @@ main section.perint-section .enter-manual form .main-inputs-and-submit-but .butt
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main section.perint-section .enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
+  background-color: var(--color-10);
+}
+main section.perint-section .enter-manual form .buttons {
+  height: calc(60% - 50px - 30px);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+main section.perint-section .enter-manual form .buttons button {
+  font-size: 20px;
+}
+main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button {
+  background-color: var(--color-02);
+  position: relative;
+  overflow: hidden;
+}
+main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-04);
+  height: 100%;
+  width: 25%;
+}
+main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button:last-of-type {
+  position: relative;
+  overflow: hidden;
+  padding-left: 68px;
+}
+main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button:last-of-type span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-04);
+  height: 100%;
+  width: 25%;
+  color: var(--color-02);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  column-gap: 10px;
+}
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .back-button button {
+  font-size: 25px;
+}
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .exports-buttons button {
+  background-color: var(--color-11);
 }
 
 /*# sourceMappingURL=main.css.map */
