@@ -9,6 +9,8 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.static('routes'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 /* const result = excelToJson({ 
     sourceFile: './public/data/dataExcel.xlsx' ,

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const multer  = require('multer')
 
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/upload/')
@@ -13,12 +14,22 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 
+let prossCount = 0;
+
 router.get('/', (req, res) => {
-    res.render('index')
+  res.render('index', {
+      prossCount
+    })
 })
 
 router.post('/', upload.single('file'), (req, res) => {
- console.log(req.file)
+  console.log(req.file)
+  prossCount++
+})
+
+router.post('/a', (req, res) => {
+  console.log(req.body)
+  res.json(req.body)
 })
 
 module.exports = router;
