@@ -365,6 +365,7 @@ main section.perint-section .input-file form div.buttons {
   width: 100%;
   margin-top: 20px;
   display: flex;
+  flex-flow: row-reverse nowrap;
   justify-content: space-between;
 }
 main section.perint-section .input-file form[data-changed="1"] .fack-input .icons-and-file-name i:first-of-type {
@@ -511,6 +512,42 @@ main section.perint-section .qr-code-style form .qr-fack i {
 }
 main section.perint-section .qr-code-style form .back-button {
   width: 100%;
+}
+main section.perint-section > section {
+  display: none;
+}
+main section.perint-section .select-input-type {
+  display: block;
+}
+main section.perint-section[data-counter-section="0"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="0"] .select-input-type {
+  display: block;
+}
+main section.perint-section[data-counter-section="1"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="1"] .enter-manual {
+  display: block;
+}
+main section.perint-section[data-counter-section="2"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="2"] .qr-code-style {
+  display: block;
+}
+main section.perint-section[data-counter-section="3"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="3"] .input-file {
+  display: block;
+}
+main section.perint-section[data-counter-section="4"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="4"] .show-item {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -207,6 +207,7 @@ main {
           width: 100%;
           margin-top: 20px;
           display: flex;
+          flex-flow: row-reverse nowrap;
           justify-content: space-between;
         }
       }
@@ -384,4 +385,59 @@ main {
       }
     }
   }
+
+  section.perint-section {
+    >section {
+      display: none;
+    }
+    .select-input-type {
+      display: block;
+    }
+  }
+
+  section.perint-section[data-counter-section="0"] {
+    >section {
+      display: none;
+    }
+    .select-input-type {
+      display: block;
+    }
+  }
+
+  section.perint-section[data-counter-section="1"] {
+    >section {
+      display: none;
+    }
+    .enter-manual {
+      display: block;
+    }
+  }
+
+  section.perint-section[data-counter-section="2"] {
+    >section {
+      display: none;
+    }
+    .qr-code-style {
+      display: block;
+    }
+  }
+
+  section.perint-section[data-counter-section="3"] {
+    >section {
+      display: none;
+    }
+    .input-file {
+      display: block;
+    }
+  }
+
+  section.perint-section[data-counter-section="4"] {
+    >section {
+      display: none;
+    }
+    .show-item {
+      display: block;
+    }
+  }
+
 }
