@@ -1,7 +1,7 @@
 :root {
-  --color-01: #E4E4E4;
+  --color-01: #e4e4e4;
   --color-02: #373737;
-  --color-03: #6EBE89;
+  --color-03: #6ebe89;
   --color-04: #ffffff;
   --color-05: #ffffff8e;
   --color-06: #4959e5;
@@ -25,7 +25,7 @@
 }
 body {
   font-family: "Rajdhani", sans-serif;
-  background: linear-gradient(111deg, #9198E5, #E66465);
+  background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
   min-height: 950px;
   height: 100vh;
@@ -39,17 +39,6 @@ body {
   width: 100%;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media (min-width: 1024px) {
-  .container {
-    width: 1024px;
-  }
-}
 li {
   list-style: none;
 }
@@ -101,15 +90,21 @@ input.main-input-text:focus {
   background-color: var(--color-04);
 }
 
-@keyframes war {
-  33.3% {
-    transform: translateY(-10px);
+@media (max-width: 767px) {
+  button.main-button {
+    font-size: 1rem;
+    padding: 10px 15px;
   }
-  66.6% {
-    transform: translateY(10px);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  99.9% {
-    transform: translateY(0px);
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 1024px;
   }
 }
 .header-of-page {
@@ -140,27 +135,39 @@ input.main-input-text:focus {
   display: flex;
   align-items: center;
 }
-.header-of-page nav button.berger-icon {
+.header-of-page nav .button-berger-icon {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-  transition: 0.3s;
   border-radius: 5px;
+  display: none;
 }
-.header-of-page nav button.berger-icon:hover {
-  background-color: var(--color-05);
+.header-of-page nav .button-berger-icon .icon-box {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  position: relative;
 }
-.header-of-page nav button.berger-icon:hover i {
-  color: var(--color-02);
-}
-.header-of-page nav button.berger-icon i {
-  font-size: 52px;
-  color: var(--color-01);
+.header-of-page nav .button-berger-icon .icon-box span {
+  display: block;
+  height: 8px;
+  width: 100%;
+  border-radius: 7px;
+  background-color: var(--color-01);
   transition: 0.3s;
+}
+.header-of-page nav .button-berger-icon[data-clicked=true] .icon-box span:first-of-type {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+.header-of-page nav .button-berger-icon[data-clicked=true] .icon-box span:nth-of-type(2) {
+  width: 0;
+}
+.header-of-page nav .button-berger-icon[data-clicked=true] .icon-box span:last-of-type {
+  transform: rotate(-45deg) translate(10px, -10px);
 }
 .header-of-page nav ul {
   display: flex;
@@ -186,7 +193,7 @@ input.main-input-text:focus {
 }
 
 @media (max-width: 767px) {
-  .header-of-page nav button.berger-icon {
+  .header-of-page nav .button-berger-icon {
     display: block;
   }
   .header-of-page nav ul {
@@ -195,21 +202,28 @@ input.main-input-text:focus {
     left: 0;
     background-color: var(--color-04);
     flex-flow: column nowrap;
-    height: 300px;
+    height: 0px;
     width: 100%;
     z-index: 100;
     justify-content: space-evenly;
-  }
-  .header-of-page nav ul li {
+    align-items: flex-start;
+    overflow: hidden;
+    transition: 0.3s;
     padding: 0 20px;
-    width: 100%;
   }
   .header-of-page nav ul li a {
     color: var(--color-02);
     width: 100%;
   }
+  .header-of-page nav ul li a:hover {
+    color: var(--color-10);
+    padding-left: 10px;
+  }
   .header-of-page nav ul li a.active {
     color: var(--color-10);
+  }
+  .header-of-page nav .button-berger-icon[data-clicked=true] ~ ul {
+    height: 300px;
   }
 }
 main {
@@ -554,12 +568,44 @@ main section.perint-section .enter-manual form .buttons .back-and-exports-button
   align-items: center;
   flex-flow: row nowrap;
   column-gap: 10px;
+  position: relative;
 }
 main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .back-button button {
   font-size: 25px;
 }
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .button-export {
+  background-color: var(--color-10);
+}
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .button-export i {
+  color: var(--color-02);
+  font-size: 1.8rem;
+}
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .exports-buttons {
+  position: absolute;
+  background-color: var(--color-02);
+  padding: 10px;
+  height: 120px;
+  top: -130px;
+  right: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 10px;
+  border-radius: 7px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s;
+}
 main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .exports-buttons button {
-  background-color: var(--color-11);
+  background-color: var(--color-03);
+  color: var(--color-04);
+  font-weight: 500;
+  font-size: 1rem;
+}
+main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .button-export[data-clicked=true] ~ .exports-buttons {
+  pointer-events: all;
+  opacity: 1;
 }
 main section.perint-section .qr-code-style form {
   display: flex;
@@ -599,6 +645,35 @@ main section.perint-section .qr-code-style form .qr-fack i {
 }
 main section.perint-section .qr-code-style form .back-button {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  main header h1 {
+    font-size: 1.5rem;
+  }
+  main header figure img {
+    width: 1.5rem;
+  }
+  main section.perint-section {
+    width: 100%;
+  }
+  main section.perint-section > section .title-section {
+    font-size: 2rem;
+  }
+  main section.perint-section .select-input-type form fieldset label {
+    font-size: 1.5rem;
+  }
+  main section.perint-section .select-input-type form fieldset label span {
+    width: 25px;
+    height: 25px;
+  }
+  main section.perint-section .enter-manual form .main-inputs-and-submit-but {
+    height: 30%;
+  }
+  main section.perint-section .enter-manual form .buttons {
+    padding: 20px 0 0 0;
+    height: calc(100% - 30px - 50px - 30%);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

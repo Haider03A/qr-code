@@ -25,19 +25,25 @@
               <img src="./images/logo.svg" alt="logo" />
             </a>
           </figure>
-          <button class="berger-icon" data-clicked="false"><i class="icon-menu"></i></button>
+          <button class="button-berger-icon" data-clicked="false">
+            <div class="icon-box">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
           <ul class="perint-items">
             <li class="item">
-              <a href="home" class="active">Home</a>
+              <a href="#" class="active">Home</a>
             </li>
             <li class="item">
-              <a href="services"> Services </a>
+              <a href="#"> Services </a>
             </li>
             <li class="item">
-              <a href="about"> About </a>
+              <a href="#"> About </a>
             </li>
             <li class="item">
-              <a href="sall-as"> Support </a>
+              <a href="#"> Support </a>
             </li>
           </ul>
         </nav>
@@ -103,31 +109,6 @@
           </form>
         </section>
 
-        <!-- Section input file-->
-        <section class="input-file">
-          <form data-changed="3">
-            <legend class="title-section">Input file</legend>
-            <div class="fack-input">
-              <input type="file" name="inputFile" id="input-file" required />
-              <div class="focus-input-file"></div>
-              <div class="icons-and-file-name">
-                <i class="icon-cloud-upload"></i>
-                <i class="icon-cloud-error"></i>
-                <i class="icon-cloud_done"></i>
-                <span class="file-name">file.json</span>
-                <span class="error">Error</span>
-              </div>
-              <p>Drop your file here or Click to borwse</p>
-            </div>
-            <div class="buttons">
-              <button class="main-button" id="next-but" type="submit">
-                Next
-              </button>
-              <button class="main-button">Back</button>
-            </div>
-          </form>
-        </section>
-
         <!-- Section Enter manual-->
         <section class="enter-manual">
           <form>
@@ -153,7 +134,7 @@
                 />
               </label>
               <div class="button-submit">
-                <button type="submit" class="main-button">Add Qr-code</button>
+                <button type="submit" class="main-button">Generate Qr-code</button>
               </div>
             </div>
             <div class="buttons">
@@ -165,11 +146,37 @@
                 <div class="back-button">
                   <button class="main-button">Back</button>
                 </div>
+                <button class="button-export main-button" data-clicked="false"><i class="icon-export-outline"></i></button>
                 <div class="exports-buttons">
                   <button class="main-button">Export image</button>
                   <button class="main-button">Export PDF</button>
                 </div>
               </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Section input file-->
+        <section class="input-file">
+          <form data-changed="3">
+            <legend class="title-section">Input file</legend>
+            <div class="fack-input">
+              <input type="file" name="inputFile" id="input-file" required />
+              <div class="focus-input-file"></div>
+              <div class="icons-and-file-name">
+                <i class="icon-cloud-upload"></i>
+                <i class="icon-cloud-error"></i>
+                <i class="icon-cloud_done"></i>
+                <span class="file-name">file.json</span>
+                <span class="error">Error</span>
+              </div>
+              <p>Drop your file here or Click to borwse</p>
+            </div>
+            <div class="buttons">
+              <button class="main-button" id="next-but" type="submit">
+                Next
+              </button>
+              <button class="main-button">Back</button>
             </div>
           </form>
         </section>

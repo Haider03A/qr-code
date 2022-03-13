@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?luwjcr');
-  src:  url('fonts/icomoon.eot?luwjcr#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?luwjcr') format('truetype'),
-    url('fonts/icomoon.woff?luwjcr') format('woff'),
-    url('fonts/icomoon.svg?luwjcr#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?br2zy3');
+  src:  url('fonts/icomoon.eot?br2zy3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?br2zy3') format('truetype'),
+    url('fonts/icomoon.woff?br2zy3') format('woff'),
+    url('fonts/icomoon.svg?br2zy3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,11 +25,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-menu:before {
+.icon-export-outline:before {
   content: "\e905";
-}
-.icon-cloud-error:before {
-  content: "\e904";
 }
 .icon-cloud_done:before {
   content: "\e903";
@@ -39,6 +36,12 @@
 }
 .icon-home:before {
   content: "\e900";
+}
+.icon-arrow_drop_up:before {
+  content: "\e906";
+}
+.icon-cloud-error:before {
+  content: "\e904";
 }
 .icon-qrcode:before {
   content: "\e938";

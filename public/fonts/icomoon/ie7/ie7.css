@@ -1,8 +1,5 @@
-.icon-menu {
+.icon-export-outline {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe905;');
-}
-.icon-cloud-error {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
 }
 .icon-cloud_done {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe903;');
@@ -12,6 +9,12 @@
 }
 .icon-home {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe900;');
+}
+.icon-arrow_drop_up {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe906;');
+}
+.icon-cloud-error {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
 }
 .icon-qrcode {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe938;');

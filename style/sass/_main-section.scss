@@ -373,15 +373,45 @@ main {
             align-items: center;
             flex-flow: row nowrap;
             column-gap: 10px;
+            position: relative;
             .back-button {
               button {
                 font-size: 25px;
               }
             }
-            .exports-buttons {
-              button {
-                background-color: var(--color-11);
+            .button-export {
+              background-color: var(--color-10);
+              i {
+                color: var(--color-02);
+                font-size: 1.8rem;
               }
+            }
+            .exports-buttons {
+              position: absolute;
+              background-color: var(--color-02);
+              padding: 10px;
+              height: 120px;
+              top: -130px;
+              right: 0;
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: flex-start;
+              align-items: flex-start;
+              row-gap: 10px;
+              border-radius: 7px;
+              pointer-events: none;
+              opacity: 0;
+              transition: .3s;
+              button {
+                background-color: var(--color-03);
+                color: var(--color-04);
+                font-weight: 500;
+                font-size: 1rem;
+              }
+            }
+             .button-export[data-clicked="true"] ~ .exports-buttons {
+              pointer-events: all;
+              opacity: 1;
             }
           }
         }
@@ -434,5 +464,48 @@ main {
 }
 
 @media (max-width: 767px) {
-  
+  main {
+    header {
+      h1 {
+        font-size: 1.5rem;
+      }
+      figure {
+        img {
+          width: 1.5rem;
+        }
+      }
+    }
+    section.perint-section {
+      width: 100%;
+      > section {
+        .title-section {
+          font-size: 2rem;
+        }
+      }
+      .select-input-type {
+        form {
+          fieldset {
+            label {
+              font-size: 1.5rem;
+              span {
+                width: 25px;
+                height: 25px;
+              }
+            }
+          }
+        }
+      }
+      .enter-manual {
+        form {
+          .main-inputs-and-submit-but {
+            height: 30%;
+          }
+          .buttons {
+            padding: 20px 0 0 0;
+            height: calc(100% - 30px - 50px - 30%);
+          } 
+        }
+      }
+    }
+  }
 }
