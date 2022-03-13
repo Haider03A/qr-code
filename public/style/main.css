@@ -112,14 +112,14 @@ input.main-input-text:focus {
     transform: translateY(0px);
   }
 }
-header.header-of-page {
+.header-of-page {
   position: relative;
   height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
 }
-header.header-of-page .background-blur {
+.header-of-page .background-blur {
   background-color: #ffffff30;
   position: absolute;
   height: 100%;
@@ -129,24 +129,24 @@ header.header-of-page .background-blur {
   z-index: -1;
   filter: blur(1px);
 }
-header.header-of-page nav {
+.header-of-page nav {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
 }
-header.header-of-page nav figure a {
+.header-of-page nav figure a {
   display: flex;
   align-items: center;
 }
-header.header-of-page nav ul {
+.header-of-page nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 5px;
 }
-header.header-of-page nav ul li a {
+.header-of-page nav ul li a {
   padding: 5px;
   border-radius: 5px;
   color: var(--color-01);
@@ -154,7 +154,7 @@ header.header-of-page nav ul li a {
   font-weight: 600;
   font-size: 20px;
 }
-header.header-of-page nav ul li a:hover {
+.header-of-page nav ul li a:hover {
   background-color: var(--color-01);
   color: var(--color-02);
 }

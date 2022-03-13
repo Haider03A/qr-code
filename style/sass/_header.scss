@@ -1,4 +1,4 @@
-header.header-of-page {
+.header-of-page {
   position: relative;
   height: 100px;
   width: 100%;
@@ -46,5 +46,10 @@ header.header-of-page {
           }
         }
       }
+    }
+  }
+  @media (max-width: 767px) {
+    .header-of-page {
+      
     }
   }
