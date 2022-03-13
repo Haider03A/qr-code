@@ -14,42 +14,96 @@
     z-index: -1;
     filter: blur(1px);
   }
-    nav {
-      height: 100%;
+  nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    figure {
+      a {
+        display: flex;
+        align-items: center;
+      }
+    }
+    button.berger-icon {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      flex-flow: row nowrap;
-      figure {
-        a {
-          display: flex;
-          align-items: center;
+      display: none;
+      transition: .3s;
+      border-radius: 5px;
+      &:hover {
+        background-color: var(--color-05);
+        i {
+          color: var(--color-02);
         }
       }
+      i {
+        font-size: 52px;
+        color: var(--color-01);
+        transition: .3s;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 5px;
+      li {
+        a {
+          padding: 5px;
+          border-radius: 5px;
+          color: var(--color-01);
+          transition: 0.3s;
+          font-weight: 600;
+          font-size: 20px;
+          &:hover {
+            background-color: var(--color-01);
+            color: var(--color-02);
+          }
+          &.active {
+            background-color: var(--color-01);
+            color: var(--color-02);
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header-of-page {
+    nav {
+      button.berger-icon {
+        display: block;
+      }
       ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 5px;
+        & {
+          position: absolute;
+          top: 100px;
+          left: 0;
+          background-color: var(--color-04);
+          flex-flow: column nowrap;
+          height: 300px;
+          width: 100%;
+          z-index: 100;
+          justify-content: space-evenly;
+        }
         li {
+          padding: 0 20px;
+          width: 100%;
           a {
-            padding: 5px;
-            border-radius: 5px;
-            color: var(--color-01);
-            transition: 0.3s;
-            font-weight: 600;
-            font-size: 20px;
-            &:hover {
-              background-color: var(--color-01);
-              color: var(--color-02);
+            color: var(--color-02);
+            width: 100%;
+            &.active {
+              color: var(--color-10);
             }
           }
         }
       }
     }
   }
-  @media (max-width: 767px) {
-    .header-of-page {
-      
-    }
-  }
+}

@@ -140,6 +140,28 @@ input.main-input-text:focus {
   display: flex;
   align-items: center;
 }
+.header-of-page nav button.berger-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.header-of-page nav button.berger-icon:hover {
+  background-color: var(--color-05);
+}
+.header-of-page nav button.berger-icon:hover i {
+  color: var(--color-02);
+}
+.header-of-page nav button.berger-icon i {
+  font-size: 52px;
+  color: var(--color-01);
+  transition: 0.3s;
+}
 .header-of-page nav ul {
   display: flex;
   justify-content: center;
@@ -158,7 +180,38 @@ input.main-input-text:focus {
   background-color: var(--color-01);
   color: var(--color-02);
 }
+.header-of-page nav ul li a.active {
+  background-color: var(--color-01);
+  color: var(--color-02);
+}
 
+@media (max-width: 767px) {
+  .header-of-page nav button.berger-icon {
+    display: block;
+  }
+  .header-of-page nav ul {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: var(--color-04);
+    flex-flow: column nowrap;
+    height: 300px;
+    width: 100%;
+    z-index: 100;
+    justify-content: space-evenly;
+  }
+  .header-of-page nav ul li {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .header-of-page nav ul li a {
+    color: var(--color-02);
+    width: 100%;
+  }
+  .header-of-page nav ul li a.active {
+    color: var(--color-10);
+  }
+}
 main {
   display: flex;
   flex-flow: column nowrap;
@@ -195,10 +248,41 @@ main section.perint-section {
   justify-content: flex-start;
   align-items: center;
 }
+main section.perint-section[data-counter-section="0"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="0"] .select-input-type {
+  display: block;
+}
+main section.perint-section[data-counter-section="1"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="1"] .enter-manual {
+  display: block;
+}
+main section.perint-section[data-counter-section="2"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="2"] .qr-code-style {
+  display: block;
+}
+main section.perint-section[data-counter-section="3"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="3"] .input-file {
+  display: block;
+}
+main section.perint-section[data-counter-section="4"] > section {
+  display: none;
+}
+main section.perint-section[data-counter-section="4"] .show-item {
+  display: block;
+}
 main section.perint-section > section {
   padding: 20px;
   min-width: 100%;
   height: 100%;
+  display: block;
 }
 main section.perint-section > section .title-section {
   text-align: center;
@@ -220,6 +304,9 @@ main section.perint-section div.background-blur {
   background-color: #ffffff42;
   filter: blur(1px);
   z-index: -1;
+}
+main section.perint-section .select-input-type {
+  display: block;
 }
 main section.perint-section .select-input-type form fieldset {
   height: 100%;
@@ -512,42 +599,6 @@ main section.perint-section .qr-code-style form .qr-fack i {
 }
 main section.perint-section .qr-code-style form .back-button {
   width: 100%;
-}
-main section.perint-section > section {
-  display: none;
-}
-main section.perint-section .select-input-type {
-  display: block;
-}
-main section.perint-section[data-counter-section="0"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="0"] .select-input-type {
-  display: block;
-}
-main section.perint-section[data-counter-section="1"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="1"] .enter-manual {
-  display: block;
-}
-main section.perint-section[data-counter-section="2"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="2"] .qr-code-style {
-  display: block;
-}
-main section.perint-section[data-counter-section="3"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="3"] .input-file {
-  display: block;
-}
-main section.perint-section[data-counter-section="4"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="4"] .show-item {
-  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
