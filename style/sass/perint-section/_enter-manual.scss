@@ -1,0 +1,139 @@
+.enter-manual {
+  form {
+    .main-inputs-and-submit-but {
+      height: 40%;
+      display: flex;
+      flex-flow: column nowrap;
+      row-gap: 15px;
+      label:first-of-type {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+
+      label:last-of-type {
+        width: 75%;
+        input {
+          width: 100%;
+        }
+      }
+
+      .button-submit {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button[type="submit"] {
+          background-color: var(--color-10);
+        }
+      }
+    }
+  }
+  .buttons {
+    height: calc(100% - 40% - 50px - 30px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    button {
+      font-size: 20px;
+    }
+    .style-and-tiem-buttons {
+      display: flex;
+      justify-content: space-between;
+      button {
+        background-color: var(--color-02);
+        position: relative;
+        overflow: hidden;
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: var(--color-04);
+          height: 100%;
+          width: 25%;
+        }
+      }
+      button:last-of-type {
+        position: relative;
+        overflow: hidden;
+        padding-left: 68px;
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: var(--color-04);
+          height: 100%;
+          width: 25%;
+          color: var(--color-02);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+        }
+      }
+    }
+    .back-and-exports-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: row nowrap;
+      column-gap: 10px;
+      position: relative;
+      .back-button {
+        button {
+          font-size: 25px;
+        }
+      }
+      .button-export {
+        background-color: var(--color-10);
+        i {
+          color: var(--color-02);
+          font-size: 1.8rem;
+        }
+      }
+      .exports-buttons {
+        position: absolute;
+        background-color: var(--color-02);
+        padding: 10px;
+        height: 120px;
+        top: -130px;
+        right: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 10px;
+        border-radius: 7px;
+        pointer-events: none;
+        opacity: 0;
+        transition: 0.3s;
+        button {
+          background-color: var(--color-03);
+          color: var(--color-04);
+          font-weight: 500;
+          font-size: 1rem;
+        }
+      }
+      .button-export[data-clicked="true"] ~ .exports-buttons {
+        pointer-events: all;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .enter-manual {
+    form {
+      .main-inputs-and-submit-but {
+        height: 30%;
+      }
+      .buttons {
+        padding: 20px 0 0 0;
+        height: calc(100% - 30px - 50px - 30%);
+      }
+    }
+  }
+}

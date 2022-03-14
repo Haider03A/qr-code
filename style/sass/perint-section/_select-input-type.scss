@@ -1,0 +1,81 @@
+.select-input-type {
+  display: block;
+  form {
+    fieldset {
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-between;
+      row-gap: 10px;
+      border: none;
+      div.inputs {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 20px;
+      }
+      label {
+        padding: 10px;
+        font-size: 36px;
+        width: 100%;
+        background-color: var(--color-05);
+        border-radius: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        cursor: pointer;
+        input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+        }
+        span {
+          width: 30px;
+          height: 30px;
+          display: block;
+          border-radius: 50%;
+          position: relative;
+          background-color: var(--color-02);
+        }
+        span::after {
+          position: absolute;
+          content: "";
+          height: 50%;
+          width: 50%;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: 0.3s;
+        }
+        input:checked ~ span::after {
+          background-color: var(--color-03);
+        }
+        input:focus ~ span {
+          box-shadow: 0px 0px 0px 4px #00b0ff;
+        }
+      }
+      button {
+        margin-top: 20px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .select-input-type {
+    form {
+      fieldset {
+        label {
+          font-size: 1.5rem;
+          span {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
+}

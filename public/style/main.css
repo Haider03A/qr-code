@@ -19,10 +19,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: UD Digi;
-  src: url("../fonts/UDDIGIKYOKASHON-B.TTC");
-}
 body {
   font-family: "Rajdhani", sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
@@ -262,6 +258,33 @@ main section.perint-section {
   justify-content: flex-start;
   align-items: center;
 }
+main section.perint-section > section {
+  padding: 20px;
+  min-width: 100%;
+  height: 100%;
+  display: block;
+}
+main section.perint-section > section .title-section {
+  text-align: center;
+  font-size: 37px;
+  color: var(--color-05);
+  font-weight: 500;
+  margin-bottom: 30px;
+  height: 50px;
+}
+main section.perint-section > section form {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+main section.perint-section div.background-blur {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff42;
+  filter: blur(1px);
+  z-index: -1;
+}
 main section.perint-section[data-counter-section="0"] > section {
   display: none;
 }
@@ -292,37 +315,25 @@ main section.perint-section[data-counter-section="4"] > section {
 main section.perint-section[data-counter-section="4"] .show-item {
   display: block;
 }
-main section.perint-section > section {
-  padding: 20px;
-  min-width: 100%;
-  height: 100%;
+
+@media (max-width: 767px) {
+  main header h1 {
+    font-size: 1.5rem;
+  }
+  main header figure img {
+    width: 1.5rem;
+  }
+  main section.perint-section {
+    width: 100%;
+  }
+  main section.perint-section > section .title-section {
+    font-size: 2rem;
+  }
+}
+.select-input-type {
   display: block;
 }
-main section.perint-section > section .title-section {
-  text-align: center;
-  font-size: 37px;
-  color: var(--color-05);
-  font-weight: 500;
-  margin-bottom: 30px;
-  height: 50px;
-}
-main section.perint-section > section form {
-  width: 80%;
-  margin: 0 auto;
-  height: 100%;
-}
-main section.perint-section div.background-blur {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #ffffff42;
-  filter: blur(1px);
-  z-index: -1;
-}
-main section.perint-section .select-input-type {
-  display: block;
-}
-main section.perint-section .select-input-type form fieldset {
+.select-input-type form fieldset {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -331,13 +342,13 @@ main section.perint-section .select-input-type form fieldset {
   row-gap: 10px;
   border: none;
 }
-main section.perint-section .select-input-type form fieldset div.inputs {
+.select-input-type form fieldset div.inputs {
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
   row-gap: 20px;
 }
-main section.perint-section .select-input-type form fieldset label {
+.select-input-type form fieldset label {
   padding: 10px;
   font-size: 36px;
   width: 100%;
@@ -349,11 +360,11 @@ main section.perint-section .select-input-type form fieldset label {
   font-weight: 500;
   cursor: pointer;
 }
-main section.perint-section .select-input-type form fieldset label input[type=radio] {
+.select-input-type form fieldset label input[type=radio] {
   position: absolute;
   opacity: 0;
 }
-main section.perint-section .select-input-type form fieldset label span {
+.select-input-type form fieldset label span {
   width: 30px;
   height: 30px;
   display: block;
@@ -361,7 +372,7 @@ main section.perint-section .select-input-type form fieldset label span {
   position: relative;
   background-color: var(--color-02);
 }
-main section.perint-section .select-input-type form fieldset label span::after {
+.select-input-type form fieldset label span::after {
   position: absolute;
   content: "";
   height: 50%;
@@ -372,171 +383,73 @@ main section.perint-section .select-input-type form fieldset label span::after {
   transform: translate(-50%, -50%);
   transition: 0.3s;
 }
-main section.perint-section .select-input-type form fieldset label input:checked ~ span::after {
+.select-input-type form fieldset label input:checked ~ span::after {
   background-color: var(--color-03);
 }
-main section.perint-section .select-input-type form fieldset label input:focus ~ span {
+.select-input-type form fieldset label input:focus ~ span {
   box-shadow: 0px 0px 0px 4px #00b0ff;
 }
-main section.perint-section .select-input-type form fieldset button {
+.select-input-type form fieldset button {
   margin-top: 20px;
   align-self: flex-end;
 }
-main section.perint-section .input-file form {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
+
+@media (max-width: 767px) {
+  .select-input-type form fieldset label {
+    font-size: 1.5rem;
+  }
+  .select-input-type form fieldset label span {
+    width: 25px;
+    height: 25px;
+  }
 }
-main section.perint-section .input-file form .fack-input {
-  height: 60%;
-  width: 100%;
-  border: 4px dashed var(--color-05);
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-main section.perint-section .input-file form .fack-input input {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  cursor: pointer;
-  border-radius: 20px;
-  opacity: 0;
-}
-main section.perint-section .input-file form .fack-input .focus-input-file {
-  position: absolute;
-  width: 98%;
-  height: 98%;
-  top: 1%;
-  left: 1%;
-  box-shadow: 0px 0px 0px 4px #00b0ff;
-  opacity: 0;
-  transition: 0.3s;
-  border-radius: 12px;
-}
-main section.perint-section .input-file form .fack-input input:focus ~ .focus-input-file {
-  opacity: 1;
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name {
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name i {
-  font-size: 70px;
-  color: var(--color-05);
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name i:nth-of-type(2) {
-  display: none;
-  color: var(--color-07);
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name i:last-of-type {
-  display: none;
-  color: var(--color-06);
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name span {
-  text-align: center;
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name .file-name {
-  width: 60%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-main section.perint-section .input-file form .fack-input .icons-and-file-name .file-name,
-main section.perint-section .input-file form .fack-input .icons-and-file-name .error {
-  font-size: 20px;
-  color: var(--color-02);
-  font-weight: 500;
-  display: none;
-}
-main section.perint-section .input-file form .fack-input p {
-  font-size: 20px;
-  color: var(--color-02);
-}
-main section.perint-section .input-file form div.buttons {
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  flex-flow: row-reverse nowrap;
-  justify-content: space-between;
-}
-main section.perint-section .input-file form[data-changed="1"] .fack-input .icons-and-file-name i:first-of-type {
-  display: none;
-}
-main section.perint-section .input-file form[data-changed="1"] .fack-input .icons-and-file-name i:last-of-type {
-  display: block;
-}
-main section.perint-section .input-file form[data-changed="1"] .fack-input .icons-and-file-name .file-name {
-  display: block;
-}
-main section.perint-section .input-file form[data-changed="1"] .fack-input p {
-  display: none;
-}
-main section.perint-section .input-file form[data-changed="2"] .fack-input .icons-and-file-name i:first-of-type {
-  display: none;
-}
-main section.perint-section .input-file form[data-changed="2"] .fack-input .icons-and-file-name i:nth-of-type(2) {
-  display: block;
-}
-main section.perint-section .input-file form[data-changed="2"] .fack-input .icons-and-file-name .error {
-  display: block;
-}
-main section.perint-section .enter-manual form .main-inputs-and-submit-but {
+.enter-manual form .main-inputs-and-submit-but {
   height: 40%;
   display: flex;
   flex-flow: column nowrap;
   row-gap: 15px;
 }
-main section.perint-section .enter-manual form .main-inputs-and-submit-but label:first-of-type {
+.enter-manual form .main-inputs-and-submit-but label:first-of-type {
   width: 100%;
 }
-main section.perint-section .enter-manual form .main-inputs-and-submit-but label:first-of-type input {
+.enter-manual form .main-inputs-and-submit-but label:first-of-type input {
   width: 100%;
 }
-main section.perint-section .enter-manual form .main-inputs-and-submit-but label:last-of-type {
+.enter-manual form .main-inputs-and-submit-but label:last-of-type {
   width: 75%;
 }
-main section.perint-section .enter-manual form .main-inputs-and-submit-but label:last-of-type input {
+.enter-manual form .main-inputs-and-submit-but label:last-of-type input {
   width: 100%;
 }
-main section.perint-section .enter-manual form .main-inputs-and-submit-but .button-submit {
+.enter-manual form .main-inputs-and-submit-but .button-submit {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main section.perint-section .enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
+.enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
   background-color: var(--color-10);
 }
-main section.perint-section .enter-manual form .buttons {
+.enter-manual .buttons {
   height: calc(60% - 50px - 30px);
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   padding: 20px 0;
 }
-main section.perint-section .enter-manual form .buttons button {
+.enter-manual .buttons button {
   font-size: 20px;
 }
-main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons {
+.enter-manual .buttons .style-and-tiem-buttons {
   display: flex;
   justify-content: space-between;
 }
-main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button {
+.enter-manual .buttons .style-and-tiem-buttons button {
   background-color: var(--color-02);
   position: relative;
   overflow: hidden;
 }
-main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button span {
+.enter-manual .buttons .style-and-tiem-buttons button span {
   position: absolute;
   top: 0;
   left: 0;
@@ -544,12 +457,12 @@ main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons 
   height: 100%;
   width: 25%;
 }
-main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button:last-of-type {
+.enter-manual .buttons .style-and-tiem-buttons button:last-of-type {
   position: relative;
   overflow: hidden;
   padding-left: 68px;
 }
-main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons button:last-of-type span {
+.enter-manual .buttons .style-and-tiem-buttons button:last-of-type span {
   position: absolute;
   top: 0;
   left: 0;
@@ -562,7 +475,7 @@ main section.perint-section .enter-manual form .buttons .style-and-tiem-buttons 
   align-items: center;
   font-weight: 600;
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons {
+.enter-manual .buttons .back-and-exports-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -570,17 +483,17 @@ main section.perint-section .enter-manual form .buttons .back-and-exports-button
   column-gap: 10px;
   position: relative;
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .back-button button {
+.enter-manual .buttons .back-and-exports-buttons .back-button button {
   font-size: 25px;
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .button-export {
+.enter-manual .buttons .back-and-exports-buttons .button-export {
   background-color: var(--color-10);
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .button-export i {
+.enter-manual .buttons .back-and-exports-buttons .button-export i {
   color: var(--color-02);
   font-size: 1.8rem;
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .exports-buttons {
+.enter-manual .buttons .back-and-exports-buttons .exports-buttons {
   position: absolute;
   background-color: var(--color-02);
   padding: 10px;
@@ -597,27 +510,146 @@ main section.perint-section .enter-manual form .buttons .back-and-exports-button
   opacity: 0;
   transition: 0.3s;
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .exports-buttons button {
+.enter-manual .buttons .back-and-exports-buttons .exports-buttons button {
   background-color: var(--color-03);
   color: var(--color-04);
   font-weight: 500;
   font-size: 1rem;
 }
-main section.perint-section .enter-manual form .buttons .back-and-exports-buttons .button-export[data-clicked=true] ~ .exports-buttons {
+.enter-manual .buttons .back-and-exports-buttons .button-export[data-clicked=true] ~ .exports-buttons {
   pointer-events: all;
   opacity: 1;
 }
-main section.perint-section .qr-code-style form {
+
+@media (max-width: 767px) {
+  .enter-manual form .main-inputs-and-submit-but {
+    height: 30%;
+  }
+  .enter-manual form .buttons {
+    padding: 20px 0 0 0;
+    height: calc(100% - 30px - 50px - 30%);
+  }
+}
+.input-file form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-file form .fack-input {
+  height: 60%;
+  width: 100%;
+  border: 4px dashed var(--color-05);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.input-file form .fack-input input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 20px;
+  opacity: 0;
+}
+.input-file form .fack-input .focus-input-file {
+  position: absolute;
+  width: 98%;
+  height: 98%;
+  top: 1%;
+  left: 1%;
+  box-shadow: 0px 0px 0px 4px #00b0ff;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+.input-file form .fack-input input:focus ~ .focus-input-file {
+  opacity: 1;
+}
+.input-file form .fack-input .icons-and-file-name {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.input-file form .fack-input .icons-and-file-name i {
+  font-size: 70px;
+  color: var(--color-05);
+}
+.input-file form .fack-input .icons-and-file-name i:nth-of-type(2) {
+  display: none;
+  color: var(--color-07);
+}
+.input-file form .fack-input .icons-and-file-name i:last-of-type {
+  display: none;
+  color: var(--color-06);
+}
+.input-file form .fack-input .icons-and-file-name span {
+  text-align: center;
+}
+.input-file form .fack-input .icons-and-file-name .file-name {
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.input-file form .fack-input .icons-and-file-name .file-name,
+.input-file form .fack-input .icons-and-file-name .error {
+  font-size: 20px;
+  color: var(--color-02);
+  font-weight: 500;
+  display: none;
+}
+.input-file form .fack-input p {
+  font-size: 20px;
+  color: var(--color-02);
+}
+.input-file form div.buttons {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-between;
+}
+.input-file form[data-changed="1"] .fack-input .icons-and-file-name i:first-of-type {
+  display: none;
+}
+.input-file form[data-changed="1"] .fack-input .icons-and-file-name i:last-of-type {
+  display: block;
+}
+.input-file form[data-changed="1"] .fack-input .icons-and-file-name .file-name {
+  display: block;
+}
+.input-file form[data-changed="1"] .fack-input p {
+  display: none;
+}
+.input-file form[data-changed="2"] .fack-input .icons-and-file-name i:first-of-type {
+  display: none;
+}
+.input-file form[data-changed="2"] .fack-input .icons-and-file-name i:nth-of-type(2) {
+  display: block;
+}
+.input-file form[data-changed="2"] .fack-input .icons-and-file-name .error {
+  display: block;
+}
+
+.qr-code-style form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
   row-gap: 20px;
 }
-main section.perint-section .qr-code-style form input[data-error="1"] {
+.qr-code-style form input[data-error="1"] {
   border: 4px solid var(--color-07);
 }
-main section.perint-section .qr-code-style form .inputs-box {
+.qr-code-style form .inputs-box {
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
@@ -627,53 +659,24 @@ main section.perint-section .qr-code-style form .inputs-box {
   width: 100%;
   gap: 10px 33px;
 }
-main section.perint-section .qr-code-style form .inputs-box label input {
+.qr-code-style form .inputs-box label input {
   width: 200px;
 }
-main section.perint-section .qr-code-style form .qr-fack {
+.qr-code-style form .qr-fack {
   height: 50%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main section.perint-section .qr-code-style form .qr-fack i {
+.qr-code-style form .qr-fack i {
   font-size: 140px;
   padding: 10px;
   background-color: var(--color-04);
   border-radius: 10px;
 }
-main section.perint-section .qr-code-style form .back-button {
+.qr-code-style form .back-button {
   width: 100%;
-}
-
-@media (max-width: 767px) {
-  main header h1 {
-    font-size: 1.5rem;
-  }
-  main header figure img {
-    width: 1.5rem;
-  }
-  main section.perint-section {
-    width: 100%;
-  }
-  main section.perint-section > section .title-section {
-    font-size: 2rem;
-  }
-  main section.perint-section .select-input-type form fieldset label {
-    font-size: 1.5rem;
-  }
-  main section.perint-section .select-input-type form fieldset label span {
-    width: 25px;
-    height: 25px;
-  }
-  main section.perint-section .enter-manual form .main-inputs-and-submit-but {
-    height: 30%;
-  }
-  main section.perint-section .enter-manual form .buttons {
-    padding: 20px 0 0 0;
-    height: calc(100% - 30px - 50px - 30%);
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

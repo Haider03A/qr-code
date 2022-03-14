@@ -17,10 +17,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: UD Digi;
-  src: url("../fonts/UDDIGIKYOKASHON-B.TTC");
-}
 body {
   font-family: "Rajdhani", sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
@@ -85,10 +81,10 @@ input.main-input-text:focus {
 }
 
 @media (max-width: 767px) {
-    button.main-button {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
+  button.main-button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
