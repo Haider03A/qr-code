@@ -18,10 +18,11 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Rajdhani", sans-serif;
+  // font-family: "Rajdhani", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
-  min-height: 950px;
+  min-height: 1100px;
   height: 100vh;
 }
 .container {
@@ -61,7 +62,7 @@ label.main-label:focus-within {
 input.main-input-text {
   display: block;
   border: none;
-  height: 35px;
+  height: 40px;
   padding: 4px;
   color: var(--color-02);
   font-size: 16px;
@@ -84,7 +85,7 @@ input.main-input-text:focus {
 @media (max-width: 767px) {
   button.main-button {
     font-size: 1rem;
-    padding: 10px 15px;
+    padding: 15px 15px;
   }
   label.main-label {
     font-size: .9rem;

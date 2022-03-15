@@ -1,8 +1,8 @@
 .enter-manual {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    row-gap: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  row-gap: 20px;
   form {
     .main-inputs-and-submit-but {
       display: flex;
@@ -30,7 +30,7 @@
           padding: 0 6px;
           border-radius: 5px;
           max-width: 50%;
-          overflow-x: scroll;
+          overflow-x: hidden;
         }
       }
       .button-submit {
@@ -44,7 +44,28 @@
       }
     }
   }
-  
+
+  .qrcode-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-basis: 100%;
+    width: 100%;
+    figure {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-04);
+      padding: 5%;
+      border-radius: 5px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
   .buttons {
     display: flex;
     justify-content: space-between;
@@ -53,45 +74,45 @@
     column-gap: 10px;
     position: relative;
     .back-button {
-        flex-basis: 100%;
-      }
+      flex-basis: 100%;
+    }
     .button-advanced,
-    .button-export{
+    .button-export {
       background-color: var(--color-10);
-        i {
-          color: var(--color-04);
-          font-size: 2rem;
-        }
+      i {
+        color: var(--color-04);
+        font-size: 2rem;
+      }
     }
     .style-and-tiem-buttons,
     .exports-buttons {
-        position: absolute;
-        background-color: var(--color-10);
-        padding: 0px;
-        height: 0px;
-        overflow: hidden;
-        top: -130px;
-        right: 0;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 10px;
-        border-radius: 7px;
-        transition: 0.3s;
-        button {
-          margin: 0 10px;
-          background-color: var(--color-04);
-          color: var(--color-02);
-          font-weight: 500;
-          font-size: 1rem;
-        }
-        button:first-of-type {
-          margin-top: 10px;
-        }
+      position: absolute;
+      background-color: var(--color-10);
+      padding: 0px;
+      height: 0px;
+      overflow: hidden;
+      top: -130px;
+      right: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius: 7px;
+      transition: 0.3s;
+      button {
+        margin: 0 10px;
+        background-color: var(--color-04);
+        color: var(--color-02);
+        font-weight: 500;
+        font-size: 1rem;
       }
+      button:first-of-type {
+        margin-top: 10px;
+      }
+    }
     .button-advanced {
-        background-color: var(--color-11);
+      background-color: var(--color-11);
     }
     .style-and-tiem-buttons {
       right: 70px;
@@ -103,9 +124,9 @@
     }
     .button-advanced[data-clicked="true"] ~ .style-and-tiem-buttons,
     .button-export[data-clicked="true"] ~ .exports-buttons {
-        height: 120px;
-      }
+      height: 120px;
     }
+  }
 }
 
 @media (max-width: 767px) {
@@ -121,3 +142,4 @@
     }
   }
 }
+

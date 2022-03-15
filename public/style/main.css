@@ -20,10 +20,10 @@
 }
 
 body {
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
-  min-height: 950px;
+  min-height: 1100px;
   height: 100vh;
 }
 
@@ -67,7 +67,7 @@ label.main-label:focus-within {
 input.main-input-text {
   display: block;
   border: none;
-  height: 35px;
+  height: 40px;
   padding: 4px;
   color: var(--color-02);
   font-size: 16px;
@@ -89,7 +89,7 @@ input.main-input-text:focus {
 @media (max-width: 767px) {
   button.main-button {
     font-size: 1rem;
-    padding: 10px 15px;
+    padding: 15px 15px;
   }
 
   label.main-label {
@@ -243,6 +243,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  margin-bottom: 30px;
 }
 main header {
   margin: 20px 0;
@@ -266,7 +267,6 @@ main header figure {
 }
 main section.perint-section {
   width: 70%;
-  height: 700px;
   position: relative;
   overflow: hidden;
   border-radius: 30px;
@@ -452,7 +452,7 @@ main section.perint-section[data-counter-section="4"] .show-item {
   padding: 0 6px;
   border-radius: 5px;
   max-width: 50%;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 .enter-manual form .main-inputs-and-submit-but .button-submit {
   display: flex;
@@ -462,6 +462,26 @@ main section.perint-section[data-counter-section="4"] .show-item {
 }
 .enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
   background-color: var(--color-10);
+}
+.enter-manual .qrcode-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-basis: 100%;
+  width: 100%;
+}
+.enter-manual .qrcode-img figure {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-04);
+  padding: 5%;
+  border-radius: 5px;
+}
+.enter-manual .qrcode-img figure img {
+  width: 100%;
 }
 .enter-manual .buttons {
   display: flex;
