@@ -49,8 +49,8 @@ button.main-button {
 }
 label.main-label {
   font-size: 20px;
-  font-weight: 500;
-  color: var(--color-05);
+  font-weight: 700;
+  color: var(--color-04);
   transition: 0.3s;
 }
 
@@ -61,12 +61,12 @@ label.main-label:focus-within {
 input.main-input-text {
   display: block;
   border: none;
-  height: 40px;
+  height: 35px;
   padding: 4px;
   color: var(--color-02);
-  font-size: 20px;
-  border-radius: 10px;
-  background-color: var(--color-05);
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: var(--color-04);
   transition: 0.3s;
 }
 
@@ -77,13 +77,20 @@ input.main-input-text::placeholder {
 
 input.main-input-text:focus {
   outline: none;
-  background-color: var(--color-04);
+  border: 2px solid  var(--color-10);
+  
 }
 
 @media (max-width: 767px) {
   button.main-button {
     font-size: 1rem;
     padding: 10px 15px;
+  }
+  label.main-label {
+    font-size: .9rem;
+  }
+  input.main-input-text::placeholder {
+    font-size: 15px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

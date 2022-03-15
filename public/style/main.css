@@ -55,8 +55,8 @@ button.main-button {
 
 label.main-label {
   font-size: 20px;
-  font-weight: 500;
-  color: var(--color-05);
+  font-weight: 700;
+  color: var(--color-04);
   transition: 0.3s;
 }
 
@@ -67,12 +67,12 @@ label.main-label:focus-within {
 input.main-input-text {
   display: block;
   border: none;
-  height: 40px;
+  height: 35px;
   padding: 4px;
   color: var(--color-02);
-  font-size: 20px;
-  border-radius: 10px;
-  background-color: var(--color-05);
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: var(--color-04);
   transition: 0.3s;
 }
 
@@ -83,13 +83,21 @@ input.main-input-text::placeholder {
 
 input.main-input-text:focus {
   outline: none;
-  background-color: var(--color-04);
+  border: 2px solid var(--color-10);
 }
 
 @media (max-width: 767px) {
   button.main-button {
     font-size: 1rem;
     padding: 10px 15px;
+  }
+
+  label.main-label {
+    font-size: 0.9rem;
+  }
+
+  input.main-input-text::placeholder {
+    font-size: 15px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -104,14 +112,14 @@ input.main-input-text:focus {
   }
 }
 .header-of-page {
-  position: relative;
   height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 10000;
 }
 .header-of-page .background-blur {
-  background-color: #ffffff30;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -131,6 +139,9 @@ input.main-input-text:focus {
   display: flex;
   align-items: center;
 }
+.header-of-page nav figure a img {
+  width: 100%;
+}
 .header-of-page nav .button-berger-icon {
   background-color: transparent;
   border: none;
@@ -139,8 +150,8 @@ input.main-input-text:focus {
   display: none;
 }
 .header-of-page nav .button-berger-icon .icon-box {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -189,12 +200,18 @@ input.main-input-text:focus {
 }
 
 @media (max-width: 767px) {
+  .header-of-page {
+    height: 50px;
+  }
+  .header-of-page nav figure {
+    width: 90px;
+  }
   .header-of-page nav .button-berger-icon {
     display: block;
   }
   .header-of-page nav ul {
     position: absolute;
-    top: 100px;
+    top: 50px;
     left: 0;
     background-color: var(--color-04);
     flex-flow: column nowrap;
@@ -262,7 +279,6 @@ main section.perint-section > section {
   padding: 20px;
   min-width: 100%;
   height: 100%;
-  display: block;
 }
 main section.perint-section > section .title-section {
   text-align: center;
@@ -270,12 +286,10 @@ main section.perint-section > section .title-section {
   color: var(--color-05);
   font-weight: 500;
   margin-bottom: 30px;
-  height: 50px;
 }
 main section.perint-section > section form {
   width: 80%;
   margin: 0 auto;
-  height: 100%;
 }
 main section.perint-section div.background-blur {
   position: absolute;
@@ -295,7 +309,7 @@ main section.perint-section[data-counter-section="1"] > section {
   display: none;
 }
 main section.perint-section[data-counter-section="1"] .enter-manual {
-  display: block;
+  display: flex;
 }
 main section.perint-section[data-counter-section="2"] > section {
   display: none;
@@ -324,10 +338,13 @@ main section.perint-section[data-counter-section="4"] .show-item {
     width: 1.5rem;
   }
   main section.perint-section {
-    width: 100%;
+    width: 90%;
   }
   main section.perint-section > section .title-section {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  main section.perint-section > section form {
+    width: 100%;
   }
 }
 .select-input-type {
@@ -403,79 +420,50 @@ main section.perint-section[data-counter-section="4"] .show-item {
     height: 25px;
   }
 }
-.enter-manual form .main-inputs-and-submit-but {
-  height: 40%;
+.enter-manual {
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 15px;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+.enter-manual form .main-inputs-and-submit-but {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 10px;
+}
+.enter-manual form .main-inputs-and-submit-but label input {
+  width: 100%;
 }
 .enter-manual form .main-inputs-and-submit-but label:first-of-type {
   width: 100%;
 }
-.enter-manual form .main-inputs-and-submit-but label:first-of-type input {
-  width: 100%;
-}
-.enter-manual form .main-inputs-and-submit-but label:last-of-type {
+.enter-manual form .main-inputs-and-submit-but label:nth-of-type(2) {
   width: 75%;
 }
-.enter-manual form .main-inputs-and-submit-but label:last-of-type input {
-  width: 100%;
+.enter-manual form .main-inputs-and-submit-but label:last-of-type {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.enter-manual form .main-inputs-and-submit-but label:last-of-type span {
+  display: inline-block;
+  background-color: var(--color-01);
+  color: var(--color-02);
+  padding: 0 6px;
+  border-radius: 5px;
+  max-width: 50%;
+  overflow-x: scroll;
 }
 .enter-manual form .main-inputs-and-submit-but .button-submit {
-  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  margin-top: 20px;
 }
 .enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
   background-color: var(--color-10);
 }
 .enter-manual .buttons {
-  height: calc(60% - 50px - 30px);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-.enter-manual .buttons button {
-  font-size: 20px;
-}
-.enter-manual .buttons .style-and-tiem-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-.enter-manual .buttons .style-and-tiem-buttons button {
-  background-color: var(--color-02);
-  position: relative;
-  overflow: hidden;
-}
-.enter-manual .buttons .style-and-tiem-buttons button span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-04);
-  height: 100%;
-  width: 25%;
-}
-.enter-manual .buttons .style-and-tiem-buttons button:last-of-type {
-  position: relative;
-  overflow: hidden;
-  padding-left: 68px;
-}
-.enter-manual .buttons .style-and-tiem-buttons button:last-of-type span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-04);
-  height: 100%;
-  width: 25%;
-  color: var(--color-02);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-}
-.enter-manual .buttons .back-and-exports-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -483,42 +471,61 @@ main section.perint-section[data-counter-section="4"] .show-item {
   column-gap: 10px;
   position: relative;
 }
-.enter-manual .buttons .back-and-exports-buttons .back-button button {
-  font-size: 25px;
+.enter-manual .buttons .back-button {
+  flex-basis: 100%;
 }
-.enter-manual .buttons .back-and-exports-buttons .button-export {
+.enter-manual .buttons .button-advanced,
+.enter-manual .buttons .button-export {
   background-color: var(--color-10);
 }
-.enter-manual .buttons .back-and-exports-buttons .button-export i {
-  color: var(--color-02);
-  font-size: 1.8rem;
+.enter-manual .buttons .button-advanced i,
+.enter-manual .buttons .button-export i {
+  color: var(--color-04);
+  font-size: 2rem;
 }
-.enter-manual .buttons .back-and-exports-buttons .exports-buttons {
+.enter-manual .buttons .style-and-tiem-buttons,
+.enter-manual .buttons .exports-buttons {
   position: absolute;
-  background-color: var(--color-02);
-  padding: 10px;
-  height: 120px;
+  background-color: var(--color-10);
+  padding: 0px;
+  height: 0px;
+  overflow: hidden;
   top: -130px;
   right: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  row-gap: 10px;
+  gap: 10px;
   border-radius: 7px;
-  pointer-events: none;
-  opacity: 0;
   transition: 0.3s;
 }
-.enter-manual .buttons .back-and-exports-buttons .exports-buttons button {
-  background-color: var(--color-03);
-  color: var(--color-04);
+.enter-manual .buttons .style-and-tiem-buttons button,
+.enter-manual .buttons .exports-buttons button {
+  margin: 0 10px;
+  background-color: var(--color-04);
+  color: var(--color-02);
   font-weight: 500;
   font-size: 1rem;
 }
-.enter-manual .buttons .back-and-exports-buttons .button-export[data-clicked=true] ~ .exports-buttons {
-  pointer-events: all;
-  opacity: 1;
+.enter-manual .buttons .style-and-tiem-buttons button:first-of-type,
+.enter-manual .buttons .exports-buttons button:first-of-type {
+  margin-top: 10px;
+}
+.enter-manual .buttons .button-advanced {
+  background-color: var(--color-11);
+}
+.enter-manual .buttons .style-and-tiem-buttons {
+  right: 70px;
+  background-color: var(--color-11);
+}
+.enter-manual .buttons .style-and-tiem-buttons button {
+  background-color: var(--color-04);
+  color: var(--color-02);
+}
+.enter-manual .buttons .button-advanced[data-clicked=true] ~ .style-and-tiem-buttons,
+.enter-manual .buttons .button-export[data-clicked=true] ~ .exports-buttons {
+  height: 120px;
 }
 
 @media (max-width: 767px) {

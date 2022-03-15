@@ -13,12 +13,15 @@ function showAndHaddin(theThis) {
 // End public code
 
 const butBargerIcon = document.querySelector('.button-berger-icon');
+const buttonAdvanced = document.querySelector('.button-advanced');
 const buttonExport = document.querySelector('.button-export');
 
 butBargerIcon.addEventListener('click', function () {
     showAndHaddin(this)
 })
-
+buttonAdvanced.addEventListener('click', function () {
+    showAndHaddin(this)
+})
 buttonExport.addEventListener('click', function () {
     showAndHaddin(this)
 })

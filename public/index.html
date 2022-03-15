@@ -115,46 +115,54 @@
             <legend class="title-section">Enter manual</legend>
             <div class="main-inputs-and-submit-but">
               <label for="qr-value" class="qr-value main-label">
-                Value Qr-code
+                Value Qr-code:
                 <input
                   id="qr-value"
                   class="main-input-text"
                   name="qrValue"
-                  value="1234123452"
+                  value=""
                   placeholder="Value of Qr"
                   required
                 />
               </label>
               <label for="qr-title" class="qr-title main-label">
-                Title for Qr-code
+                Title for Qr-code:
                 <input
                   id="qr-title"
                   class="main-input-text"
                   name="qrTitle"
-                  value="A50s"
+                  value=""
                   placeholder="Title of Qr (Option)"
                 />
+              </label>
+              <label class="label-number-items main-label" for="number-items">
+                Number of items:
+                <span id="number-items">1</span>
               </label>
               <div class="button-submit">
                 <button type="submit" name="buttonSubmit" class="main-button">Generate Qr-code</button>
               </div>
             </div>
           </form>
+          
           <div class="buttons">
-            <div class="style-and-tiem-buttons">
-              <button class="main-button">Qr-code style</button>
-              <button class="main-button"><span>1</span>show items</button>
-            </div>
-            <div class="back-and-exports-buttons">
+            
               <div class="back-button">
                 <button class="main-button">Back</button>
               </div>
+              
+              <button class="button-advanced main-button" data-clicked="false"><i class="icon-miscellaneous_services"></i></button>
+              <div class="style-and-tiem-buttons">
+                <button class="main-button">Qr-code style</button>
+                <button class="main-button">show items</button>
+              </div>
+              
               <button class="button-export main-button" data-clicked="false"><i class="icon-export-outline"></i></button>
               <div class="exports-buttons">
                 <button class="main-button">Export image</button>
                 <button class="main-button">Export PDF</button>
               </div>
-            </div>
+            
           </div>
         </section>
 

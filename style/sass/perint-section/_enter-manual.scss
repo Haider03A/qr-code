@@ -1,127 +1,111 @@
 .enter-manual {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    row-gap: 20px;
   form {
     .main-inputs-and-submit-but {
-      height: 40%;
       display: flex;
       flex-flow: column nowrap;
-      row-gap: 15px;
+      row-gap: 10px;
+      label {
+        input {
+          width: 100%;
+        }
+      }
       label:first-of-type {
         width: 100%;
-        input {
-          width: 100%;
-        }
       }
-
-      label:last-of-type {
+      label:nth-of-type(2) {
         width: 75%;
-        input {
-          width: 100%;
+      }
+      label:last-of-type {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        span {
+          display: inline-block;
+          background-color: var(--color-01);
+          color: var(--color-02);
+          padding: 0 6px;
+          border-radius: 5px;
+          max-width: 50%;
+          overflow-x: scroll;
         }
       }
-
       .button-submit {
-        height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
+        margin-top: 20px;
         button[type="submit"] {
           background-color: var(--color-10);
         }
       }
     }
   }
+  
   .buttons {
-    height: calc(100% - 40% - 50px - 30px);
     display: flex;
-    flex-flow: column nowrap;
     justify-content: space-between;
-    padding: 20px 0;
-    button {
-      font-size: 20px;
-    }
-    .style-and-tiem-buttons {
-      display: flex;
-      justify-content: space-between;
-      button {
-        background-color: var(--color-02);
-        position: relative;
-        overflow: hidden;
-        span {
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: var(--color-04);
-          height: 100%;
-          width: 25%;
-        }
+    align-items: center;
+    flex-flow: row nowrap;
+    column-gap: 10px;
+    position: relative;
+    .back-button {
+        flex-basis: 100%;
       }
-      button:last-of-type {
-        position: relative;
-        overflow: hidden;
-        padding-left: 68px;
-        span {
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: var(--color-04);
-          height: 100%;
-          width: 25%;
-          color: var(--color-02);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-weight: 600;
-        }
-      }
-    }
-    .back-and-exports-buttons {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-flow: row nowrap;
-      column-gap: 10px;
-      position: relative;
-      .back-button {
-        button {
-          font-size: 25px;
-        }
-      }
-      .button-export {
-        background-color: var(--color-10);
+    .button-advanced,
+    .button-export{
+      background-color: var(--color-10);
         i {
-          color: var(--color-02);
-          font-size: 1.8rem;
+          color: var(--color-04);
+          font-size: 2rem;
         }
-      }
-      .exports-buttons {
+    }
+    .style-and-tiem-buttons,
+    .exports-buttons {
         position: absolute;
-        background-color: var(--color-02);
-        padding: 10px;
-        height: 120px;
+        background-color: var(--color-10);
+        padding: 0px;
+        height: 0px;
+        overflow: hidden;
         top: -130px;
         right: 0;
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        row-gap: 10px;
+        gap: 10px;
         border-radius: 7px;
-        pointer-events: none;
-        opacity: 0;
         transition: 0.3s;
         button {
-          background-color: var(--color-03);
-          color: var(--color-04);
+          margin: 0 10px;
+          background-color: var(--color-04);
+          color: var(--color-02);
           font-weight: 500;
           font-size: 1rem;
         }
+        button:first-of-type {
+          margin-top: 10px;
+        }
       }
-      .button-export[data-clicked="true"] ~ .exports-buttons {
-        pointer-events: all;
-        opacity: 1;
+    .button-advanced {
+        background-color: var(--color-11);
+    }
+    .style-and-tiem-buttons {
+      right: 70px;
+      background-color: var(--color-11);
+      button {
+        background-color: var(--color-04);
+        color: var(--color-02);
       }
     }
-  }
+    .button-advanced[data-clicked="true"] ~ .style-and-tiem-buttons,
+    .button-export[data-clicked="true"] ~ .exports-buttons {
+        height: 120px;
+      }
+    }
 }
 
 @media (max-width: 767px) {
