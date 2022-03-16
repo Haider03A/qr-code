@@ -76,6 +76,9 @@ main {
       .enter-manual {
         display: flex;
       }
+      .qr-code-style {
+        display: flex;
+      }
     }
 
     &[data-counter-section="2"] {

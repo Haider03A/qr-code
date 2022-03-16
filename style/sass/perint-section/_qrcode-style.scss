@@ -1,4 +1,8 @@
 .qr-code-style {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-10);
   form {
     display: flex;
     flex-flow: column nowrap;
