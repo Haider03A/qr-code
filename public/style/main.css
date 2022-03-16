@@ -23,7 +23,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
-  min-height: 1100px;
+  min-height: 1200px;
   height: 100vh;
 }
 
@@ -55,7 +55,7 @@ button.main-button {
 
 label.main-label {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-04);
   transition: 0.3s;
 }
@@ -93,7 +93,7 @@ input.main-input-text:focus {
   }
 
   label.main-label {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   input.main-input-text::placeholder {
@@ -187,7 +187,7 @@ input.main-input-text:focus {
   border-radius: 5px;
   color: var(--color-01);
   transition: 0.3s;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
 }
 .header-of-page nav ul li a:hover {
@@ -227,6 +227,7 @@ input.main-input-text:focus {
   .header-of-page nav ul li a {
     color: var(--color-02);
     width: 100%;
+    font-size: 1rem;
   }
   .header-of-page nav ul li a:hover {
     color: var(--color-10);
@@ -332,7 +333,7 @@ main section.perint-section[data-counter-section="4"] .show-item {
 
 @media (max-width: 767px) {
   main header h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   main header figure img {
     width: 1.5rem;
@@ -341,7 +342,7 @@ main section.perint-section[data-counter-section="4"] .show-item {
     width: 90%;
   }
   main section.perint-section > section .title-section {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   main section.perint-section > section form {
     width: 100%;
@@ -501,7 +502,7 @@ main section.perint-section[data-counter-section="4"] .show-item {
 .enter-manual .buttons .button-advanced i,
 .enter-manual .buttons .button-export i {
   color: var(--color-04);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .enter-manual .buttons .style-and-tiem-buttons,
 .enter-manual .buttons .exports-buttons {

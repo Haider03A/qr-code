@@ -22,7 +22,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
-  min-height: 1100px;
+  min-height: 1200px;
   height: 100vh;
 }
 .container {
@@ -50,7 +50,7 @@ button.main-button {
 }
 label.main-label {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-04);
   transition: 0.3s;
 }
@@ -88,7 +88,7 @@ input.main-input-text:focus {
     padding: 15px 15px;
   }
   label.main-label {
-    font-size: .9rem;
+    font-size: .7rem;
   }
   input.main-input-text::placeholder {
     font-size: 15px;
