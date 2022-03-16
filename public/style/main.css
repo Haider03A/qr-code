@@ -11,6 +11,8 @@
   --color-10: #2196f3;
   --color-11: #e91e63;
   --color-12: #37373750;
+  --color-13: #536664;
+  --color-14: #00000021;
 }
 
 * {
@@ -225,15 +227,28 @@ input.main-input-text:focus {
     padding: 0 20px;
   }
   .header-of-page nav ul li a {
+    padding-left: 15px;
     color: var(--color-02);
     width: 100%;
     font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-of-page nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--color-10);
   }
   .header-of-page nav ul li a:hover {
     color: var(--color-10);
-    padding-left: 10px;
+    padding-left: 20px;
   }
   .header-of-page nav ul li a.active {
+    padding-left: 20px;
     color: var(--color-10);
   }
   .header-of-page nav .button-berger-icon[data-clicked=true] ~ ul {
@@ -497,56 +512,90 @@ main section.perint-section[data-counter-section="4"] .show-item {
 }
 .enter-manual .buttons .button-advanced,
 .enter-manual .buttons .button-export {
-  background-color: var(--color-10);
+  background-color: var(--color-04);
+  position: relative;
 }
 .enter-manual .buttons .button-advanced i,
 .enter-manual .buttons .button-export i {
-  color: var(--color-04);
+  color: var(--color-13);
   font-size: 1.5rem;
+  pointer-events: none;
+}
+.enter-manual .buttons .button-advanced::before,
+.enter-manual .buttons .button-export::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 10px);
+  transition: 0.3s;
+  z-index: -1;
+  border: 10px solid transparent;
+  border-bottom-color: var(--color-04);
+}
+.enter-manual .buttons .button-advanced[data-clicked=true]::before,
+.enter-manual .buttons .button-export[data-clicked=true]::before {
+  top: -20px;
 }
 .enter-manual .buttons .style-and-tiem-buttons,
 .enter-manual .buttons .exports-buttons {
   position: absolute;
-  background-color: var(--color-10);
   padding: 0px;
-  height: 0px;
+  height: 0;
+  width: 50%;
   overflow: hidden;
-  top: -130px;
+  top: -315px;
   right: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: flex-start;
-  gap: 10px;
-  border-radius: 7px;
+  align-items: center;
+  row-gap: 10px;
+  border-radius: 4px;
   transition: 0.3s;
+  background-color: var(--color-04);
+}
+.enter-manual .buttons .style-and-tiem-buttons h1,
+.enter-manual .buttons .exports-buttons h1 {
+  padding: 15px 5px;
+  width: 100%;
+  font-size: 100%;
+  color: var(--color-02);
+  border-bottom: 2px solid var(--color-14);
+  font-weight: 700;
+  text-align: center;
 }
 .enter-manual .buttons .style-and-tiem-buttons button,
 .enter-manual .buttons .exports-buttons button {
-  margin: 0 10px;
-  background-color: var(--color-04);
-  color: var(--color-02);
-  font-weight: 500;
+  transition: 0.3s;
+  text-align: start;
+  color: var(--color-13);
+  font-weight: 600;
   font-size: 1rem;
-}
-.enter-manual .buttons .style-and-tiem-buttons button:first-of-type,
-.enter-manual .buttons .exports-buttons button:first-of-type {
-  margin-top: 10px;
-}
-.enter-manual .buttons .button-advanced {
-  background-color: var(--color-11);
-}
-.enter-manual .buttons .style-and-tiem-buttons {
-  right: 70px;
-  background-color: var(--color-11);
-}
-.enter-manual .buttons .style-and-tiem-buttons button {
+  width: 90%;
   background-color: var(--color-04);
-  color: var(--color-02);
+  padding-left: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.enter-manual .buttons .style-and-tiem-buttons button::before,
+.enter-manual .buttons .exports-buttons button::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: var(--color-10);
+}
+.enter-manual .buttons .style-and-tiem-buttons button:hover,
+.enter-manual .buttons .exports-buttons button:hover {
+  background-color: var(--color-01);
+  color: var(--color-10);
+  padding-left: 20px;
 }
 .enter-manual .buttons .button-advanced[data-clicked=true] ~ .style-and-tiem-buttons,
 .enter-manual .buttons .button-export[data-clicked=true] ~ .exports-buttons {
-  height: 120px;
+  height: 300px;
 }
 
 @media (max-width: 767px) {

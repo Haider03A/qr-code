@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./fonts/icomoon/style.css" />
@@ -79,7 +79,7 @@
                   <input
                     type="radio"
                     name="data-type"
-                    id="enter-manual"
+                    id="check-enter-manual"
                     checked
                     value="enterManual"
                   />
@@ -91,7 +91,7 @@
                   <input
                     type="radio"
                     name="data-type"
-                    id="import-excel-file"
+                    id="check-import-excel-file"
                     value="importExcelFile"
                   />
                   <span class="check-mark"></span>
@@ -102,7 +102,7 @@
                   <input
                     type="radio"
                     name="data-type"
-                    id="import-json-file"
+                    id="check-import-json-file"
                     value="importJsonFile"
                   />
                   <span class="check-mark"></span>
@@ -166,14 +166,16 @@
               <i class="icon-miscellaneous_services"></i>
             </button>
             <div class="style-and-tiem-buttons">
+              <h1>Advanced Settings</h1>
               <button class="main-button">Qr-code style</button>
-              <button class="main-button">show items</button>
+              <button class="main-button">Show items</button>
             </div>
 
             <button class="button-export main-button" data-clicked="false">
               <i class="icon-export-outline"></i>
             </button>
             <div class="exports-buttons">
+              <h1>Export</h1>
               <button class="main-button">Export image</button>
               <button class="main-button">Export PDF</button>
             </div>
