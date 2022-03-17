@@ -26,3 +26,8 @@ const exportButtons = document.querySelector('.enter-manual .buttons .exports-bu
 document.addEventListener('click', e => onClickDocumentHaddin(e, buttonExport, buttonExport, exportButtons));
 buttonExport.addEventListener('click', _ => showAndHaddin(buttonExport))
 
+const qrcodeStyleButtonOpen = document.querySelector('.enter-manual .buttons .style-and-tiem-buttons .style-button');
+const qrcodeStyleButtonClose = document.querySelector('.qr-code-style form .back-button');
+const qrcodeStyleBox = document.querySelector('.qr-code-style');
+qrcodeStyleButtonOpen.addEventListener('click', _ => showAndHaddin(qrcodeStyleBox))
+qrcodeStyleButtonClose.addEventListener('click', _ => showAndHaddin(qrcodeStyleBox))

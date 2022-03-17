@@ -74,7 +74,7 @@
             <fieldset>
               <legend class="title-section">Select input data type</legend>
               <div class="inputs">
-                <label for="enter-manual"
+                <label for="check-enter-manual"
                   >Enter manual
                   <input
                     type="radio"
@@ -86,7 +86,7 @@
                   <span class="check-mark"></span>
                 </label>
 
-                <label for="import-excel-file"
+                <label for="check-import-excel-file"
                   >Import Excel file
                   <input
                     type="radio"
@@ -97,7 +97,7 @@
                   <span class="check-mark"></span>
                 </label>
 
-                <label for="import-json-file"
+                <label for="check-import-json-file"
                   >Import JSON file
                   <input
                     type="radio"
@@ -167,7 +167,7 @@
             </button>
             <div class="style-and-tiem-buttons">
               <h1>Advanced Settings</h1>
-              <button class="main-button">Qr-code style</button>
+              <button class="main-button style-button">Qr-code style</button>
               <button class="main-button">Show items</button>
             </div>
 
@@ -211,7 +211,7 @@
         <section class="show-item"></section>
 
         <!-- Section qr-code style-->
-        <section class="qr-code-style">
+        <section class="qr-code-style" data-clicked="false">
           <form>
             <legend class="title-section">Qr-code sstyle</legend>
             <div class="inputs-box">
@@ -257,7 +257,7 @@
                 />
               </label>
               <label for="qr-style-color" class="qr-style-color main-label">
-                Color Qr-code:
+                Color:
                 <input
                   id="qr-style-color"
                   type="color"
@@ -270,7 +270,7 @@
                 for="qr-style-background"
                 class="qr-style-background main-label"
               >
-                Background color Qr-code:
+                Background color:
                 <input
                   id="qr-style-background"
                   type="color"

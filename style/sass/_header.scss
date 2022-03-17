@@ -75,6 +75,7 @@
       column-gap: 5px;
       li {
         border-radius: 5px;
+        overflow: hidden;
         a {
           padding: 5px;
           color: var(--color-01);
@@ -119,12 +120,11 @@
         transition: 0.3s;
         padding: 0 20px;
         li {
-          overflow: hidden;
           a {
             padding-left: 15px;
             color: var(--color-02);
             width: 100%;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             position: relative;
             overflow: hidden;
             &::before {
