@@ -89,6 +89,27 @@ input.main-input-text:focus {
   border: 2px solid var(--color-10);
 }
 
+.qrcode-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-basis: 100%;
+  width: 100%;
+}
+.qrcode-img figure {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-04);
+  padding: 5%;
+  border-radius: 5px;
+}
+.qrcode-img figure img {
+  width: 100%;
+}
+
 @media (max-width: 767px) {
   button.main-button {
     font-size: 1rem;
@@ -447,6 +468,9 @@ main section.perint-section[data-counter-section="4"] .show-item {
   justify-content: space-between;
   row-gap: 20px;
 }
+.enter-manual form {
+  width: 80%;
+}
 .enter-manual form .main-inputs-and-submit-but {
   display: flex;
   flex-flow: column nowrap;
@@ -483,26 +507,6 @@ main section.perint-section[data-counter-section="4"] .show-item {
 }
 .enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
   background-color: var(--color-10);
-}
-.enter-manual .qrcode-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  flex-basis: 100%;
-  width: 100%;
-}
-.enter-manual .qrcode-img figure {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-04);
-  padding: 5%;
-  border-radius: 5px;
-}
-.enter-manual .qrcode-img figure img {
-  width: 100%;
 }
 .enter-manual .buttons {
   display: flex;
@@ -734,6 +738,7 @@ main section.perint-section[data-counter-section="4"] .show-item {
   right: 0;
 }
 .qr-code-style form {
+  width: 100%;
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -753,8 +758,11 @@ main section.perint-section[data-counter-section="4"] .show-item {
   padding: 0 30px;
   flex-grow: 1;
 }
+.qr-code-style form .inputs-box label {
+  width: 20%;
+}
 .qr-code-style form .inputs-box label input {
-  width: 100px;
+  width: 100%;
 }
 .qr-code-style form .inputs-box label input[type=color] {
   width: 50px;
@@ -788,6 +796,15 @@ main section.perint-section[data-counter-section="4"] .show-item {
 .qr-code-style form .back-button button i {
   color: var(--color-10);
   font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .qr-code-style form .inputs-box {
+    padding: 0;
+  }
+  .qr-code-style form .inputs-box label {
+    width: calc(50% - 20px);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

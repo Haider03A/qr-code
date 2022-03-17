@@ -2,7 +2,7 @@
   position: absolute;
   top: -100%;
   right: -100%;
-  transition: .3s;
+  transition: 0.3s;
   min-height: 100%;
   background-color: var(--color-10);
   &[data-clicked="true"] {
@@ -10,6 +10,7 @@
     right: 0;
   }
   form {
+    width: 100%;
     position: relative;
     display: flex;
     flex-flow: column nowrap;
@@ -24,17 +25,17 @@
       flex-flow: row wrap;
       justify-content: flex-start;
       align-content: flex-start;
-      
       gap: 10px 25px;
       padding: 0 30px;
       flex-grow: 1;
       label {
+        width: 20%;
         input {
-          width: 100px;
-          &[type=color] {
+          width: 100%;
+          &[type="color"] {
             width: 50px;
           }
-          &:focus{
+          &:focus {
             border-color: var(--color-02);
           }
         }
@@ -64,6 +65,18 @@
         i {
           color: var(--color-10);
           font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .qr-code-style {
+    form {
+      .inputs-box {
+        padding: 0;
+        label {
+          width: calc(50% - 20px);
         }
       }
     }
