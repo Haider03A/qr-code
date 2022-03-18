@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./fonts/icomoon/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -21,12 +24,33 @@
         <nav>
           <figure class="logo">
             <a href="#">
-               <svg xmlns="http://www.w3.org/2000/svg" width="124" height="54" viewBox="0 0 124 54">
-  <g id="logo" transform="translate(1 -33)">
-    <text id="LAG" transform="translate(72 74)" fill="#e4e4e4" font-size="47" font-family="Rajdhani, sans-serif"><tspan x="-50.649" y="0">LAG</tspan></text>
-    <text id="Mr" transform="translate(12 75)" fill="#e4e4e4" font-size="17" font-family="Rajdhani, sans-serif"><tspan x="-12.215" y="0">Mr</tspan></text>
-  </g>
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="124"
+                height="54"
+                viewBox="0 0 124 54"
+              >
+                <g id="logo" transform="translate(1 -33)">
+                  <text
+                    id="LAG"
+                    transform="translate(72 74)"
+                    fill="#e4e4e4"
+                    font-size="47"
+                    font-family="Rajdhani, sans-serif"
+                  >
+                    <tspan x="-50.649" y="0">LAG</tspan>
+                  </text>
+                  <text
+                    id="Mr"
+                    transform="translate(12 75)"
+                    fill="#e4e4e4"
+                    font-size="17"
+                    font-family="Rajdhani, sans-serif"
+                  >
+                    <tspan x="-12.215" y="0">Mr</tspan>
+                  </text>
+                </g>
+              </svg>
             </a>
           </figure>
           <button class="button-berger-icon" data-clicked="false">
@@ -139,7 +163,17 @@
                   placeholder="Title of Qr (Option)"
                 />
               </label>
-              <label class="label-number-items main-label" for="number-items">
+              <label for="checkbox-look" class="checkbox-look main-label">
+                Look:
+                <input
+                  type="checkbox"
+                  id="checkbox-look"
+                  name="checkbox-look"
+                  value="look"
+                />
+                <span class="fack-checkbox"></span>
+              </label>
+              <label for="number-items" class="label-number-items main-label">
                 Number of items:
                 <span id="number-items">1</span>
               </label>
@@ -256,26 +290,26 @@
                   placeholder="0 - 15 px"
                 />
               </label>
-              <label for="qr-style-color" class="qr-style-color main-label">
+              <label class="qr-style-color color main-label" for="qr-style-color">
                 Color:
                 <input
                   id="qr-style-color"
-                  type="color"
+                  type="text"
                   class="main-input-text"
-                  value="#000000"
+                  value="000"
                   data-error="0"
                 />
               </label>
               <label
                 for="qr-style-background"
-                class="qr-style-background main-label"
+                class="qr-style-background color main-label"
               >
                 Background color:
                 <input
                   id="qr-style-background"
-                  type="color"
+                  type="text"
                   class="main-input-text"
-                  value="#ffffff"
+                  value="FFF"
                   data-error="0"
                 />
               </label>

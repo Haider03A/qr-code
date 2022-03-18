@@ -9,9 +9,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "run-nodemon": "nodemon index.js",
-    "sass-watch": "sass --watch ./style/sass/index.scss ./public/style/main.css",
-    "dev": "npm-run-all --parallel sass-watch run-nodemon"
+    "nodemonStart": "nodemon index.js",
+    "sassWatch": "sass --watch ./style/sass/index.scss ./public/style/main.css",
+    "Dev": "npm-run-all --parallel sassWatch nodemonStart"
   },
   "keywords": [],
   "author": "",

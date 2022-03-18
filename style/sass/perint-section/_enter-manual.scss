@@ -7,23 +7,66 @@
     width: 80%;
     .main-inputs-and-submit-but {
       display: flex;
-      flex-flow: column nowrap;
-      row-gap: 10px;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 10px;
       label {
         input {
           width: 100%;
         }
       }
-      label:first-of-type {
+      label.qr-value {
         width: 100%;
       }
-      label:nth-of-type(2) {
+      label.qr-title {
         width: 75%;
       }
-      label:last-of-type {
+      label.checkbox-look {
+        overflow: hidden;
+        width: fit-content;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        input {
+          cursor: pointer;
+          position: absolute;
+          opacity: 0;
+        }
+        span {
+          display: block;
+          background-color: var(--color-04);
+          height: 40px;
+          width: 40px;
+          border-radius: 5px;
+          position: relative;
+          overflow: hidden;
+          &::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            border-radius: 5px;
+            transform: translate(-50%, -50%);
+            transition: .3s;
+            opacity: 1;
+          }
+        }
+        input:checked ~ span::before {
+          background-color: var(--color-13  );
+        }
+        input:focus ~ span {
+          border: 2px solid var(--color-10);
+        }
+      }
+      label.label-number-items {
         display: flex;
         align-items: center;
         column-gap: 5px;
+        flex-basis: 100%;
         span {
           display: inline-block;
           background-color: var(--color-01);

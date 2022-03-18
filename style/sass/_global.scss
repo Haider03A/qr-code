@@ -26,7 +26,7 @@ body {
   background-repeat: no-repeat;
   min-height: 1200px;
   height: 100vh;
-  user-select: none;
+  // user-select: none;
 }
 .container {
   margin-left: auto;
@@ -56,6 +56,7 @@ label.main-label {
   font-weight: 500;
   color: var(--color-04);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 label.main-label:focus-within {
@@ -72,17 +73,18 @@ input.main-input-text {
   border-radius: 3px;
   background-color: var(--color-04);
   transition: 0.3s;
-}
-
-input.main-input-text::placeholder {
-  color: var(--color-12);
-  font-size: 18px;
-}
-
-input.main-input-text:focus {
-  outline: none;
-  border: 2px solid  var(--color-10);
-  
+  &:disabled {
+    background-color: var(--color-01);
+    color: var(--color-12);
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid  var(--color-10);
+  }
+  &::placeholder {
+    color: var(--color-12);
+    font-size: 18px;
+  }
 }
 
 .qrcode-img {

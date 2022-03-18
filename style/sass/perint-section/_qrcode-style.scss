@@ -4,6 +4,7 @@
   right: -100%;
   transition: 0.3s;
   min-height: 100%;
+  width: 100%;
   background-color: var(--color-10);
   &[data-clicked="true"] {
     top: 0;
@@ -17,9 +18,7 @@
     justify-content: flex-start;
     align-items: center;
     row-gap: 20px;
-    input[data-error="1"] {
-      border: 3px solid var(--color-07);
-    }
+
     .inputs-box {
       display: flex;
       flex-flow: row wrap;
@@ -30,13 +29,34 @@
       flex-grow: 1;
       label {
         width: 20%;
+        min-width: fit-content;
+        position: relative;
+        &.color {
+          input {
+            padding-left: 30px;
+          }
+        }
+        &.color::before {
+          position: absolute;
+          content: "#";
+          bottom: 0px;
+          left: 0px;
+          font-size: 20px;
+          color: var(--color-13);
+          height: 40px;
+          border-radius: 3px;
+          line-height: 40px;
+          text-align: center;
+          padding: 0 5px;
+          background-color: var(--color-01);
+        }
         input {
           width: 100%;
-          &[type="color"] {
-            width: 50px;
-          }
           &:focus {
             border-color: var(--color-02);
+          }
+          &[data-error="1"] {
+            border: 3px solid var(--color-07);
           }
         }
       }
