@@ -29,8 +29,17 @@
       flex-grow: 1;
       label {
         width: 20%;
-        min-width: fit-content;
+        min-width: 100px;
         position: relative;
+        input {
+          width: 100%;
+          &:focus {
+            border-color: var(--color-02);
+          }
+          &[data-error="1"] {
+            border: 3px solid var(--color-07);
+          }
+        }
         &.color {
           input {
             padding-left: 30px;
@@ -49,15 +58,6 @@
           text-align: center;
           padding: 0 5px;
           background-color: var(--color-01);
-        }
-        input {
-          width: 100%;
-          &:focus {
-            border-color: var(--color-02);
-          }
-          &[data-error="1"] {
-            border: 3px solid var(--color-07);
-          }
         }
       }
     }

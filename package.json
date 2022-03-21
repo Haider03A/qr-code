@@ -11,7 +11,7 @@
     "start": "node index.js",
     "nodemonStart": "nodemon index.js",
     "sassWatch": "sass --watch ./style/sass/index.scss ./public/style/main.css",
-    "Dev": "npm-run-all --parallel sassWatch nodemonStart"
+    "dev": "npm-run-all --parallel sassWatch nodemonStart"
   },
   "keywords": [],
   "author": "",
