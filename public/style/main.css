@@ -808,12 +808,14 @@ main section.perint-section[data-counter-section="4"] .show-item {
 }
 .qr-code-style form .inputs-box label input {
   width: 100%;
+  transition: 0.3s;
+  border: 3px solid transparent;
 }
 .qr-code-style form .inputs-box label input:focus {
   border-color: var(--color-02);
 }
 .qr-code-style form .inputs-box label input[data-error="1"] {
-  border: 3px solid var(--color-07);
+  border-color: var(--color-07);
 }
 .qr-code-style form .inputs-box label.color input {
   padding-left: 30px;
