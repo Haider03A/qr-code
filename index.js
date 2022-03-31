@@ -2,7 +2,7 @@ const express = require("express")
 const ejs = require('ejs')
 const excelToJson = require('convert-excel-to-json');
 const app = express()
-const routerHome = require('./routes/home')
+const mainRouter = require('./routes/main_router')
 const routerError = require('./routes/error')
 const port = process.env.PORT || 3000;
 
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }))
 });
  */
 
-app.use('/', routerHome)
+app.use('/', mainRouter)
 app.use('/', routerError)
 
 app.listen(port, () => {

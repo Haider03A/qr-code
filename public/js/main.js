@@ -117,9 +117,13 @@ enterManualButtonSubmit.addEventListener('click', async _ => {
     const urlPOST = 'http://localhost:3000/qrcode/upload';
     if (objData.qrcodeData) {
         allDataForm.push(objData)
+        try {
             const res = await fetchData(urlPOST, allDataForm);
             const data = await res.json()
             console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
     } else {
         inputQrcodeDataEle.style.animation = 'input-error-vild 1s 1';
         setTimeout(() => {
