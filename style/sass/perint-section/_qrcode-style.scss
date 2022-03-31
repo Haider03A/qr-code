@@ -46,11 +46,12 @@
             padding-left: 30px;
           }
         }
-        &.color::before {
+        &.color .input-color-box {
+          position: relative;
+          span {  
           position: absolute;
-          content: "#";
-          bottom: 0px;
-          left: 0px;
+          top: 0;
+          left: 0;
           font-size: 20px;
           color: var(--color-13);
           height: 40px;
@@ -60,6 +61,7 @@
           padding: 0 5px;
           background-color: var(--color-01);
         }
+        } 
       }
     }
     .qr-fack {
@@ -73,6 +75,12 @@
         padding: 10px;
         background-color: var(--color-04);
         border-radius: 10px;
+      }
+    }
+    .qrcode-img {
+      width: 50%;
+      span {
+        font-size: 1.5rem;
       }
     }
     .back-button {

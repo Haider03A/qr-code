@@ -88,17 +88,20 @@
       }
     }
   }
-
+  .qrcode-img {
+    width: 50%;
+    margin: 0 auto;
+    span {
+      font-size: 1.5rem;
+    }
+  }
   .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     flex-flow: row nowrap;
     column-gap: 10px;
     position: relative;
-    .back-button {
-      flex-basis: 100%;
-    }
     .button-advanced,
     .button-export {
       background-color: var(--color-04);

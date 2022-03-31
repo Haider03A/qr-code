@@ -1,0 +1,41 @@
+.show-items {
+  position: absolute;
+  z-index: 22;
+  background-color: var(--color-10);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: -100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.3s;
+  &[data-clicked="true"] {
+    right: 0%;
+  }
+  .cloes-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 20%;
+    button {
+      width: 100%;
+      background-color: var(--color-04);
+      i {
+        color: var(--color-10);
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .items-box {
+    background-color: var(--color-02);
+    flex-basis: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}

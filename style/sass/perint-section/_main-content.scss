@@ -57,54 +57,6 @@ main {
       filter: blur(1px);
       z-index: -1;
     }
-
-    &[data-counter-section="0"] {
-      > section {
-        display: none;
-      }
-      .select-input-type {
-        display: block;
-      }
-    }
-
-    &[data-counter-section="1"] {
-      > section {
-        display: none;
-      }
-      .enter-manual {
-        display: flex;
-      }
-      .qr-code-style {
-        display: flex;
-      }
-    }
-
-    &[data-counter-section="2"] {
-      > section {
-        display: none;
-      }
-      .qr-code-style {
-        display: block;
-      }
-    }
-
-    &[data-counter-section="3"] {
-      > section {
-        display: none;
-      }
-      .input-file {
-        display: block;
-      }
-    }
-
-    &[data-counter-section="4"] {
-      > section {
-        display: none;
-      }
-      .show-item {
-        display: block;
-      }
-    }
   }
 }
 

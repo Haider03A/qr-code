@@ -88,54 +88,9 @@
         </figure>
       </header>
 
-      <section class="perint-section" data-counter-section="1">
+      <section class="perint-section">
         <!-- Background blur -->
         <div class="background-blur"></div>
-
-        <!-- Section select input type -->
-        <section class="select-input-type">
-          <form name="selectInputTypeForm">
-            <fieldset>
-              <legend class="title-section">Select input data type</legend>
-              <div class="inputs">
-                <label for="check-enter-manual"
-                  >Enter manual
-                  <input
-                    type="radio"
-                    name="data-type"
-                    id="check-enter-manual"
-                    checked
-                    value="enterManual"
-                  />
-                  <span class="check-mark"></span>
-                </label>
-
-                <label for="check-import-excel-file"
-                  >Import Excel file
-                  <input
-                    type="radio"
-                    name="data-type"
-                    id="check-import-excel-file"
-                    value="importExcelFile"
-                  />
-                  <span class="check-mark"></span>
-                </label>
-
-                <label for="check-import-json-file"
-                  >Import JSON file
-                  <input
-                    type="radio"
-                    name="data-type"
-                    id="check-import-json-file"
-                    value="importJsonFile"
-                  />
-                  <span class="check-mark"></span>
-                </label>
-              </div>
-              <button class="main-button" type="submit">Next</button>
-            </fieldset>
-          </form>
-        </section>
 
         <!-- Section Enter manual-->
         <section class="enter-manual">
@@ -160,7 +115,7 @@
                   class="main-input-text"
                   name="qrTitle"
                   value=""
-                  placeholder="Title of Qr (Option)"
+                  placeholder="Title of Qr max 12(Option)"
                 />
               </label>
               <label for="checkbox-look" class="checkbox-look main-label">
@@ -186,23 +141,20 @@
           </form>
 
           <div class="qrcode-img">
-            <figure>
+            <div class="main-qrcode-style">
+              <span>MrLAG03</span>
               <img src="./images/qrcode.svg" alt="qrcode" />
-            </figure>
+            </div>
           </div>
 
           <div class="buttons">
-            <div class="back-button">
-              <button class="main-button">Back</button>
-            </div>
-
             <button class="button-advanced main-button" data-clicked="false">
               <i class="icon-miscellaneous_services"></i>
             </button>
             <div class="style-and-tiem-buttons">
               <h1>Advanced Settings</h1>
               <button class="main-button style-button">Qr-code style</button>
-              <button class="main-button">Show items</button>
+              <button class="main-button show-items-button">Show items</button>
             </div>
 
             <button class="button-export main-button" data-clicked="false">
@@ -216,33 +168,115 @@
           </div>
         </section>
 
-        <!-- Section input file-->
-        <section class="input-file">
-          <form data-changed="3">
-            <legend class="title-section">Input file</legend>
-            <div class="fack-input">
-              <input type="file" name="inputFile" id="input-file" required />
-              <div class="focus-input-file"></div>
-              <div class="icons-and-file-name">
-                <i class="icon-cloud-upload"></i>
-                <i class="icon-cloud-error"></i>
-                <i class="icon-cloud_done"></i>
-                <span class="file-name">file.json</span>
-                <span class="error">Error</span>
-              </div>
-              <p>Drop your file here or Click to borwse</p>
-            </div>
-            <div class="buttons">
-              <button class="main-button" id="next-but" type="submit">
-                Next
-              </button>
-              <button class="main-button">Back</button>
-            </div>
-          </form>
-        </section>
-
         <!-- Section show item-->
-        <section class="show-item"></section>
+        <section class="show-items" data-clicked="false">
+          <div class="cloes-button">
+            <button class="main-button"><i class="icon-remove"></i></button>
+          </div>
+          <h1 class="title-section">Items added</h1>
+          <div class="items-box">
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52wwwwwwwwwwwwwwwsswwwwwwwwwwwss sssssss</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+            <div class="main-qrcode-style"><span>Samsung A52s</span><img src="./images/qrcode.svg" alt=""></div>
+          </div>
+        </section>
 
         <!-- Section qr-code style-->
         <section class="qr-code-style" data-clicked="false">
@@ -292,6 +326,8 @@
               </label>
               <label class="qr-style-color color main-label" for="qr-style-color">
                 Color:
+                <div class="input-color-box">
+                  <span>#</span>
                 <input
                   id="qr-style-color"
                   type="text"
@@ -299,12 +335,16 @@
                   value="000"
                   data-error="0"
                 />
+                </div>
+                
               </label>
               <label
                 for="qr-style-background"
                 class="qr-style-background color main-label"
               >
                 Background color:
+                <div class="input-color-box">
+                  <span>#</span>
                 <input
                   id="qr-style-background"
                   type="text"
@@ -312,12 +352,15 @@
                   value="FFF"
                   data-error="0"
                 />
+                </div>
+                
               </label>
             </div>
             <div class="qrcode-img">
-              <figure>
+              <div class='main-qrcode-style'>
+                <span>MrLAG03</span>
                 <img src="./images/qrcode.svg" alt="qrcode" />
-              </figure>
+              </div main-qrcode-style>
             </div>
             <div class="back-button">
               <button class="main-button"><i class="icon-remove"></i></button>

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const multer  = require('multer')
+const multer = require('multer')
 
 
 const storage = multer.diskStorage({
@@ -18,8 +18,8 @@ let prossCount = 0;
 
 router.get('/', (req, res) => {
   res.render('index', {
-      prossCount
-    })
+    prossCount
+  })
 })
 
 router.post('/', upload.single('file'), (req, res) => {
@@ -30,6 +30,18 @@ router.post('/', upload.single('file'), (req, res) => {
 router.post('/a', (req, res) => {
   console.log(req.body)
   res.json(req.body)
+})
+
+router.post('/qrcode/upload', (req, res) => {
+  if (req.body[0].qrcodeData) {
+    res.status(200)
+    res.json(req.body);
+  } else {
+    res.status(404)
+    res.json({
+      error: 'no body'
+    });
+  }
 })
 
 module.exports = router;

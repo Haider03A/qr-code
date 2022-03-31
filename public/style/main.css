@@ -76,6 +76,7 @@ input.main-input-text {
   font-size: 16px;
   border-radius: 3px;
   background-color: var(--color-04);
+  border: 3px solid transparent;
   transition: 0.3s;
 }
 input.main-input-text:disabled {
@@ -84,32 +85,51 @@ input.main-input-text:disabled {
 }
 input.main-input-text:focus {
   outline: none;
-  border: 2px solid var(--color-10);
+  border-color: var(--color-10);
 }
 input.main-input-text::placeholder {
   color: var(--color-12);
   font-size: 18px;
 }
 
-.qrcode-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  flex-basis: 100%;
-  width: 100%;
+@keyframes input-error-vild {
+  0% {
+    border-color: var(--color-11);
+  }
+  50% {
+    border-color: transparent;
+  }
+  75% {
+    border-color: var(--color-11);
+  }
+  100% {
+    border-color: transparent;
+  }
 }
-.qrcode-img figure {
-  width: 50%;
+.main-qrcode-style {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-color: var(--color-04);
-  padding: 5%;
-  border-radius: 5px;
+  position: relative;
+  border-radius: 7px;
 }
-.qrcode-img figure img {
+.main-qrcode-style span {
+  padding: 10px 10px 10px;
+  display: block;
+  font-size: 10px;
   width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 500;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.main-qrcode-style img {
+  width: 100%;
+  padding: 10px;
 }
 
 @media (max-width: 767px) {
@@ -134,7 +154,7 @@ input.main-input-text::placeholder {
 }
 @media (min-width: 1024px) {
   .container {
-    width: 1024px;
+    width: 1000px;
   }
 }
 .header-of-page {
@@ -340,39 +360,6 @@ main section.perint-section div.background-blur {
   filter: blur(1px);
   z-index: -1;
 }
-main section.perint-section[data-counter-section="0"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="0"] .select-input-type {
-  display: block;
-}
-main section.perint-section[data-counter-section="1"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="1"] .enter-manual {
-  display: flex;
-}
-main section.perint-section[data-counter-section="1"] .qr-code-style {
-  display: flex;
-}
-main section.perint-section[data-counter-section="2"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="2"] .qr-code-style {
-  display: block;
-}
-main section.perint-section[data-counter-section="3"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="3"] .input-file {
-  display: block;
-}
-main section.perint-section[data-counter-section="4"] > section {
-  display: none;
-}
-main section.perint-section[data-counter-section="4"] .show-item {
-  display: block;
-}
 
 @media (max-width: 767px) {
   main header h1 {
@@ -389,79 +376,6 @@ main section.perint-section[data-counter-section="4"] .show-item {
   }
   main section.perint-section > section form {
     width: 100%;
-  }
-}
-.select-input-type {
-  display: block;
-}
-.select-input-type form fieldset {
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  row-gap: 10px;
-  border: none;
-}
-.select-input-type form fieldset div.inputs {
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  row-gap: 20px;
-}
-.select-input-type form fieldset label {
-  padding: 10px;
-  font-size: 30px;
-  width: 100%;
-  background-color: var(--color-05);
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 500;
-  cursor: pointer;
-}
-.select-input-type form fieldset label input[type=radio] {
-  position: absolute;
-  opacity: 0;
-}
-.select-input-type form fieldset label span {
-  width: 30px;
-  height: 30px;
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  background-color: var(--color-02);
-}
-.select-input-type form fieldset label span::after {
-  position: absolute;
-  content: "";
-  height: 50%;
-  width: 50%;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.3s;
-}
-.select-input-type form fieldset label input:checked ~ span::after {
-  background-color: var(--color-03);
-}
-.select-input-type form fieldset label input:focus ~ span {
-  box-shadow: 0px 0px 0px 4px #00b0ff;
-}
-.select-input-type form fieldset button {
-  margin-top: 20px;
-  align-self: flex-end;
-}
-
-@media (max-width: 767px) {
-  .select-input-type form fieldset label {
-    font-size: 1.5rem;
-  }
-  .select-input-type form fieldset label span {
-    width: 25px;
-    height: 25px;
   }
 }
 .enter-manual {
@@ -553,16 +467,20 @@ main section.perint-section[data-counter-section="4"] .show-item {
 .enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
   background-color: var(--color-10);
 }
+.enter-manual .qrcode-img {
+  width: 50%;
+  margin: 0 auto;
+}
+.enter-manual .qrcode-img span {
+  font-size: 1.5rem;
+}
 .enter-manual .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   flex-flow: row nowrap;
   column-gap: 10px;
   position: relative;
-}
-.enter-manual .buttons .back-button {
-  flex-basis: 100%;
 }
 .enter-manual .buttons .button-advanced,
 .enter-manual .buttons .button-export {
@@ -661,113 +579,46 @@ main section.perint-section[data-counter-section="4"] .show-item {
     height: calc(100% - 30px - 50px - 30%);
   }
 }
-.input-file form {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-}
-.input-file form .fack-input {
-  height: 60%;
-  width: 100%;
-  border: 4px dashed var(--color-05);
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.input-file form .fack-input input {
+.show-items {
   position: absolute;
+  z-index: 22;
+  background-color: var(--color-10);
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0;
-  z-index: 10;
-  cursor: pointer;
-  border-radius: 20px;
-  opacity: 0;
-}
-.input-file form .fack-input .focus-input-file {
-  position: absolute;
-  width: 98%;
-  height: 98%;
-  top: 1%;
-  left: 1%;
-  box-shadow: 0px 0px 0px 4px #00b0ff;
-  opacity: 0;
-  transition: 0.3s;
-  border-radius: 12px;
-}
-.input-file form .fack-input input:focus ~ .focus-input-file {
-  opacity: 1;
-}
-.input-file form .fack-input .icons-and-file-name {
-  width: 100%;
+  right: -100%;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: flex-start;
   align-items: center;
+  transition: 0.3s;
 }
-.input-file form .fack-input .icons-and-file-name i {
-  font-size: 70px;
-  color: var(--color-05);
+.show-items[data-clicked=true] {
+  right: 0%;
 }
-.input-file form .fack-input .icons-and-file-name i:nth-of-type(2) {
-  display: none;
-  color: var(--color-07);
+.show-items .cloes-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 20%;
 }
-.input-file form .fack-input .icons-and-file-name i:last-of-type {
-  display: none;
-  color: var(--color-06);
-}
-.input-file form .fack-input .icons-and-file-name span {
-  text-align: center;
-}
-.input-file form .fack-input .icons-and-file-name .file-name {
-  width: 60%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.input-file form .fack-input .icons-and-file-name .file-name,
-.input-file form .fack-input .icons-and-file-name .error {
-  font-size: 20px;
-  color: var(--color-02);
-  font-weight: 500;
-  display: none;
-}
-.input-file form .fack-input p {
-  font-size: 20px;
-  color: var(--color-02);
-}
-.input-file form div.buttons {
+.show-items .cloes-button button {
   width: 100%;
-  margin-top: 20px;
-  display: flex;
-  flex-flow: row-reverse nowrap;
-  justify-content: space-between;
+  background-color: var(--color-04);
 }
-.input-file form[data-changed="1"] .fack-input .icons-and-file-name i:first-of-type {
-  display: none;
+.show-items .cloes-button button i {
+  color: var(--color-10);
+  font-size: 1.5rem;
 }
-.input-file form[data-changed="1"] .fack-input .icons-and-file-name i:last-of-type {
-  display: block;
-}
-.input-file form[data-changed="1"] .fack-input .icons-and-file-name .file-name {
-  display: block;
-}
-.input-file form[data-changed="1"] .fack-input p {
-  display: none;
-}
-.input-file form[data-changed="2"] .fack-input .icons-and-file-name i:first-of-type {
-  display: none;
-}
-.input-file form[data-changed="2"] .fack-input .icons-and-file-name i:nth-of-type(2) {
-  display: block;
-}
-.input-file form[data-changed="2"] .fack-input .icons-and-file-name .error {
-  display: block;
+.show-items .items-box {
+  background-color: var(--color-02);
+  flex-basis: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  padding: 15px;
 }
 
 .qr-code-style {
@@ -820,11 +671,13 @@ main section.perint-section[data-counter-section="4"] .show-item {
 .qr-code-style form .inputs-box label.color input {
   padding-left: 30px;
 }
-.qr-code-style form .inputs-box label.color::before {
+.qr-code-style form .inputs-box label.color .input-color-box {
+  position: relative;
+}
+.qr-code-style form .inputs-box label.color .input-color-box span {
   position: absolute;
-  content: "#";
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   font-size: 20px;
   color: var(--color-13);
   height: 40px;
@@ -846,6 +699,12 @@ main section.perint-section[data-counter-section="4"] .show-item {
   padding: 10px;
   background-color: var(--color-04);
   border-radius: 10px;
+}
+.qr-code-style form .qrcode-img {
+  width: 50%;
+}
+.qr-code-style form .qrcode-img span {
+  font-size: 1.5rem;
 }
 .qr-code-style form .back-button {
   position: absolute;

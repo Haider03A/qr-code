@@ -27,8 +27,8 @@ const inputValidationNumber = (value, minValue = 0, maxValue = 1) => {
         } else {
             letters = minValue
         };
-        
         resolve(letters)
+
     })
 }
 // End public code
@@ -54,25 +54,80 @@ const qrcodeStyleButtonOpen = document.querySelector('.enter-manual .buttons .st
 const qrcodeStyleButtonClose = document.querySelector('.qr-code-style form .back-button');
 const qrcodeStyleBox = document.querySelector('.qr-code-style');
 
-const inputQrcodeValue = document.querySelector('.enter-manual form label.qr-value input');
-const inputQrcodeTitle = document.querySelector('.enter-manual form label.qr-title input');
+// Start enter manual
+const inputQrcodeDataEle = document.querySelector('.enter-manual form label.qr-value input');
+const inputQrcodeTitleEle = document.querySelector('.enter-manual form label.qr-title input');
 const inputQrcodeChecboxLook = document.querySelector('.enter-manual form label.checkbox-look input');
 const cloneValueQrcodeToQrcodeTitle = _ => {
     inputQrcodeChecboxLook.checked &&
-        (inputQrcodeTitle.value = inputQrcodeValue.value);
+        (inputQrcodeTitleEle.value = inputQrcodeDataEle.value);
 }
 inputQrcodeChecboxLook.addEventListener('click', _ => {
     if (inputQrcodeChecboxLook.checked) {
-        inputQrcodeTitle.disabled = true;
+        inputQrcodeTitleEle.disabled = true;
         cloneValueQrcodeToQrcodeTitle();
-        inputQrcodeValue.focus();
+        inputQrcodeDataEle.focus();
     } else {
-        inputQrcodeTitle.disabled = false;
-        inputQrcodeTitle.focus();
+        inputQrcodeTitleEle.disabled = false;
+        inputQrcodeTitleEle.focus();
     };
 });
-inputQrcodeValue.addEventListener('keyup', _ => cloneValueQrcodeToQrcodeTitle());
-inputQrcodeValue.addEventListener('blur', _ => cloneValueQrcodeToQrcodeTitle());
+inputQrcodeDataEle.addEventListener('keyup', _ => cloneValueQrcodeToQrcodeTitle());
+inputQrcodeDataEle.addEventListener('blur', _ => cloneValueQrcodeToQrcodeTitle());
+
+const fetchData = (url, data) => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+}
+const enterManualButtonSubmit = document.querySelector('form#enter-manual button[type=submit]');
+let allDataForm = [];
+let id = -1;
+enterManualButtonSubmit.addEventListener('click', async _ => {
+    const objData = {};
+    objData.id = ++id
+
+    // Start form vild
+    const qrcodeTitleValue = inputQrcodeTitleEle.value.trim();
+    const qrcodeDataValue = inputQrcodeDataEle.value.trim();
+    for (i = 0; i <= 7000; i++) {
+        if (i < 12) {
+            if (qrcodeTitleValue) {
+                if (qrcodeTitleValue[i] == ' ' || qrcodeTitleValue[i]) {
+                    objData.qrcodeTitle ? objData.qrcodeTitle += qrcodeTitleValue[i] : objData.qrcodeTitle = qrcodeTitleValue[i];
+                }
+            } else {
+                objData.qrcodeTitle = 0;
+            }
+        }
+
+        if (qrcodeDataValue) {
+            if (qrcodeDataValue[i] == ' ' || qrcodeDataValue[i]) {
+                objData.qrcodeData ? objData.qrcodeData += qrcodeDataValue[i] : objData.qrcodeData = qrcodeDataValue[i];
+            }
+        } else {
+            objData.qrcodeData = 0;
+        }
+    }
+    // End form vild
+    const urlPOST = 'http://localhost:3000/qrcode/upload';
+    if (objData.qrcodeData) {
+        allDataForm.push(objData)
+            const res = await fetchData(urlPOST, allDataForm);
+            const data = await res.json()
+            console.log(data);
+    } else {
+        inputQrcodeDataEle.style.animation = 'input-error-vild 1s 1';
+        setTimeout(() => {
+            inputQrcodeDataEle.style.animation = null
+        }, 1000);
+    }
+})
+// End enter manual
 
 // Start Qrcode style
 const inputsColors = document.querySelectorAll('.qr-code-style form .inputs-box label.color input');
@@ -90,10 +145,11 @@ const qrcodeStyleBackgroundColorInput = document.querySelector('.qr-code-style f
 // End qrcode style inputs elements
 
 qrcodeStyleButtonOpen.addEventListener('click', _ => showAndHaddin(qrcodeStyleBox));
-qrcodeStyleButtonClose.addEventListener('click', _ => {
-    inputValidationNumber(qrcodeStyleWidthInput.value, 20, 700).then(value => qrcodeStyleWidthInput.value = value);
-    inputValidationNumber(qrcodeStyleHeightInput.value, 20, 700).then(value => qrcodeStyleHeightInput.value = value);
-    inputValidationNumber(qrcodeStyleMarginInput.value, 0, 15).then(value => qrcodeStyleMarginInput.value = value);
+qrcodeStyleButtonClose.addEventListener('click', async _ => {
+    await inputValidationNumber(qrcodeStyleWidthInput.value, 20, 700).then(value => qrcodeStyleWidthInput.value = value);
+    await inputValidationNumber(qrcodeStyleHeightInput.value, 20, 700).then(value => qrcodeStyleHeightInput.value = value);
+    await inputValidationNumber(qrcodeStyleMarginInput.value, 0, 15).then(value => qrcodeStyleMarginInput.value = value);
+    showAndHaddin(qrcodeStyleBox);
 });
 qrcodeStyleWidthInput.addEventListener('blur', function () {
     inputValidationNumber(qrcodeStyleWidthInput.value, 20, 700).then(value => qrcodeStyleWidthInput.value = value);
@@ -107,3 +163,11 @@ qrcodeStyleMarginInput.addEventListener('blur', function () {
     inputValidationNumber(qrcodeStyleMarginInput.value, 20, 700).then(value => qrcodeStyleMarginInput.value = value);
 })
 // End Qrcode style
+
+// Start show items
+const perintItemsBox = document.querySelector('section.show-items');
+const buttonOpenItems = document.querySelector("section.enter-manual .buttons .style-and-tiem-buttons .show-items-button");
+const buttoncloseItems = document.querySelector("section.show-items .cloes-button button");
+buttonOpenItems.addEventListener('click', _ => showAndHaddin(perintItemsBox));
+buttoncloseItems.addEventListener('click', _ => showAndHaddin(perintItemsBox));
+// Ens show items
