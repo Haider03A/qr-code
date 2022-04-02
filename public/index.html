@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="./js/lib/qrcode.js"></script>
     <title>QR-Code Creater</title>
   </head>
   <body>
@@ -99,14 +100,14 @@
             <div class="main-inputs-and-submit-but">
               <label for="qr-value" class="qr-value main-label">
                 Value Qr-code:
-                <input
+                <textarea
                   id="qr-value"
                   class="main-input-text"
                   name="qrValue"
                   value=""
                   placeholder="Value of Qr"
                   required
-                />
+                ></textarea>
               </label>
               <label for="qr-title" class="qr-title main-label">
                 Title for Qr-code:
@@ -115,7 +116,7 @@
                   class="main-input-text"
                   name="qrTitle"
                   value=""
-                  placeholder="Title of Qr max 12(Option)"
+                  placeholder="Title of Qr max 30(Option)"
                 />
               </label>
               <label for="checkbox-look" class="checkbox-look main-label">
@@ -369,7 +370,7 @@
         </section>
       </section>
     </main>
-
+    
     <script src="./js/main.js"></script>
   </body>
 </html>

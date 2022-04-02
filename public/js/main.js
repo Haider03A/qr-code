@@ -55,7 +55,7 @@ const qrcodeStyleButtonClose = document.querySelector('.qr-code-style form .back
 const qrcodeStyleBox = document.querySelector('.qr-code-style');
 
 // Start enter manual
-const inputQrcodeDataEle = document.querySelector('.enter-manual form label.qr-value input');
+const inputQrcodeDataEle = document.querySelector('.enter-manual form label.qr-value textarea');
 const inputQrcodeTitleEle = document.querySelector('.enter-manual form label.qr-title input');
 const inputQrcodeChecboxLook = document.querySelector('.enter-manual form label.checkbox-look input');
 const cloneValueQrcodeToQrcodeTitle = _ => {
@@ -95,7 +95,7 @@ enterManualButtonSubmit.addEventListener('click', async _ => {
     const qrcodeTitleValue = inputQrcodeTitleEle.value.trim();
     const qrcodeDataValue = inputQrcodeDataEle.value.trim();
     for (i = 0; i <= 7000; i++) {
-        if (i < 12) {
+        if (i < 30) {
             if (qrcodeTitleValue) {
                 if (qrcodeTitleValue[i] == ' ' || qrcodeTitleValue[i]) {
                     objData.qrcodeTitle ? objData.qrcodeTitle += qrcodeTitleValue[i] : objData.qrcodeTitle = qrcodeTitleValue[i];
@@ -117,10 +117,35 @@ enterManualButtonSubmit.addEventListener('click', async _ => {
     const urlPOST = 'http://localhost:3000/qrcode/upload';
     if (objData.qrcodeData) {
         allDataForm.push(objData)
+        const options = {
+            type: 'svg',
+            color: {
+                dark: '#4959e5',
+                light: '#ffffff'
+            },
+            margin: 0,
+        }
+        const { qrcodeData, qrcodeTitle } = allDataForm[allDataForm.length - 1];
+        QRCode.toString(qrcodeData, options, (err, imgCreated) => {
+            const qrcodeBoxToAppend = document.querySelector("section.enter-manual > div.qrcode-img > div");
+            
+            if (!err) {
+                qrcodeBoxToAppend.innerHTML = imgCreated;
+                if (qrcodeTitle) {
+                    const spanTitle = document.createElement('span');
+                    const spanTitleText = document.createTextNode(qrcodeTitle);
+                    spanTitle.append(spanTitleText);
+                    qrcodeBoxToAppend.prepend(spanTitle);
+                };
+
+            } else {
+                console.log(err);
+            }
+
+        })
         try {
             const res = await fetchData(urlPOST, allDataForm);
             const data = await res.json()
-            console.log(data);
         } catch (error) {
             console.log(error);
         }

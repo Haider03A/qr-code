@@ -26,9 +26,6 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
-  min-height: 1200px;
-  height: 100vh;
-  // user-select: none;
 }
 .container {
   margin-left: auto;
@@ -65,7 +62,7 @@ label.main-label:focus-within {
   color: var(--color-04);
 }
 
-input.main-input-text {
+.main-input-text {
   display: block;
   border: none;
   height: 40px;
@@ -125,7 +122,9 @@ input.main-input-text {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
   }
-  img {
+  img,
+  svg,
+  canvas {
     width: 100%;
     padding: 10px;
   }

@@ -25,8 +25,6 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(111deg, #9198e5, #e66465);
   background-repeat: no-repeat;
-  min-height: 1200px;
-  height: 100vh;
 }
 
 .container {
@@ -67,7 +65,7 @@ label.main-label:focus-within {
   color: var(--color-04);
 }
 
-input.main-input-text {
+.main-input-text {
   display: block;
   border: none;
   height: 40px;
@@ -79,15 +77,15 @@ input.main-input-text {
   border: 3px solid transparent;
   transition: 0.3s;
 }
-input.main-input-text:disabled {
+.main-input-text:disabled {
   background-color: var(--color-01);
   color: var(--color-12);
 }
-input.main-input-text:focus {
+.main-input-text:focus {
   outline: none;
   border-color: var(--color-10);
 }
-input.main-input-text::placeholder {
+.main-input-text::placeholder {
   color: var(--color-12);
   font-size: 18px;
 }
@@ -127,7 +125,9 @@ input.main-input-text::placeholder {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
-.main-qrcode-style img {
+.main-qrcode-style img,
+.main-qrcode-style svg,
+.main-qrcode-style canvas {
   width: 100%;
   padding: 10px;
 }
@@ -393,8 +393,14 @@ main section.perint-section div.background-blur {
   align-items: center;
   gap: 10px;
 }
-.enter-manual form .main-inputs-and-submit-but label input {
+.enter-manual form .main-inputs-and-submit-but label input,
+.enter-manual form .main-inputs-and-submit-but label textarea {
   width: 100%;
+}
+.enter-manual form .main-inputs-and-submit-but label textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 40px;
 }
 .enter-manual form .main-inputs-and-submit-but label.qr-value {
   width: 100%;

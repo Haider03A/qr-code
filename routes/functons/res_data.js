@@ -4,7 +4,7 @@ const resData = async (req, res) => {
     let qrcodeDataNotVild = false;
     if (items[0]) {
 
-        items.map((item, index) => {
+        items.map((item) => {
             const qrcodeTitle = item.qrcodeTitle.toString().trim();
             const qrcodeData = item.qrcodeData.toString().trim();
             if (qrcodeTitle) {

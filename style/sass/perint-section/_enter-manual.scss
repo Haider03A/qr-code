@@ -11,8 +11,15 @@
       align-items: center;
       gap: 10px;
       label {
-        input {
+        input,
+        textarea {
           width: 100%;
+          
+        }
+        textarea {
+          max-width: 100%;
+          min-width: 100%;
+          min-height: 40px;
         }
       }
       label.qr-value {
