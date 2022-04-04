@@ -46,7 +46,7 @@
         position: relative;
         span {
           display: block;
-          height: 8px;
+          height: 7px;
           width: 100%;
           border-radius: 7px;
           background-color: var(--color-01);
@@ -77,11 +77,12 @@
         border-radius: 5px;
         overflow: hidden;
         a {
-          padding: 5px;
+          padding: 8px 5px;
           color: var(--color-01);
           transition: 0.3s;
           font-weight: 500;
           font-size: 20px;
+          display: block;
           &:hover {
             background-color: var(--color-01);
             color: var(--color-02);
@@ -121,7 +122,9 @@
         padding: 0 20px;
         li {
           a {
+            padding: 10px;
             padding-left: 15px;
+            display: block;
             color: var(--color-02);
             width: 100%;
             font-size: 1.2rem;
@@ -132,7 +135,7 @@
               position: absolute;
               top: 0px;
               left: 0;
-              width: 8px;
+              width: 7px;
               height: 100%;
               background-color: var(--color-10);
             }

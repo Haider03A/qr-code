@@ -1,3 +1,6 @@
+.icon-cloud-error {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
+}
 .icon-export-outline {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe905;');
 }
@@ -10,8 +13,8 @@
 .icon-home {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe900;');
 }
-.icon-cloud-error {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
+.icon-navigation-more {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe907;');
 }
 .icon-qrcode {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe938;');
@@ -55,7 +58,10 @@
 .icon-history {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf1da;');
 }
-.icon-navigation-more {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe907;');
+.icon-floppy-o {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c7;');
+}
+.icon-save {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c7;');
 }
 

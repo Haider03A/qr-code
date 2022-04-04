@@ -3,31 +3,38 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   row-gap: 20px;
+
   form {
     width: 80%;
+
     .main-inputs-and-submit-but {
       display: flex;
       flex-flow: row wrap;
       align-items: center;
       gap: 10px;
+
       label {
+
         input,
         textarea {
           width: 100%;
-          
         }
+
         textarea {
           max-width: 100%;
           min-width: 100%;
           min-height: 40px;
         }
       }
+
       label.qr-value {
         width: 100%;
       }
+
       label.qr-title {
         width: 75%;
       }
+
       label.checkbox-look {
         overflow: hidden;
         width: fit-content;
@@ -36,11 +43,13 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
+
         input {
           cursor: pointer;
           position: absolute;
           opacity: 0;
         }
+
         span {
           display: block;
           background-color: var(--color-04);
@@ -49,6 +58,7 @@
           border-radius: 5px;
           position: relative;
           overflow: hidden;
+
           &::before {
             position: absolute;
             content: "";
@@ -58,22 +68,26 @@
             height: 50%;
             border-radius: 5px;
             transform: translate(-50%, -50%);
-            transition: .3s;
+            transition: 0.3s;
             opacity: 1;
           }
         }
-        input:checked ~ span::before {
-          background-color: var(--color-13  );
+
+        input:checked~span::before {
+          background-color: var(--color-13);
         }
-        input:focus ~ span {
+
+        input:focus~span {
           border: 2px solid var(--color-10);
         }
       }
+
       label.label-number-items {
         display: flex;
         align-items: center;
         column-gap: 5px;
         flex-basis: 100%;
+
         span {
           display: inline-block;
           background-color: var(--color-01);
@@ -84,54 +98,72 @@
           overflow-x: hidden;
         }
       }
+
       .button-submit {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         margin-top: 20px;
+
         button[type="submit"] {
           background-color: var(--color-10);
         }
       }
     }
   }
+
   .qrcode-img {
     width: 50%;
     margin: 0 auto;
+
     span {
       font-size: 1.5rem;
     }
   }
+
   .buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-flow: row nowrap;
-    column-gap: 10px;
     position: relative;
+    column-gap: 2px;
+
     .button-advanced,
-    .button-export {
-      background-color: var(--color-04);
+    .button-export,
+    .save-qrcode {
+      background-color: var(--color-01);
       position: relative;
+
+      &:hover {
+        background-color: var(--color-04);
+        i {
+          color: var(--color-02);
+        }
+      }
+
       i {
-        color: var(--color-13);
+        color: var(--color-02);
         font-size: 1.5rem;
         pointer-events: none;
       }
-      &::before {
+
+      &:not(.save-qrcode)::before {
         content: "";
         position: absolute;
         top: 0px;
         left: calc(50% - 10px);
-        transition: .3s;
+        transition: 0.3s;
         z-index: -1;
         border: 10px solid transparent;
         border-bottom-color: var(--color-04);
       }
+
       &[data-clicked="true"]::before {
         top: -20px;
       }
     }
+
     .style-and-tiem-buttons,
     .exports-buttons {
       position: absolute;
@@ -149,15 +181,17 @@
       border-radius: 4px;
       transition: 0.3s;
       background-color: var(--color-04);
+
       h1 {
         padding: 15px 5px;
         width: 100%;
         font-size: 100%;
-        color: var(--color-02); 
+        color: var(--color-02);
         border-bottom: 2px solid var(--color-14);
         font-weight: 700;
         text-align: center;
       }
+
       button {
         transition: 0.3s;
         text-align: start;
@@ -169,6 +203,7 @@
         padding-left: 20px;
         position: relative;
         overflow: hidden;
+
         &::before {
           content: "";
           position: absolute;
@@ -178,6 +213,7 @@
           height: 100%;
           background-color: var(--color-10);
         }
+
         &:hover {
           background-color: var(--color-01);
           color: var(--color-10);
@@ -186,8 +222,10 @@
       }
     }
 
-    .button-advanced[data-clicked="true"] ~ .style-and-tiem-buttons,
-    .button-export[data-clicked="true"] ~ .exports-buttons {
+
+
+    .button-advanced[data-clicked="true"]~.style-and-tiem-buttons,
+    .button-export[data-clicked="true"]~.exports-buttons {
       height: 300px;
     }
   }
@@ -196,15 +234,21 @@
 @media (max-width: 767px) {
   .enter-manual {
     form {
-
       .main-inputs-and-submit-but {
         height: 30%;
       }
-      .buttons {
-        padding: 20px 0 0 0;
-        height: calc(100% - 30px - 50px - 30%);
+    }
+
+    .qrcode-img {
+      width: 60%;
+    }
+
+    .buttons {
+
+      .style-and-tiem-buttons,
+      .exports-buttons {
+        width: 80%;
       }
     }
   }
 }
-

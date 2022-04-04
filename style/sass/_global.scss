@@ -13,6 +13,7 @@
   --color-12: #37373750;
   --color-13: #536664;
   --color-14: #00000021;
+  --color-15: #f8f9fa;
 }
 html {
 }
@@ -24,7 +25,9 @@ html {
 body {
   // font-family: "Rajdhani", sans-serif;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(111deg, #9198e5, #e66465);
+  // background: linear-gradient(111deg, #9198e5, #e66465);
+  background: linear-gradient(111deg, #9198e5, #240a0a);
+  // background: linear-gradient(111deg, #d9bc65, #e91e63);
   background-repeat: no-repeat;
 }
 .container {

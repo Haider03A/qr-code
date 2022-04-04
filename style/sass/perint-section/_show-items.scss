@@ -1,7 +1,7 @@
 .show-items {
   position: absolute;
   z-index: 22;
-  background-color: var(--color-10);
+  background: linear-gradient(296deg, #ffa726, #2196f3);
   height: 100%;
   width: 100%;
   top: 0;
@@ -29,7 +29,7 @@
     }
   }
   .items-box {
-    background-color: var(--color-02);
+    
     flex-basis: 100%;
     width: 100%;
     overflow-y: scroll;

@@ -5,7 +5,7 @@
   transition: 0.3s;
   min-height: 100%;
   width: 100%;
-  background-color: var(--color-10);
+  background: linear-gradient(110deg, #2196f3, #ff5722);
   &[data-clicked="true"] {
     top: 0;
     right: 0;

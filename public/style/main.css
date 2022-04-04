@@ -13,6 +13,7 @@
   --color-12: #37373750;
   --color-13: #536664;
   --color-14: #00000021;
+  --color-15: #f8f9fa;
 }
 
 * {
@@ -23,7 +24,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(111deg, #9198e5, #e66465);
+  background: linear-gradient(111deg, #9198e5, #240a0a);
   background-repeat: no-repeat;
 }
 
@@ -207,7 +208,7 @@ label.main-label:focus-within {
 }
 .header-of-page nav .button-berger-icon .icon-box span {
   display: block;
-  height: 8px;
+  height: 7px;
   width: 100%;
   border-radius: 7px;
   background-color: var(--color-01);
@@ -233,11 +234,12 @@ label.main-label:focus-within {
   overflow: hidden;
 }
 .header-of-page nav ul li a {
-  padding: 5px;
+  padding: 8px 5px;
   color: var(--color-01);
   transition: 0.3s;
   font-weight: 500;
   font-size: 20px;
+  display: block;
 }
 .header-of-page nav ul li a:hover {
   background-color: var(--color-01);
@@ -274,7 +276,9 @@ label.main-label:focus-within {
     padding: 0 20px;
   }
   .header-of-page nav ul li a {
+    padding: 10px;
     padding-left: 15px;
+    display: block;
     color: var(--color-02);
     width: 100%;
     font-size: 1.2rem;
@@ -286,7 +290,7 @@ label.main-label:focus-within {
     position: absolute;
     top: 0px;
     left: 0;
-    width: 8px;
+    width: 7px;
     height: 100%;
     background-color: var(--color-10);
   }
@@ -485,22 +489,35 @@ main section.perint-section div.background-blur {
   justify-content: flex-end;
   align-items: center;
   flex-flow: row nowrap;
-  column-gap: 10px;
   position: relative;
+  column-gap: 2px;
 }
 .enter-manual .buttons .button-advanced,
-.enter-manual .buttons .button-export {
-  background-color: var(--color-04);
+.enter-manual .buttons .button-export,
+.enter-manual .buttons .save-qrcode {
+  background-color: var(--color-01);
   position: relative;
 }
+.enter-manual .buttons .button-advanced:hover,
+.enter-manual .buttons .button-export:hover,
+.enter-manual .buttons .save-qrcode:hover {
+  background-color: var(--color-04);
+}
+.enter-manual .buttons .button-advanced:hover i,
+.enter-manual .buttons .button-export:hover i,
+.enter-manual .buttons .save-qrcode:hover i {
+  color: var(--color-02);
+}
 .enter-manual .buttons .button-advanced i,
-.enter-manual .buttons .button-export i {
-  color: var(--color-13);
+.enter-manual .buttons .button-export i,
+.enter-manual .buttons .save-qrcode i {
+  color: var(--color-02);
   font-size: 1.5rem;
   pointer-events: none;
 }
-.enter-manual .buttons .button-advanced::before,
-.enter-manual .buttons .button-export::before {
+.enter-manual .buttons .button-advanced:not(.save-qrcode)::before,
+.enter-manual .buttons .button-export:not(.save-qrcode)::before,
+.enter-manual .buttons .save-qrcode:not(.save-qrcode)::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -511,7 +528,8 @@ main section.perint-section div.background-blur {
   border-bottom-color: var(--color-04);
 }
 .enter-manual .buttons .button-advanced[data-clicked=true]::before,
-.enter-manual .buttons .button-export[data-clicked=true]::before {
+.enter-manual .buttons .button-export[data-clicked=true]::before,
+.enter-manual .buttons .save-qrcode[data-clicked=true]::before {
   top: -20px;
 }
 .enter-manual .buttons .style-and-tiem-buttons,
@@ -580,15 +598,18 @@ main section.perint-section div.background-blur {
   .enter-manual form .main-inputs-and-submit-but {
     height: 30%;
   }
-  .enter-manual form .buttons {
-    padding: 20px 0 0 0;
-    height: calc(100% - 30px - 50px - 30%);
+  .enter-manual .qrcode-img {
+    width: 60%;
+  }
+  .enter-manual .buttons .style-and-tiem-buttons,
+.enter-manual .buttons .exports-buttons {
+    width: 80%;
   }
 }
 .show-items {
   position: absolute;
   z-index: 22;
-  background-color: var(--color-10);
+  background: linear-gradient(296deg, #ffa726, #2196f3);
   height: 100%;
   width: 100%;
   top: 0;
@@ -617,7 +638,6 @@ main section.perint-section div.background-blur {
   font-size: 1.5rem;
 }
 .show-items .items-box {
-  background-color: var(--color-02);
   flex-basis: 100%;
   width: 100%;
   overflow-y: scroll;
@@ -634,7 +654,7 @@ main section.perint-section div.background-blur {
   transition: 0.3s;
   min-height: 100%;
   width: 100%;
-  background-color: var(--color-10);
+  background: linear-gradient(110deg, #2196f3, #ff5722);
 }
 .qr-code-style[data-clicked=true] {
   top: 0;
@@ -734,6 +754,9 @@ main section.perint-section div.background-blur {
   .qr-code-style form .inputs-box label {
     width: calc(50% - 20px);
   }
+}
+footer {
+  height: 300px;
 }
 
 /*# sourceMappingURL=main.css.map */
