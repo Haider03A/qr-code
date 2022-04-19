@@ -1,4 +1,16 @@
+// WIFI:S:Hayder Mi;T:WPa;P:asdzaed3612;H:false;;
 // Start public code
+const qrcodeValuesDefault = {
+    data: 'Hi ****__4x',
+    title: 'MrLAG'
+}
+let vlauesFormsToGenerate = [];
+let colors = {
+    color: '#1B1A17',
+    backgroundColor: '#F0A500',
+    titleColor: '#1B1A17'
+};
+
 const buttons = document.querySelectorAll('button')
 buttons.forEach(but => but.addEventListener('click', e => e.preventDefault()))
 
@@ -54,10 +66,17 @@ const qrcodeStyleButtonOpen = document.querySelector('.enter-manual .buttons .st
 const qrcodeStyleButtonClose = document.querySelector('.qr-code-style form .back-button');
 const qrcodeStyleBox = document.querySelector('.qr-code-style');
 
-// Start enter manual
 const inputQrcodeDataEle = document.querySelector('.enter-manual form label.qr-value textarea');
 const inputQrcodeTitleEle = document.querySelector('.enter-manual form label.qr-title input');
 const inputQrcodeChecboxLook = document.querySelector('.enter-manual form label.checkbox-look input');
+const enterManualButtonSubmit = document.querySelector('form#enter-manual button[type=submit]');
+const feakQrcodeBoxMainZoon = document.querySelector("section.enter-manual > div.qrcode-img > div");
+const inputsColors = document.querySelectorAll('.qr-code-style form .inputs-box label.color input');
+const feakQrcodeBoxStyleZoon = document.querySelector("section.qr-code-style form > div.qrcode-img > div")
+
+// Start enter manual
+
+// Start on click checkbox
 const cloneValueQrcodeToQrcodeTitle = _ => {
     inputQrcodeChecboxLook.checked &&
         (inputQrcodeTitleEle.value = inputQrcodeDataEle.value);
@@ -74,22 +93,13 @@ inputQrcodeChecboxLook.addEventListener('click', _ => {
 });
 inputQrcodeDataEle.addEventListener('keyup', _ => cloneValueQrcodeToQrcodeTitle());
 inputQrcodeDataEle.addEventListener('blur', _ => cloneValueQrcodeToQrcodeTitle());
+// End on click checkbox
 
-const fetchData = (url, data) => {
-    return fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-}
-
-const enterManualButtonSubmit = document.querySelector('form#enter-manual button[type=submit]');
-
-const vildFromInputs = (callBackValuesAndStatus) => {
-    const qrcodeDataValue = inputQrcodeDataEle.value.trim().toString();
-    const qrcodeTitleValue = inputQrcodeTitleEle.value.trim().toString();
+const vildFromInputs = (qrcodeData, qrcodeTitle, callBackValuesAndStatus) => {
+    const qrcodeDataNotVild = qrcodeData.toString();
+    const qrcodeTitleNotVild = qrcodeTitle.toString();
+    const qrcodeDataValue = qrcodeDataNotVild.trim();
+    const qrcodeTitleValue = qrcodeTitleNotVild.trim();
     let status = {
         qrcodeDataStatus: false,
         qrcodeTitleStatus: false
@@ -113,28 +123,41 @@ const vildFromInputs = (callBackValuesAndStatus) => {
     callBackValuesAndStatus(valuesForms, status);
 }
 
-const generateQrcodeAndAppend = (qrcodeData, qrcodeTitle = false,  qrcodeBoxToAppend, callbackImgCreated, optionsQrcode = false) => {
+const generateQrcodeAndAppend = (qrcodeData, qrcodeTitle = false, qrcodeBoxToAppend, callbackImgCreated = false, optionsQrcode = false, colors = false) => {
     const optionsDefault = {
         type: 'svg',
         color: {
-            dark: '#4959e5',
-            light: '#ffffff'
+            dark: colors.color || '#000000',
+            light: '#240a0a00',
         },
         margin: 0,
         errorCorrectionLevel: 'H',
     }
-    QRCode.toString(qrcodeData, optionsDefault, (err, imgCreated) => { 
-        callbackImgCreated(imgCreated, err);
+    QRCode.toString(qrcodeData, optionsQrcode || optionsDefault, (err, imgCreated) => {
+        callbackImgCreated &&
+            callbackImgCreated(imgCreated, err);
+
+        qrcodeBoxToAppend.innerHTML = imgCreated;
+        qrcodeBoxToAppend.style.backgroundColor = colors.backgroundColor || '#240a0a00';
+        if (qrcodeTitle) {
+            const spanTitle = document.createElement('span');
+            const spanTitleText = document.createTextNode(qrcodeTitle);
+            spanTitle.style.color = colors.titleColor || '#000000';
+            spanTitle.append(spanTitleText);
+            qrcodeBoxToAppend.prepend(spanTitle);
+        };
     })
 }
 
-let vlauesFormsToGenerate = [];
+const inputNotVildBorderErr = ele => {
+    ele.style.animation = 'input-error-vild 1s 1';
+    setTimeout(() => {
+        ele.style.animation = null
+    }, 1000);
+}
 
-enterManualButtonSubmit.addEventListener('click', async _ => {
-
-    
-    
-    vildFromInputs((vlaues, status) => {
+const generateQrcodeFun = (qrcodeData, qrcodeTitle, qrcodeBox, colors, ...eleInputErr) => {
+    vildFromInputs(qrcodeData, qrcodeTitle, (vlaues, status) => {
         const { qrcodeDataValue, qrcodeTitleValue } = vlaues;
         const { qrcodeDataStatus, qrcodeTitleStatus } = status;
         const dataObj = {}
@@ -143,79 +166,65 @@ enterManualButtonSubmit.addEventListener('click', async _ => {
             dataObj.status = { qrcodeDataStatus, qrcodeTitleStatus }
             vlauesFormsToGenerate.push(dataObj)
         }
-        
-        if (qrcodeDataStatus && qrcodeTitleStatus) {
-            generateQrcodeAndAppend(qrcodeDataValue, 0, 0, (imgCreated, err) => { 
-                console.log(imgCreated, err);
-            })
-            console.log(vlauesFormsToGenerate);
-        } else {
 
+        if (qrcodeDataStatus && qrcodeTitleStatus) {
+            generateQrcodeAndAppend(qrcodeDataValue, qrcodeTitleValue, qrcodeBox, false, false, colors);
+        } else {
+            if (!eleInputErr) {
+                qrcodeDataStatus ||
+                    inputNotVildBorderErr(eleInputErr[0]);
+                qrcodeTitleStatus ||
+                    inputNotVildBorderErr(eleInputErr[1]);
+            }
         }
     });
+}
 
-    
+window.addEventListener('load', _ => {
+    generateQrcodeFun(qrcodeValuesDefault.data, qrcodeValuesDefault.title, feakQrcodeBoxMainZoon, colors);
+    generateQrcodeFun(qrcodeValuesDefault.data, qrcodeValuesDefault.title, feakQrcodeBoxStyleZoon, colors);
+    inputsColors[0].value = colors.color;
+    inputsColors[1].value = colors.backgroundColor;
+    inputsColors[2].vlaue = colors.titleColor;
+})
 
-    // if (objData.qrcodeData) {
-
-
-    //     const { qrcodeData, qrcodeTitle } = allDataForm[allDataForm.length - 1];
-    //     QRCode.toString(qrcodeData, options, (err, imgCreated) => {
-
-    //         const qrcodeBoxToAppend = document.querySelector("section.enter-manual > div.qrcode-img > div");
-
-    //         if (!err) {
-    //             qrcodeBoxToAppend.innerHTML = imgCreated;
-    //             if (qrcodeTitle) {
-    //                 const spanTitle = document.createElement('span');
-    //                 const spanTitleText = document.createTextNode(qrcodeTitle);
-    //                 spanTitle.append(spanTitleText);
-    //                 qrcodeBoxToAppend.prepend(spanTitle);
-    //             };
-
-    //         } else {
-    //             console.log(err);
-    //         }
-
-    //     })
-    // } else {
-    //     inputQrcodeDataEle.style.animation = 'input-error-vild 1s 1';
-    //     setTimeout(() => {
-    //         inputQrcodeDataEle.style.animation = null
-    //     }, 1000);
-    // }
-
+enterManualButtonSubmit.addEventListener('click', _ => {
+    generateQrcodeFun(inputQrcodeDataEle.value, inputQrcodeTitleEle.value, feakQrcodeBoxMainZoon, colors, inputQrcodeDataEle, inputQrcodeTitleEle);
 })
 // End enter manual
 
 // Start Qrcode style
-const inputsColors = document.querySelectorAll('.qr-code-style form .inputs-box label.color input');
 inputsColors.forEach(input => {
     input.addEventListener('keyup', _ => input.value = input.value.toUpperCase())
     input.addEventListener('blur', _ => input.value = input.value.toUpperCase())
+    input.addEventListener('change', _ => {
+        const [color, backgroundColor, titleColor] = inputsColors;
+        colors.color = color.value;
+        colors.backgroundColor = backgroundColor.value;
+        colors.titleColor = titleColor.value;
+        generateQrcodeFun(qrcodeValuesDefault.data, qrcodeValuesDefault.title, feakQrcodeBoxMainZoon, colors);
+        generateQrcodeFun(qrcodeValuesDefault.data, qrcodeValuesDefault.title, feakQrcodeBoxStyleZoon, colors);
+        generateQrcodeFun(inputQrcodeDataEle.value, inputQrcodeTitleEle.value, feakQrcodeBoxMainZoon, colors, inputQrcodeDataEle, inputQrcodeTitleEle);
+    })
 })
 
+
+
+
+
+
+
+
+
+
 // Start qrcode style inputs elements 
-const qrcodeStyleWidthInput = document.querySelector('.qr-code-style form .qr-style-width input');
-const qrcodeStyleHeightInput = document.querySelector('.qr-code-style form .qr-style-height input');
 const qrcodeStyleMarginInput = document.querySelector('.qr-code-style form .qr-style-margin input');
-const qrcodeStyleColorInput = document.querySelector('.qr-code-style form .qr-style-color input');
-const qrcodeStyleBackgroundColorInput = document.querySelector('.qr-code-style form .qr-style-background input');
 // End qrcode style inputs elements
 
 qrcodeStyleButtonOpen.addEventListener('click', _ => showAndHaddin(qrcodeStyleBox));
 qrcodeStyleButtonClose.addEventListener('click', async _ => {
-    await inputValidationNumber(qrcodeStyleWidthInput.value, 20, 700).then(value => qrcodeStyleWidthInput.value = value);
-    await inputValidationNumber(qrcodeStyleHeightInput.value, 20, 700).then(value => qrcodeStyleHeightInput.value = value);
     await inputValidationNumber(qrcodeStyleMarginInput.value, 0, 15).then(value => qrcodeStyleMarginInput.value = value);
     showAndHaddin(qrcodeStyleBox);
-});
-qrcodeStyleWidthInput.addEventListener('blur', function () {
-    inputValidationNumber(qrcodeStyleWidthInput.value, 20, 700).then(value => qrcodeStyleWidthInput.value = value);
-});
-
-qrcodeStyleHeightInput.addEventListener('blur', function () {
-    inputValidationNumber(qrcodeStyleHeightInput.value, 20, 700).then(value => qrcodeStyleHeightInput.value = value);
 });
 
 qrcodeStyleMarginInput.addEventListener('blur', function () {

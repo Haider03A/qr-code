@@ -143,7 +143,7 @@
 
           <div class="qrcode-img">
             <div class="main-qrcode-style">
-              <span>MrLAG03</span>
+              <span>MrLAG</span>
               <img src="./images/qrcode.svg" alt="qrcode" />
             </div>
           </div>
@@ -288,34 +288,6 @@
           <form>
             <legend class="title-section">Qr-code style</legend>
             <div class="inputs-box">
-              <label for="qr-style-width" class="qr-style-width main-label">
-                Width:
-                <input
-                  id="qr-style-width"
-                  type="number"
-                  min="20"
-                  max="700"
-                  class="main-input-text"
-                  value="100"
-                  data-error="0"
-                  required
-                  placeholder="20 - 700 px"
-                />
-              </label>
-              <label for="qr-style-height" class="qr-style-height main-label">
-                Height:
-                <input
-                  id="qr-style-height"
-                  type="number"
-                  min="20"
-                  max="700"
-                  class="main-input-text"
-                  value="100"
-                  data-error="0"
-                  required
-                  placeholder="20 - 700 px"
-                />
-              </label>
               <label for="qr-style-margin" class="qr-style-margin main-label">
                 Margin:
                 <input
@@ -332,12 +304,12 @@
               <label class="qr-style-color color main-label" for="qr-style-color">
                 Color:
                 <div class="input-color-box">
-                  <span>#</span>
+                  <!-- <span>#</span> -->
                 <input
                   id="qr-style-color"
-                  type="text"
+                  type="color"
                   class="main-input-text"
-                  value="000"
+                  value="#000000"
                   data-error="0"
                 />
                 </div>
@@ -349,12 +321,26 @@
               >
                 Background color:
                 <div class="input-color-box">
-                  <span>#</span>
+                  <!-- <span>#</span> -->
                 <input
                   id="qr-style-background"
-                  type="text"
+                  type="color"
                   class="main-input-text"
-                  value="FFF"
+                  value="#FFFFFF"
+                  data-error="0"
+                />
+                </div>
+                
+              </label>
+              <label class="qr-style-title-color color main-label" for="qr-style-title-color">
+                Title Color:
+                <div class="input-color-box">
+                  <!-- <span>#</span> -->
+                <input
+                  id="qr-style-title-color"
+                  type="color"
+                  class="main-input-text"
+                  value="#000000"
                   data-error="0"
                 />
                 </div>

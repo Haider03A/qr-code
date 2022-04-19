@@ -27,9 +27,11 @@
       padding: 0 30px;
       flex-grow: 1;
       label {
-        width: 20%;
-        min-width: 100px;
+        min-width: fit-content;
         position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
         input {
           width: 100%;
           transition: .3s;
@@ -42,9 +44,6 @@
           }
         }
         &.color {
-          input {
-            padding-left: 30px;
-          }
         }
         &.color .input-color-box {
           position: relative;
