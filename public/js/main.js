@@ -217,7 +217,6 @@ inputsColors.forEach(input => {
 
 qrcodeStyleButtonOpen.addEventListener('click', _ => showAndHaddin(qrcodeStyleBox));
 qrcodeStyleButtonClose.addEventListener('click', async _ => {
-    await inputValidationNumber(qrcodeStyleMarginInput.value, 0, 15).then(value => qrcodeStyleMarginInput.value = value);
     showAndHaddin(qrcodeStyleBox);
 });
 // End Qrcode style
