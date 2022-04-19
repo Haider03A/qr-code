@@ -73,6 +73,7 @@ const enterManualButtonSubmit = document.querySelector('form#enter-manual button
 const feakQrcodeBoxMainZoon = document.querySelector("section.enter-manual > div.qrcode-img > div");
 const inputsColors = document.querySelectorAll('.qr-code-style form .inputs-box label.color input');
 const feakQrcodeBoxStyleZoon = document.querySelector("section.qr-code-style form > div.qrcode-img > div")
+const buttonSaveQrcode = document.querySelector("section.enter-manual > div.buttons > button.save-qrcode.main-button")
 
 // Start enter manual
 
@@ -130,7 +131,7 @@ const generateQrcodeAndAppend = (qrcodeData, qrcodeTitle = false, qrcodeBoxToApp
             dark: colors.color || '#000000',
             light: '#240a0a00',
         },
-        margin: 0,
+        margin: 1,
         errorCorrectionLevel: 'H',
     }
     QRCode.toString(qrcodeData, optionsQrcode || optionsDefault, (err, imgCreated) => {
@@ -191,6 +192,18 @@ window.addEventListener('load', _ => {
 enterManualButtonSubmit.addEventListener('click', _ => {
     generateQrcodeFun(inputQrcodeDataEle.value, inputQrcodeTitleEle.value, feakQrcodeBoxMainZoon, colors, inputQrcodeDataEle, inputQrcodeTitleEle);
 })
+
+buttonSaveQrcode.addEventListener('click', _ => {
+    html2canvas(feakQrcodeBoxMainZoon).then(canvas => {
+        const imgDataSRC = canvas.toDataURL('image/png');
+        console.log(imgDataSRC);
+        const link = document.createElement('a');
+        link.href = imgDataSRC;
+        link.download = 'qrcode.png';
+        link.click();
+        link.remove()
+    });
+});
 // End enter manual
 
 // Start Qrcode style

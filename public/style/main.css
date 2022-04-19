@@ -130,7 +130,6 @@ label.main-label:focus-within {
 .main-qrcode-style svg,
 .main-qrcode-style canvas {
   width: 100%;
-  padding: 10px;
 }
 
 @media (max-width: 767px) {
