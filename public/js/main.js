@@ -57,11 +57,6 @@ const styleAndTiemButtons = document.querySelector('.enter-manual .buttons .styl
 document.addEventListener('click', e => onClickDocumentHaddin(e, buttonAdvanced, buttonAdvanced, styleAndTiemButtons));
 buttonAdvanced.addEventListener('click', _ => showAndHaddin(buttonAdvanced))
 
-const buttonExport = document.querySelector('.button-export');
-const exportButtons = document.querySelector('.enter-manual .buttons .exports-buttons');
-document.addEventListener('click', e => onClickDocumentHaddin(e, buttonExport, buttonExport, exportButtons));
-buttonExport.addEventListener('click', _ => showAndHaddin(buttonExport));
-
 const qrcodeStyleButtonOpen = document.querySelector('.enter-manual .buttons .style-and-tiem-buttons .style-button');
 const qrcodeStyleButtonClose = document.querySelector('.qr-code-style form .back-button');
 const qrcodeStyleBox = document.querySelector('.qr-code-style');
@@ -196,10 +191,9 @@ enterManualButtonSubmit.addEventListener('click', _ => {
 buttonSaveQrcode.addEventListener('click', _ => {
     html2canvas(feakQrcodeBoxMainZoon).then(canvas => {
         const imgDataSRC = canvas.toDataURL('image/png');
-        console.log(imgDataSRC);
         const link = document.createElement('a');
         link.href = imgDataSRC;
-        link.download = 'qrcode.png';
+        link.download = 'qrcode-mrlag.png';
         link.click();
         link.remove()
     });
@@ -221,34 +215,9 @@ inputsColors.forEach(input => {
     })
 })
 
-
-
-
-
-
-
-
-
-
-// Start qrcode style inputs elements 
-const qrcodeStyleMarginInput = document.querySelector('.qr-code-style form .qr-style-margin input');
-// End qrcode style inputs elements
-
 qrcodeStyleButtonOpen.addEventListener('click', _ => showAndHaddin(qrcodeStyleBox));
 qrcodeStyleButtonClose.addEventListener('click', async _ => {
     await inputValidationNumber(qrcodeStyleMarginInput.value, 0, 15).then(value => qrcodeStyleMarginInput.value = value);
     showAndHaddin(qrcodeStyleBox);
 });
-
-qrcodeStyleMarginInput.addEventListener('blur', function () {
-    inputValidationNumber(qrcodeStyleMarginInput.value, 20, 700).then(value => qrcodeStyleMarginInput.value = value);
-})
 // End Qrcode style
-
-// Start show items
-const perintItemsBox = document.querySelector('section.show-items');
-const buttonOpenItems = document.querySelector("section.enter-manual .buttons .style-and-tiem-buttons .show-items-button");
-const buttoncloseItems = document.querySelector("section.show-items .cloes-button button");
-buttonOpenItems.addEventListener('click', _ => showAndHaddin(perintItemsBox));
-buttoncloseItems.addEventListener('click', _ => showAndHaddin(perintItemsBox));
-// Ens show items
