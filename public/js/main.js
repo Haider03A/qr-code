@@ -84,77 +84,107 @@ const fetchData = (url, data) => {
         body: JSON.stringify(data)
     })
 }
+
 const enterManualButtonSubmit = document.querySelector('form#enter-manual button[type=submit]');
-let allDataForm = [];
-let id = -1;
-enterManualButtonSubmit.addEventListener('click', async _ => {
-    const objData = {};
-    objData.id = ++id
 
-    // Start form vild
-    const qrcodeTitleValue = inputQrcodeTitleEle.value.trim();
-    const qrcodeDataValue = inputQrcodeDataEle.value.trim();
-    for (i = 0; i <= 7000; i++) {
-        if (i < 30) {
-            if (qrcodeTitleValue) {
-                if (qrcodeTitleValue[i] == ' ' || qrcodeTitleValue[i]) {
-                    objData.qrcodeTitle ? objData.qrcodeTitle += qrcodeTitleValue[i] : objData.qrcodeTitle = qrcodeTitleValue[i];
-                }
-            } else {
-                objData.qrcodeTitle = 0;
-            }
-        }
-
-        if (qrcodeDataValue) {
-            if (qrcodeDataValue[i] == ' ' || qrcodeDataValue[i]) {
-                objData.qrcodeData ? objData.qrcodeData += qrcodeDataValue[i] : objData.qrcodeData = qrcodeDataValue[i];
-            }
-        } else {
-            objData.qrcodeData = 0;
-        }
+const vildFromInputs = (callBackValuesAndStatus) => {
+    const qrcodeDataValue = inputQrcodeDataEle.value.trim().toString();
+    const qrcodeTitleValue = inputQrcodeTitleEle.value.trim().toString();
+    let status = {
+        qrcodeDataStatus: false,
+        qrcodeTitleStatus: false
     }
-    // End form vild
-    const urlPOST = 'http://localhost:3000/qrcode/upload';
-    if (objData.qrcodeData) {
-        allDataForm.push(objData)
-        const options = {
-            type: 'svg',
-            color: {
-                dark: '#4959e5',
-                light: '#ffffff'
-            },
-            margin: 0,
-        }
-        const { qrcodeData, qrcodeTitle } = allDataForm[allDataForm.length - 1];
-        QRCode.toString(qrcodeData, options, (err, imgCreated) => {
-            const qrcodeBoxToAppend = document.querySelector("section.enter-manual > div.qrcode-img > div");
-            
-            if (!err) {
-                qrcodeBoxToAppend.innerHTML = imgCreated;
-                if (qrcodeTitle) {
-                    const spanTitle = document.createElement('span');
-                    const spanTitleText = document.createTextNode(qrcodeTitle);
-                    spanTitle.append(spanTitleText);
-                    qrcodeBoxToAppend.prepend(spanTitle);
-                };
-
-            } else {
-                console.log(err);
-            }
-
-        })
-        try {
-            const res = await fetchData(urlPOST, allDataForm);
-            const data = await res.json()
-        } catch (error) {
-            console.log(error);
-        }
+    let valuesForms = {}
+    if (qrcodeDataValue.length <= 1273 && qrcodeDataValue != '') {
+        status.qrcodeDataStatus = true
     } else {
-        inputQrcodeDataEle.style.animation = 'input-error-vild 1s 1';
-        setTimeout(() => {
-            inputQrcodeDataEle.style.animation = null
-        }, 1000);
+        status.qrcodeDataStatus = false
     }
+    if (qrcodeTitleValue.length <= 30 && qrcodeTitleValue !== ' ') {
+        status.qrcodeTitleStatus = true
+    } else {
+        status.qrcodeTitleStatus = false
+    }
+
+    if (status.qrcodeDataStatus && status.qrcodeTitleStatus) {
+        valuesForms.qrcodeDataValue = qrcodeDataValue;
+        valuesForms.qrcodeTitleValue = qrcodeTitleValue;
+    }
+    callBackValuesAndStatus(valuesForms, status);
+}
+
+const generateQrcodeAndAppend = (qrcodeData, qrcodeTitle = false,  qrcodeBoxToAppend, callbackImgCreated, optionsQrcode = false) => {
+    const optionsDefault = {
+        type: 'svg',
+        color: {
+            dark: '#4959e5',
+            light: '#ffffff'
+        },
+        margin: 0,
+        errorCorrectionLevel: 'H',
+    }
+    QRCode.toString(qrcodeData, optionsDefault, (err, imgCreated) => { 
+        callbackImgCreated(imgCreated, err);
+    })
+}
+
+let vlauesFormsToGenerate = [];
+
+enterManualButtonSubmit.addEventListener('click', async _ => {
+
+    
+    
+    vildFromInputs((vlaues, status) => {
+        const { qrcodeDataValue, qrcodeTitleValue } = vlaues;
+        const { qrcodeDataStatus, qrcodeTitleStatus } = status;
+        const dataObj = {}
+        if (qrcodeDataStatus && qrcodeTitleStatus) {
+            dataObj.data = { qrcodeDataValue, qrcodeTitleValue }
+            dataObj.status = { qrcodeDataStatus, qrcodeTitleStatus }
+            vlauesFormsToGenerate.push(dataObj)
+        }
+        
+        if (qrcodeDataStatus && qrcodeTitleStatus) {
+            generateQrcodeAndAppend(qrcodeDataValue, 0, 0, (imgCreated, err) => { 
+                console.log(imgCreated, err);
+            })
+            console.log(vlauesFormsToGenerate);
+        } else {
+
+        }
+    });
+
+    
+
+    // if (objData.qrcodeData) {
+
+
+    //     const { qrcodeData, qrcodeTitle } = allDataForm[allDataForm.length - 1];
+    //     QRCode.toString(qrcodeData, options, (err, imgCreated) => {
+
+    //         const qrcodeBoxToAppend = document.querySelector("section.enter-manual > div.qrcode-img > div");
+
+    //         if (!err) {
+    //             qrcodeBoxToAppend.innerHTML = imgCreated;
+    //             if (qrcodeTitle) {
+    //                 const spanTitle = document.createElement('span');
+    //                 const spanTitleText = document.createTextNode(qrcodeTitle);
+    //                 spanTitle.append(spanTitleText);
+    //                 qrcodeBoxToAppend.prepend(spanTitle);
+    //             };
+
+    //         } else {
+    //             console.log(err);
+    //         }
+
+    //     })
+    // } else {
+    //     inputQrcodeDataEle.style.animation = 'input-error-vild 1s 1';
+    //     setTimeout(() => {
+    //         inputQrcodeDataEle.style.animation = null
+    //     }, 1000);
+    // }
+
 })
 // End enter manual
 
