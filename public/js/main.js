@@ -1,14 +1,14 @@
 // WIFI:S:Hayder Mi;T:WPa;P:asdzaed3612;H:false;;
 // Start public code
 const qrcodeValuesDefault = {
-    data: 'Hi ****__4x',
-    title: 'MrLAG'
+    data: 'test',
+    title: 'Title'
 }
 let vlauesFormsToGenerate = [];
 let colors = {
-    color: '#1B1A17',
-    backgroundColor: '#F0A500',
-    titleColor: '#1B1A17'
+    color: '#000000',
+    backgroundColor: '#ffffff',
+    titleColor: '#000000'
 };
 
 const buttons = document.querySelectorAll('button')
