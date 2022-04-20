@@ -11,6 +11,28 @@ let colors = {
     titleColor: '#000000'
 };
 
+Coloris({
+  el: '.color-pick',
+  format: 'hex',
+  focusInput: true,
+  wrap: false,
+  swatchesOnly: false,
+autoClose: false,
+  swatches: [
+    '#264653',
+    '#2a9d8f',
+    '#e9c46a',
+    '#f4a261',
+    '#e76f51',
+    '#d62828',
+    '#023e8a',
+    '#0077b6',
+    '#0096c7',
+    '#00b4d8',
+    '#48cae4',
+  ]
+});
+
 const buttons = document.querySelectorAll('button')
 buttons.forEach(but => but.addEventListener('click', e => e.preventDefault()))
 

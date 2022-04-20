@@ -14,8 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./style/lib/coloris.min.css" />
     <script src="./js/lib/qrcode.js"></script>
     <script src="./js/lib/html2canvas.min.js"></script>
+    <script src="./js/lib/coloris.min.js"></script>
     <title>QR-Code Creater</title>
   </head>
   <body>
@@ -171,8 +173,8 @@
                   <!-- <span>#</span> -->
                 <input
                   id="qr-style-color"
-                  type="color"
-                  class="main-input-text"
+                  type="text"
+                  class="main-input-text color-pick"
                   value="#000000"
                   data-error="0"
                 />
@@ -188,8 +190,8 @@
                   <!-- <span>#</span> -->
                 <input
                   id="qr-style-background"
-                  type="color"
-                  class="main-input-text"
+                  type="text"
+                  class="main-input-text color-pick"
                   value="#FFFFFF"
                   data-error="0"
                 />
@@ -202,8 +204,8 @@
                   <!-- <span>#</span> -->
                 <input
                   id="qr-style-title-color"
-                  type="color"
-                  class="main-input-text"
+                  type="text"
+                  class="main-input-text color-pick"
                   value="#000000"
                   data-error="0"
                 />
