@@ -14,6 +14,9 @@ let colors = {
 Coloris({
   el: '.color-pick',
   format: 'hex',
+  formatToggle: true,
+  margin: 2,
+  parent: true,
   focusInput: true,
   wrap: false,
   swatchesOnly: false,
@@ -226,7 +229,7 @@ buttonSaveQrcode.addEventListener('click', _ => {
 inputsColors.forEach(input => {
     input.addEventListener('keyup', _ => input.value = input.value.toUpperCase())
     input.addEventListener('blur', _ => input.value = input.value.toUpperCase())
-    input.addEventListener('change', _ => {
+    input.addEventListener('input', _ => {
         const [color, backgroundColor, titleColor] = inputsColors;
         colors.color = color.value;
         colors.backgroundColor = backgroundColor.value;
