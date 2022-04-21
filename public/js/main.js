@@ -14,13 +14,13 @@ let colors = {
 Coloris({
   el: '.color-pick',
   format: 'hex',
-  formatToggle: true,
+  formatToggle: false,
   margin: 2,
   parent: true,
   focusInput: true,
   wrap: false,
   swatchesOnly: false,
-autoClose: false,
+  autoClose: false,
   swatches: [
     '#264653',
     '#2a9d8f',

@@ -24,7 +24,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(111deg, #9198e5, #240a0a);
+  background: linear-gradient(111deg, #5491f8, #166ee5);
   background-repeat: no-repeat;
 }
 
@@ -653,7 +653,7 @@ main section.perint-section div.background-blur {
   transition: 0.3s;
   min-height: 100%;
   width: 100%;
-  background: linear-gradient(110deg, #2196f3, #ff5722);
+  background: linear-gradient(110deg, #5491f8, #5491f8);
 }
 .qr-code-style[data-clicked=true] {
   top: 0;
