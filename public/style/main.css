@@ -647,82 +647,38 @@ main section.perint-section div.background-blur {
 }
 
 .qr-code-style {
-  position: absolute;
-  top: -100%;
-  right: -100%;
   transition: 0.3s;
-  min-height: 100%;
   width: 100%;
   background: linear-gradient(110deg, #5491f8, #5491f8);
 }
-.qr-code-style[data-clicked=true] {
-  top: 0;
-  right: 0;
+.qr-code-style[data-show=true] {
+  transform: translateX(-100%);
 }
 .qr-code-style form {
   width: 100%;
-  position: relative;
+  height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
   row-gap: 20px;
+  position: relative;
 }
-.qr-code-style form .inputs-box {
+.qr-code-style form .box-inputs {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-content: flex-start;
+  align-content: space-evenly;
   gap: 10px 25px;
   padding: 0 30px;
   flex-grow: 1;
 }
-.qr-code-style form .inputs-box label {
-  min-width: fit-content;
-  position: relative;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
+.qr-code-style form .box-inputs > div > * {
+  line-height: 1.5;
+  display: block;
 }
-.qr-code-style form .inputs-box label input {
+.qr-code-style form .box-inputs > div input {
   width: 100%;
-  transition: 0.3s;
-  border: 3px solid transparent;
-}
-.qr-code-style form .inputs-box label input:focus {
-  border-color: var(--color-02);
-}
-.qr-code-style form .inputs-box label input[data-error="1"] {
-  border-color: var(--color-07);
-}
-.qr-code-style form .inputs-box label.color .input-color-box {
-  position: relative;
-}
-.qr-code-style form .inputs-box label.color .input-color-box span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 20px;
-  color: var(--color-13);
-  height: 40px;
-  border-radius: 3px;
-  line-height: 40px;
-  text-align: center;
-  padding: 0 5px;
-  background-color: var(--color-01);
-}
-.qr-code-style form .qr-fack {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 100%;
-}
-.qr-code-style form .qr-fack i {
-  font-size: 140px;
-  padding: 10px;
-  background-color: var(--color-04);
-  border-radius: 10px;
 }
 .qr-code-style form .qrcode-img {
   width: 50%;
@@ -730,17 +686,17 @@ main section.perint-section div.background-blur {
 .qr-code-style form .qrcode-img span {
   font-size: 1.5rem;
 }
-.qr-code-style form .back-button {
+.qr-code-style form .but-close {
   position: absolute;
   top: -20px;
   right: -20px;
   width: 20%;
 }
-.qr-code-style form .back-button button {
+.qr-code-style form .but-close button {
   width: 100%;
   background-color: var(--color-04);
 }
-.qr-code-style form .back-button button i {
+.qr-code-style form .but-close button i {
   color: var(--color-10);
   font-size: 1.5rem;
 }

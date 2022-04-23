@@ -1,96 +1,63 @@
 .qr-code-style {
-  position: absolute;
-  top: -100%;
-  right: -100%;
   transition: 0.3s;
-  min-height: 100%;
   width: 100%;
   // background: linear-gradient(110deg, #2196f3, #ff5722);
   background: linear-gradient(110deg, #5491f8, #5491f8);
-  &[data-clicked="true"] {
-    top: 0;
-    right: 0;
+
+  &[data-show="true"] {
+    transform: translateX(-100%);
   }
+
   form {
     width: 100%;
-    position: relative;
+    height: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
     row-gap: 20px;
-    .inputs-box {
+    position: relative;
+
+    .box-inputs {
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
-      align-content: flex-start;
+      align-content: space-evenly;
       gap: 10px 25px;
       padding: 0 30px;
       flex-grow: 1;
-      label {
-        min-width: fit-content;
-        position: relative;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-end;
+      >div {
+        
+        &>* {
+          line-height: 1.5;
+          display: block;
+        }
+
         input {
           width: 100%;
-          transition: .3s;
-          border: 3px solid transparent;
-          &:focus {
-            border-color: var(--color-02);
-          }
-          &[data-error="1"] {
-            border-color: var(--color-07);
-          }
         }
-        &.color {
-        }
-        &.color .input-color-box {
-          position: relative;
-          span {  
-          position: absolute;
-          top: 0;
-          left: 0;
-          font-size: 20px;
-          color: var(--color-13);
-          height: 40px;
-          border-radius: 3px;
-          line-height: 40px;
-          text-align: center;
-          padding: 0 5px;
-          background-color: var(--color-01);
-        }
-        } 
+
       }
     }
-    .qr-fack {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-basis: 100%;
-      i {
-        font-size: 140px;
-        padding: 10px;
-        background-color: var(--color-04);
-        border-radius: 10px;
-      }
-    }
+
     .qrcode-img {
       width: 50%;
+
       span {
         font-size: 1.5rem;
       }
     }
-    .back-button {
+
+    .but-close {
       position: absolute;
       top: -20px;
       right: -20px;
       width: 20%;
+
       button {
         width: 100%;
         background-color: var(--color-04);
+
         i {
           color: var(--color-10);
           font-size: 1.5rem;
@@ -99,11 +66,13 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .qr-code-style {
     form {
       .inputs-box {
         padding: 0;
+
         label {
           width: calc(50% - 20px);
         }

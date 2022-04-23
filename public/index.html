@@ -1,234 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/main.css" />
-    <link rel="stylesheet" href="./fonts/icomoon/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style/lib/coloris.min.css" />
-    <script src="./js/lib/qrcode.js"></script>
-    <script src="./js/lib/html2canvas.min.js"></script>
-    <script src="./js/lib/coloris.min.js"></script>
-    <title>QR-Code Creater</title>
-  </head>
-  <body>
-    <!-- Header of page -->
-    <header class="header-of-page">
-      <div class="background-blur"></div>
-      <div class="container">
-        <nav>
-          <figure class="logo">
-            <a href="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="124"
-                height="54"
-                viewBox="0 0 124 54"
-              >
-                <g id="logo" transform="translate(1 -33)">
-                  <text
-                    id="LAG"
-                    transform="translate(72 74)"
-                    fill="#e4e4e4"
-                    font-size="47"
-                    font-family="Rajdhani, sans-serif"
-                  >
-                    <tspan x="-50.649" y="0">LAG</tspan>
-                  </text>
-                  <text
-                    id="Mr"
-                    transform="translate(12 75)"
-                    fill="#e4e4e4"
-                    font-size="17"
-                    font-family="Rajdhani, sans-serif"
-                  >
-                    <tspan x="-12.215" y="0">Mr</tspan>
-                  </text>
-                </g>
-              </svg>
-            </a>
-          </figure>
-          <button class="button-berger-icon" data-clicked="false">
-            <div class="icon-box">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-          <ul class="perint-items">
-            <li class="item">
-              <a href="#" class="active">Home</a>
-            </li>
-            <li class="item">
-              <a href="#"> Services </a>
-            </li>
-            <li class="item">
-              <a href="#"> About </a>
-            </li>
-            <li class="item">
-              <a href="#"> Support </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <link rel="stylesheet" href="./fonts/icomoon/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style/lib/coloris.min.css" />
+  <script src="./js/lib/qrcode.js"></script>
+  <script src="./js/lib/html2canvas.min.js"></script>
+  <script src="./js/lib/coloris.min.js"></script>
+  <title>QR-Code Creater</title>
+</head>
+
+<body>
+  <!-- Header of page -->
+  <header class="header-of-page">
+    <div class="background-blur"></div>
+    <div class="container">
+      <nav>
+        <figure class="logo">
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="124" height="54" viewBox="0 0 124 54">
+              <g id="logo" transform="translate(1 -33)">
+                <text id="LAG" transform="translate(72 74)" fill="#e4e4e4" font-size="47"
+                  font-family="Rajdhani, sans-serif">
+                  <tspan x="-50.649" y="0">LAG</tspan>
+                </text>
+                <text id="Mr" transform="translate(12 75)" fill="#e4e4e4" font-size="17"
+                  font-family="Rajdhani, sans-serif">
+                  <tspan x="-12.215" y="0">Mr</tspan>
+                </text>
+              </g>
+            </svg>
+          </a>
+        </figure>
+        <button class="button-berger-icon" data-clicked="false">
+          <div class="icon-box">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <ul class="perint-items" data-show="false">
+          <li class="item">
+            <a href="#" class="active">Home</a>
+          </li>
+          <li class="item">
+            <a href="#"> Services </a>
+          </li>
+          <li class="item">
+            <a href="#"> About </a>
+          </li>
+          <li class="item">
+            <a href="#"> Support </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content of page -->
+  <main class="container">
+    <!-- Header of main contentt -->
+    <header>
+      <h1>Converter to Qr Code</h1>
+      <figure>
+        <img src="./images/qrcode.svg" alt="qrcode" />
+      </figure>
     </header>
 
-    <!-- Main content of page -->
-    <main class="container">
-      <!-- Header of main contentt -->
-      <header>
-        <h1>Converter to Qr Code</h1>
-        <figure>
-          <img src="./images/qrcode.svg" alt="qrcode" />
-        </figure>
-      </header>
+    <section class="perint-section">
+      <!-- Background blur -->
+      <div class="background-blur"></div>
 
-      <section class="perint-section">
-        <!-- Background blur -->
-        <div class="background-blur"></div>
+      <!-- Section Enter manual-->
+      <section class="enter-manual">
+        <form name="enterManual" id="enter-manual">
+          <legend class="title-section">Enter manual</legend>
 
-        <!-- Section Enter manual-->
-        <section class="enter-manual">
-          <form name="enterManual" id="enter-manual">
-            <legend class="title-section">Enter manual</legend>
-            <div class="main-inputs-and-submit-but">
-              <label for="qr-value" class="qr-value main-label">
-                Value Qr-code:
-                <textarea
-                  id="qr-value"
-                  class="main-input-text"
-                  name="qrValue"
-                  value=""
-                  placeholder="Value of Qr"
-                  required
-                ></textarea>
-              </label>
-              <label for="qr-title" class="qr-title main-label">
-                Title for Qr-code:
-                <input
-                  id="qr-title"
-                  class="main-input-text"
-                  name="qrTitle"
-                  value=""
-                  placeholder="Title of Qr max 30(Option)"
-                />
-              </label>
-              <label for="checkbox-look" class="checkbox-look main-label">
-                Look:
-                <input
-                  type="checkbox"
-                  id="checkbox-look"
-                  name="checkbox-look"
-                  value="look"
-                />
-                <span class="fack-checkbox"></span>
-              </label>
-              <div class="button-submit">
-                <button type="submit" name="buttonSubmit" class="main-button">
-                  Generate Qr-code
-                </button>
+          <div class="box-input-qr-data" data-inputValid="false">
+            <label for="input-qr-data" class="input-label-qr-data main-label">Value Qr-code:</label>
+            <textarea id="input-qr-data" class="input-qr-data main-input-text" name="inputQrData"
+              placeholder="Value of Qrcode" required></textarea>
+            <span class="input-message-box">Input Not Valid</span>
+          </div>
+
+          <div class="box-input-qr-title" data-inputValid="false">
+            <label for="input-qr-title" class="input-label-qr-title main-label">Title for Qr-code:</label>
+            <input id="input-qr-title" class="input-qr-title main-input-text" name="inputQrTitle"
+              placeholder="Title of Qr max 30(Option)" />
+            <span class="input-message-box">Input Not Valid</span>
+          </div>
+          <div class="box-button-submit">
+            <button type="submit" name="butGenerateQrcode" class="but-generate-qrcode main-but">
+              Generate Qr-code
+            </button>
+          </div>
+
+        </form>
+
+        <div class="qrcode-img">
+          <div class="main-qrcode-style">
+            <span>MrLAG</span>
+            <img src="./images/qrcode.svg" alt="qrcode" />
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="save-qrcode main-but" data-clicked="false">
+            <i class="icon-save"></i>
+          </button>
+
+          <button class="button-advanced main-but" data-clicked="false">
+            <i class="icon-miscellaneous_services"></i>
+          </button>
+
+          <div class="box-advanced-settings" data-show="false">
+            <h1>Advanced Settings</h1>
+            <button class="button-style main-but" data-clicked="false">Qr-code style</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section qr-code style-->
+      <section class="qr-code-style" data-show="false">
+        <form>
+          <legend class="title-section">Qr-code style</legend>
+          <div class="box-inputs">
+
+              <div class="box-input-path-color-qrcode">
+                <label class="input-path-color-qrcode color main-label" for="input-path-color-qrcode">Color:</label>
+                <input id="input-path-color-qrcode" type="text" class="input-path-color-qrcode main-input-text color-pick" value="#000000"/>
               </div>
-            </div>
-          </form>
+
+              <div class="box-input-background-color-qrcode">
+                <label for="input-background-color-qrcode" class="input-background-color-qrcode color main-label">Background color:</label>
+                <input id="input-background-color-qrcode" type="text" class="input-background-color-qrcode main-input-text color-pick" value="#FFFFFF"/>
+              </div>
+
+              <div class="box-input-title-color-qrcode">
+                <label class="input-title-color-qrcode color main-label" for="input-title-color-qrcode">Title Color:</label>
+                <input id="input-title-color-qrcode" type="text" class="input-title-color-qrcode main-input-text color-pick" value="#000000"/>
+              </div>
+
+
+              <div class="box-input-margin-qrcode">
+                <label class="input-margin-qrcode color main-label" for="input-margin-qrcode">Title Color:</label>
+                <input id="input-margin-qrcode" type="number" class="input-margin-qrcode main-input-text color-pick" value="1"/>
+                <span class="input-message-box">Input Not Valid</span>
+              </div>
+
+          </div>
 
           <div class="qrcode-img">
-            <div class="main-qrcode-style">
-              <span>MrLAG</span>
+            <div class='main-qrcode-style'>
+              <span>MrLAG03</span>
               <img src="./images/qrcode.svg" alt="qrcode" />
-            </div>
+            </div main-qrcode-style>
           </div>
 
-          <div class="buttons">
-            <button class="save-qrcode main-button">
-              <i class="icon-save"></i>
-            </button>
-
-            <button class="button-advanced main-button" data-clicked="false">
-              <i class="icon-miscellaneous_services"></i>
-            </button>
-            <div class="style-and-tiem-buttons">
-              <h1>Advanced Settings</h1>
-              <button class="main-button style-button">Qr-code style</button>
-            </div>
+          <div class="but-close">
+            <button class="main-but"><i class="icon-remove"></i></button>
           </div>
-        </section>
 
-        <!-- Section qr-code style-->
-        <section class="qr-code-style" data-clicked="false">
-          <form>
-            <legend class="title-section">Qr-code style</legend>
-            <div class="inputs-box">
-              <label class="qr-style-color color main-label" for="qr-style-color">
-                Color:
-                <div class="input-color-box">
-                  <!-- <span>#</span> -->
-                <input
-                  id="qr-style-color"
-                  type="text"
-                  class="main-input-text color-pick"
-                  value="#000000"
-                  data-error="0"
-                />
-                </div>
-                
-              </label>
-              <label
-                for="qr-style-background"
-                class="qr-style-background color main-label"
-              >
-                Background color:
-                <div class="input-color-box">
-                  <!-- <span>#</span> -->
-                <input
-                  id="qr-style-background"
-                  type="text"
-                  class="main-input-text color-pick"
-                  value="#FFFFFF"
-                  data-error="0"
-                />
-                </div>
-                
-              </label>
-              <label class="qr-style-title-color color main-label" for="qr-style-title-color">
-                Title Color:
-                <div class="input-color-box">
-                  <!-- <span>#</span> -->
-                <input
-                  id="qr-style-title-color"
-                  type="text"
-                  class="main-input-text color-pick"
-                  value="#000000"
-                  data-error="0"
-                />
-                </div>
-                
-              </label>
-            </div>
-            <div class="qrcode-img">
-              <div class='main-qrcode-style'>
-                <span>MrLAG03</span>
-                <img src="./images/qrcode.svg" alt="qrcode" />
-              </div main-qrcode-style>
-            </div>
-            <div class="back-button">
-              <button class="main-button"><i class="icon-remove"></i></button>
-            </div>
-          </form>
-        </section>
+        </form>
       </section>
-    </main>
-    <footer>
-      
-    </footer>
-    <script src="./js/main.js"></script>
-  </body>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>
