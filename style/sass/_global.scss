@@ -15,21 +15,23 @@
   --color-14: #00000021;
   --color-15: #f8f9fa;
 }
-html {
-}
+
+html {}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
-  // font-family: "Rajdhani", sans-serif;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(111deg, #5491f8, #166ee5);
   //background: linear-gradient(111deg, #9198e5, #240a0a);
   // background: linear-gradient(111deg, #d9bc65, #e91e63);
   background-repeat: no-repeat;
 }
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -41,23 +43,15 @@ body {
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
-button.main-button {
-  border: none;
-  padding: 10px 28px;
-  font-size: 25px;
-  background-color: var(--color-03);
-  color: var(--color-04);
-  border-radius: 5px;
-  cursor: pointer;
-}
+
 label.main-label {
   font-size: 20px;
   font-weight: 500;
   color: var(--color-04);
-  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -66,7 +60,6 @@ label.main-label:focus-within {
 }
 
 .main-input-text {
-  display: block;
   border: none;
   height: 40px;
   padding: 4px;
@@ -74,36 +67,67 @@ label.main-label:focus-within {
   font-size: 16px;
   border-radius: 3px;
   background-color: var(--color-04);
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   transition: 0.3s;
+
   &:disabled {
     background-color: var(--color-01);
     color: var(--color-12);
   }
+
   &:focus {
     outline: none;
-    border-color: var(--color-10);
+    border-color: var(--color-03);
   }
+
   &::placeholder {
     color: var(--color-12);
     font-size: 18px;
+    position: absolute;
+    top: 4px;
+
   }
 }
 
-@keyframes input-error-vild {
-  0% {
-    border-color: var(--color-11);
+input.main-input-text::placeholder {
+  top: 9px;
+}
+
+div {
+  .input-message-box {
+    font-size: .7rem;
+    color: transparent;
+    font-weight: 600;
+    margin: 4px 0 0 4px;
+    display: none;
+    transition: .3s;
   }
-  50% {
-    border-color: transparent;
-  }
-  75% {
-    border-color: var(--color-11);
-  }
-  100% {
-    border-color: transparent;
+
+  &[data-notvalid='true'] {
+    .main-input-text {
+      border-color: var(--color-07);
+    }
+
+    .input-message-box {
+      display: block;
+      color: var(--color-07);
+    }
+
   }
 }
+
+
+button.main-but {
+  border: none;
+  padding: 10px 28px;
+  font-size: 25px;
+  background-color: var(--color-03);
+  color: var(--color-04);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
 
 .main-qrcode-style {
   display: flex;
@@ -113,6 +137,7 @@ label.main-label:focus-within {
   background-color: var(--color-04);
   position: relative;
   border-radius: 7px;
+
   span {
     padding: 10px 10px 10px;
     display: block;
@@ -125,6 +150,7 @@ label.main-label:focus-within {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
   }
+
   img,
   svg,
   canvas {
@@ -133,23 +159,27 @@ label.main-label:focus-within {
 }
 
 @media (max-width: 767px) {
-  button.main-button {
+  button.main-but {
     font-size: 1rem;
     padding: 15px 15px;
   }
+
   label.main-label {
     font-size: 0.7rem;
   }
+
   input.main-input-text::placeholder {
     font-size: 15px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
+
 @media (min-width: 1024px) {
   .container {
     width: 1000px;

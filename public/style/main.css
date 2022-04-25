@@ -44,7 +44,64 @@ a {
   text-decoration: none;
 }
 
-button.main-button {
+label.main-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-04);
+  cursor: pointer;
+}
+
+label.main-label:focus-within {
+  color: var(--color-04);
+}
+
+.main-input-text {
+  border: none;
+  height: 40px;
+  padding: 4px;
+  color: var(--color-02);
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: var(--color-04);
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.main-input-text:disabled {
+  background-color: var(--color-01);
+  color: var(--color-12);
+}
+.main-input-text:focus {
+  outline: none;
+  border-color: var(--color-03);
+}
+.main-input-text::placeholder {
+  color: var(--color-12);
+  font-size: 18px;
+  position: absolute;
+  top: 4px;
+}
+
+input.main-input-text::placeholder {
+  top: 9px;
+}
+
+div .input-message-box {
+  font-size: 0.7rem;
+  color: transparent;
+  font-weight: 600;
+  margin: 4px 0 0 4px;
+  display: none;
+  transition: 0.3s;
+}
+div[data-notvalid=true] .main-input-text {
+  border-color: var(--color-07);
+}
+div[data-notvalid=true] .input-message-box {
+  display: block;
+  color: var(--color-07);
+}
+
+button.main-but {
   border: none;
   padding: 10px 28px;
   font-size: 25px;
@@ -54,57 +111,6 @@ button.main-button {
   cursor: pointer;
 }
 
-label.main-label {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--color-04);
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-label.main-label:focus-within {
-  color: var(--color-04);
-}
-
-.main-input-text {
-  display: block;
-  border: none;
-  height: 40px;
-  padding: 4px;
-  color: var(--color-02);
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: var(--color-04);
-  border: 3px solid transparent;
-  transition: 0.3s;
-}
-.main-input-text:disabled {
-  background-color: var(--color-01);
-  color: var(--color-12);
-}
-.main-input-text:focus {
-  outline: none;
-  border-color: var(--color-10);
-}
-.main-input-text::placeholder {
-  color: var(--color-12);
-  font-size: 18px;
-}
-
-@keyframes input-error-vild {
-  0% {
-    border-color: var(--color-11);
-  }
-  50% {
-    border-color: transparent;
-  }
-  75% {
-    border-color: var(--color-11);
-  }
-  100% {
-    border-color: transparent;
-  }
-}
 .main-qrcode-style {
   display: flex;
   flex-flow: column nowrap;
@@ -133,7 +139,7 @@ label.main-label:focus-within {
 }
 
 @media (max-width: 767px) {
-  button.main-button {
+  button.main-but {
     font-size: 1rem;
     padding: 15px 15px;
   }
