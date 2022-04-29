@@ -6,107 +6,41 @@
 
   form {
     width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 8px;
 
-    .main-inputs-and-submit-but {
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      gap: 10px;
+    >div {
+      line-height: 1.2;
 
-      label {
-
-        input,
-        textarea {
-          width: 100%;
-        }
-
-        textarea {
-          max-width: 100%;
-          min-width: 100%;
-          min-height: 40px;
-        }
+      &>*:not(span) {
+        display: block;
       }
 
-      label.qr-value {
+      input,
+      textarea {
         width: 100%;
       }
 
-      label.qr-title {
-        width: 75%;
+      textarea {
+        min-height: 40px;
       }
 
-      label.checkbox-look {
-        overflow: hidden;
-        width: fit-content;
-        position: relative;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
+    }
 
-        input {
-          cursor: pointer;
-          position: absolute;
-          opacity: 0;
-        }
+    .box-button-submit {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 10px;
 
-        span {
-          display: block;
-          background-color: var(--color-04);
-          height: 40px;
-          width: 40px;
-          border-radius: 5px;
-          position: relative;
-          overflow: hidden;
+      button[type="submit"] {
+        background-color: var(--color-16);
 
-          &::before {
-            position: absolute;
-            content: "";
-            top: 50%;
-            left: 50%;
-            width: 50%;
-            height: 50%;
-            border-radius: 5px;
-            transform: translate(-50%, -50%);
-            transition: 0.3s;
-            opacity: 1;
-          }
-        }
+        &:hover {
+          background-color: var(--color-08);
 
-        input:checked~span::before {
-          background-color: var(--color-13);
-        }
-
-        input:focus~span {
-          border: 2px solid var(--color-10);
-        }
-      }
-
-      label.label-number-items {
-        display: flex;
-        align-items: center;
-        column-gap: 5px;
-        flex-basis: 100%;
-
-        span {
-          display: inline-block;
-          background-color: var(--color-01);
-          color: var(--color-02);
-          padding: 0 6px;
-          border-radius: 5px;
-          max-width: 50%;
-          overflow-x: hidden;
-        }
-      }
-
-      .button-submit {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 20px;
-
-        button[type="submit"] {
-          background-color: var(--color-10);
         }
       }
     }
@@ -130,13 +64,13 @@
     column-gap: 2px;
 
     .button-advanced,
-    .button-export,
     .save-qrcode {
       background-color: var(--color-01);
       position: relative;
 
       &:hover {
         background-color: var(--color-04);
+
         i {
           color: var(--color-02);
         }
@@ -159,13 +93,17 @@
         border-bottom-color: var(--color-04);
       }
 
-      &[data-clicked="true"]::before {
-        top: -20px;
+      &[data-clicked="true"] {
+        background-color: var(--color-04);
+
+        &::before {
+          top: -20px;
+        }
       }
+
     }
 
-    .style-and-tiem-buttons,
-    .exports-buttons {
+    .box-advanced-settings {
       position: absolute;
       padding: 0px;
       height: 0;
@@ -181,6 +119,10 @@
       border-radius: 4px;
       transition: 0.3s;
       background-color: var(--color-04);
+
+      &[data-show='true'] {
+        height: 300px;
+      }
 
       h1 {
         padding: 15px 5px;
@@ -209,7 +151,7 @@
           position: absolute;
           top: 0px;
           left: 0;
-          width: 8px;
+          width: 5px;
           height: 100%;
           background-color: var(--color-10);
         }
@@ -222,22 +164,11 @@
       }
     }
 
-
-
-    .button-advanced[data-clicked="true"]~.style-and-tiem-buttons,
-    .button-export[data-clicked="true"]~.exports-buttons {
-      height: 300px;
-    }
   }
 }
 
 @media (max-width: 767px) {
   .enter-manual {
-    form {
-      .main-inputs-and-submit-but {
-        height: 30%;
-      }
-    }
 
     .qrcode-img {
       width: 60%;
@@ -245,8 +176,7 @@
 
     .buttons {
 
-      .style-and-tiem-buttons,
-      .exports-buttons {
+      .box-advanced-settings {
         width: 80%;
       }
     }

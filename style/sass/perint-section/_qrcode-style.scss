@@ -22,13 +22,13 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
-      align-content: space-evenly;
+      align-content: center;
       gap: 10px 25px;
       padding: 0 30px;
       flex-grow: 1;
       >div {
         
-        &>* {
+        &>*:not(span) {
           line-height: 1.5;
           display: block;
         }
@@ -48,7 +48,7 @@
       }
     }
 
-    .but-close {
+    .button-close-box-style {
       position: absolute;
       top: -20px;
       right: -20px;

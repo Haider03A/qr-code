@@ -14,6 +14,7 @@
   --color-13: #536664;
   --color-14: #00000021;
   --color-15: #f8f9fa;
+  --color-16: #455a64;
 }
 
 * {
@@ -43,6 +44,10 @@ li {
 a {
   text-decoration: none;
 }
+a:focus {
+  outline: none;
+  border: 2px solid var(--color-03);
+}
 
 label.main-label {
   font-size: 20px;
@@ -57,22 +62,26 @@ label.main-label:focus-within {
 
 .main-input-text {
   border: none;
-  height: 40px;
+  height: 44px;
   padding: 4px;
   color: var(--color-02);
   font-size: 16px;
   border-radius: 3px;
   background-color: var(--color-04);
-  border: 2px solid transparent;
   transition: 0.3s;
 }
-.main-input-text:disabled {
+.main-input-text:disabled, .main-input-text[disabled] {
   background-color: var(--color-01);
   color: var(--color-12);
+  cursor: no-drop;
 }
 .main-input-text:focus {
   outline: none;
-  border-color: var(--color-03);
+  border: 2px solid var(--color-03);
+}
+.main-input-text:focus-visible {
+  outline: none;
+  border: 2px solid var(--color-03);
 }
 .main-input-text::placeholder {
   color: var(--color-12);
@@ -109,6 +118,16 @@ button.main-but {
   color: var(--color-04);
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+button.main-but:focus-visible {
+  outline: none;
+  border: 2px solid var(--color-03);
+}
+button.main-but:disabled, button.main-but[disabled] {
+  background-color: var(--color-01) !important;
+  color: var(--color-12) !important;
+  cursor: no-drop !important;
 }
 
 .main-qrcode-style {
@@ -148,7 +167,10 @@ button.main-but {
     font-size: 0.7rem;
   }
 
-  input.main-input-text::placeholder {
+  .main-input-text {
+    height: 40px;
+  }
+  .main-input-text::placeholder {
     font-size: 15px;
   }
 }
@@ -161,6 +183,17 @@ button.main-but {
 @media (min-width: 1024px) {
   .container {
     width: 1000px;
+  }
+}
+@keyframes berger-amin-on-clocse {
+  33% {
+    transform: translateX(20%);
+  }
+  66% {
+    transform: translateX(-20%);
+  }
+  99% {
+    transform: translateX(0%);
   }
 }
 .header-of-page {
@@ -196,13 +229,25 @@ button.main-but {
 }
 .header-of-page nav .button-berger-icon {
   background-color: transparent;
-  border: none;
   cursor: pointer;
   border-radius: 5px;
   display: none;
+  padding: 5px;
+}
+.header-of-page nav .button-berger-icon:hover .icon-box span {
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-name: berger-amin-on-clocse;
+}
+.header-of-page nav .button-berger-icon:hover .icon-box span:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+.header-of-page nav .button-berger-icon:hover .icon-box span:last-of-type {
+  animation-delay: 0.2s;
 }
 .header-of-page nav .button-berger-icon .icon-box {
-  width: 30px;
+  width: 40px;
   height: 30px;
   display: flex;
   flex-flow: column nowrap;
@@ -213,11 +258,14 @@ button.main-but {
 }
 .header-of-page nav .button-berger-icon .icon-box span {
   display: block;
-  height: 7px;
+  height: 5px;
   width: 100%;
-  border-radius: 7px;
+  border-radius: 2.2px;
   background-color: var(--color-01);
   transition: 0.3s;
+}
+.header-of-page nav .button-berger-icon[data-clicked=true]:hover .icon-box span {
+  animation: none;
 }
 .header-of-page nav .button-berger-icon[data-clicked=true] .icon-box span:first-of-type {
   transform: rotate(45deg) translate(10px, 10px);
@@ -247,11 +295,11 @@ button.main-but {
   display: block;
 }
 .header-of-page nav ul li a:hover {
-  background-color: var(--color-01);
+  background-color: var(--color-05);
   color: var(--color-02);
 }
 .header-of-page nav ul li a.active {
-  background-color: var(--color-01);
+  background-color: var(--color-05);
   color: var(--color-02);
 }
 
@@ -280,6 +328,12 @@ button.main-but {
     transition: 0.3s;
     padding: 0 20px;
   }
+  .header-of-page nav ul[data-show=true] {
+    height: 300px;
+  }
+  .header-of-page nav ul li {
+    width: 100%;
+  }
   .header-of-page nav ul li a {
     padding: 10px;
     padding-left: 15px;
@@ -289,26 +343,17 @@ button.main-but {
     font-size: 1.2rem;
     position: relative;
     overflow: hidden;
-  }
-  .header-of-page nav ul li a::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 7px;
-    height: 100%;
-    background-color: var(--color-10);
+    width: 100%;
   }
   .header-of-page nav ul li a:hover {
     color: var(--color-10);
+    background-color: var(--color-14);
     padding-left: 20px;
   }
   .header-of-page nav ul li a.active {
     padding-left: 20px;
+    background-color: var(--color-14);
     color: var(--color-10);
-  }
-  .header-of-page nav .button-berger-icon[data-clicked=true] ~ ul {
-    height: 300px;
   }
 }
 main {
@@ -345,7 +390,7 @@ main section.perint-section {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
 }
 main section.perint-section > section {
   padding: 20px;
@@ -395,92 +440,35 @@ main section.perint-section div.background-blur {
 }
 .enter-manual form {
   width: 80%;
-}
-.enter-manual form .main-inputs-and-submit-but {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  gap: 10px;
-}
-.enter-manual form .main-inputs-and-submit-but label input,
-.enter-manual form .main-inputs-and-submit-but label textarea {
-  width: 100%;
-}
-.enter-manual form .main-inputs-and-submit-but label textarea {
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 40px;
-}
-.enter-manual form .main-inputs-and-submit-but label.qr-value {
-  width: 100%;
-}
-.enter-manual form .main-inputs-and-submit-but label.qr-title {
-  width: 75%;
-}
-.enter-manual form .main-inputs-and-submit-but label.checkbox-look {
-  overflow: hidden;
-  width: fit-content;
-  position: relative;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  row-gap: 8px;
 }
-.enter-manual form .main-inputs-and-submit-but label.checkbox-look input {
-  cursor: pointer;
-  position: absolute;
-  opacity: 0;
+.enter-manual form > div {
+  line-height: 1.2;
 }
-.enter-manual form .main-inputs-and-submit-but label.checkbox-look span {
+.enter-manual form > div > *:not(span) {
   display: block;
-  background-color: var(--color-04);
-  height: 40px;
-  width: 40px;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
 }
-.enter-manual form .main-inputs-and-submit-but label.checkbox-look span::before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 50%;
-  border-radius: 5px;
-  transform: translate(-50%, -50%);
-  transition: 0.3s;
-  opacity: 1;
+.enter-manual form > div input,
+.enter-manual form > div textarea {
+  width: 100%;
 }
-.enter-manual form .main-inputs-and-submit-but label.checkbox-look input:checked ~ span::before {
-  background-color: var(--color-13);
+.enter-manual form > div textarea {
+  min-height: 40px;
 }
-.enter-manual form .main-inputs-and-submit-but label.checkbox-look input:focus ~ span {
-  border: 2px solid var(--color-10);
-}
-.enter-manual form .main-inputs-and-submit-but label.label-number-items {
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-  flex-basis: 100%;
-}
-.enter-manual form .main-inputs-and-submit-but label.label-number-items span {
-  display: inline-block;
-  background-color: var(--color-01);
-  color: var(--color-02);
-  padding: 0 6px;
-  border-radius: 5px;
-  max-width: 50%;
-  overflow-x: hidden;
-}
-.enter-manual form .main-inputs-and-submit-but .button-submit {
+.enter-manual form .box-button-submit {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
-.enter-manual form .main-inputs-and-submit-but .button-submit button[type=submit] {
-  background-color: var(--color-10);
+.enter-manual form .box-button-submit button[type=submit] {
+  background-color: var(--color-16);
+}
+.enter-manual form .box-button-submit button[type=submit]:hover {
+  background-color: var(--color-08);
 }
 .enter-manual .qrcode-img {
   width: 50%;
@@ -498,30 +486,25 @@ main section.perint-section div.background-blur {
   column-gap: 2px;
 }
 .enter-manual .buttons .button-advanced,
-.enter-manual .buttons .button-export,
 .enter-manual .buttons .save-qrcode {
   background-color: var(--color-01);
   position: relative;
 }
 .enter-manual .buttons .button-advanced:hover,
-.enter-manual .buttons .button-export:hover,
 .enter-manual .buttons .save-qrcode:hover {
   background-color: var(--color-04);
 }
 .enter-manual .buttons .button-advanced:hover i,
-.enter-manual .buttons .button-export:hover i,
 .enter-manual .buttons .save-qrcode:hover i {
   color: var(--color-02);
 }
 .enter-manual .buttons .button-advanced i,
-.enter-manual .buttons .button-export i,
 .enter-manual .buttons .save-qrcode i {
   color: var(--color-02);
   font-size: 1.5rem;
   pointer-events: none;
 }
 .enter-manual .buttons .button-advanced:not(.save-qrcode)::before,
-.enter-manual .buttons .button-export:not(.save-qrcode)::before,
 .enter-manual .buttons .save-qrcode:not(.save-qrcode)::before {
   content: "";
   position: absolute;
@@ -532,13 +515,15 @@ main section.perint-section div.background-blur {
   border: 10px solid transparent;
   border-bottom-color: var(--color-04);
 }
+.enter-manual .buttons .button-advanced[data-clicked=true],
+.enter-manual .buttons .save-qrcode[data-clicked=true] {
+  background-color: var(--color-04);
+}
 .enter-manual .buttons .button-advanced[data-clicked=true]::before,
-.enter-manual .buttons .button-export[data-clicked=true]::before,
 .enter-manual .buttons .save-qrcode[data-clicked=true]::before {
   top: -20px;
 }
-.enter-manual .buttons .style-and-tiem-buttons,
-.enter-manual .buttons .exports-buttons {
+.enter-manual .buttons .box-advanced-settings {
   position: absolute;
   padding: 0px;
   height: 0;
@@ -555,8 +540,10 @@ main section.perint-section div.background-blur {
   transition: 0.3s;
   background-color: var(--color-04);
 }
-.enter-manual .buttons .style-and-tiem-buttons h1,
-.enter-manual .buttons .exports-buttons h1 {
+.enter-manual .buttons .box-advanced-settings[data-show=true] {
+  height: 300px;
+}
+.enter-manual .buttons .box-advanced-settings h1 {
   padding: 15px 5px;
   width: 100%;
   font-size: 100%;
@@ -565,8 +552,7 @@ main section.perint-section div.background-blur {
   font-weight: 700;
   text-align: center;
 }
-.enter-manual .buttons .style-and-tiem-buttons button,
-.enter-manual .buttons .exports-buttons button {
+.enter-manual .buttons .box-advanced-settings button {
   transition: 0.3s;
   text-align: start;
   color: var(--color-13);
@@ -578,36 +564,26 @@ main section.perint-section div.background-blur {
   position: relative;
   overflow: hidden;
 }
-.enter-manual .buttons .style-and-tiem-buttons button::before,
-.enter-manual .buttons .exports-buttons button::before {
+.enter-manual .buttons .box-advanced-settings button::before {
   content: "";
   position: absolute;
   top: 0px;
   left: 0;
-  width: 8px;
+  width: 5px;
   height: 100%;
   background-color: var(--color-10);
 }
-.enter-manual .buttons .style-and-tiem-buttons button:hover,
-.enter-manual .buttons .exports-buttons button:hover {
+.enter-manual .buttons .box-advanced-settings button:hover {
   background-color: var(--color-01);
   color: var(--color-10);
   padding-left: 25px;
 }
-.enter-manual .buttons .button-advanced[data-clicked=true] ~ .style-and-tiem-buttons,
-.enter-manual .buttons .button-export[data-clicked=true] ~ .exports-buttons {
-  height: 300px;
-}
 
 @media (max-width: 767px) {
-  .enter-manual form .main-inputs-and-submit-but {
-    height: 30%;
-  }
   .enter-manual .qrcode-img {
     width: 60%;
   }
-  .enter-manual .buttons .style-and-tiem-buttons,
-.enter-manual .buttons .exports-buttons {
+  .enter-manual .buttons .box-advanced-settings {
     width: 80%;
   }
 }
@@ -674,12 +650,12 @@ main section.perint-section div.background-blur {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-content: space-evenly;
+  align-content: center;
   gap: 10px 25px;
   padding: 0 30px;
   flex-grow: 1;
 }
-.qr-code-style form .box-inputs > div > * {
+.qr-code-style form .box-inputs > div > *:not(span) {
   line-height: 1.5;
   display: block;
 }
@@ -692,17 +668,17 @@ main section.perint-section div.background-blur {
 .qr-code-style form .qrcode-img span {
   font-size: 1.5rem;
 }
-.qr-code-style form .but-close {
+.qr-code-style form .button-close-box-style {
   position: absolute;
   top: -20px;
   right: -20px;
   width: 20%;
 }
-.qr-code-style form .but-close button {
+.qr-code-style form .button-close-box-style button {
   width: 100%;
   background-color: var(--color-04);
 }
-.qr-code-style form .but-close button i {
+.qr-code-style form .button-close-box-style button i {
   color: var(--color-10);
   font-size: 1.5rem;
 }

@@ -14,6 +14,7 @@
   --color-13: #536664;
   --color-14: #00000021;
   --color-15: #f8f9fa;
+  --color-16: #455a64;
 }
 
 html {}
@@ -46,6 +47,10 @@ li {
 
 a {
   text-decoration: none;
+  &:focus {
+    outline: none;
+    border: 2px solid var(--color-03);
+  }
 }
 
 label.main-label {
@@ -61,23 +66,29 @@ label.main-label:focus-within {
 
 .main-input-text {
   border: none;
-  height: 40px;
+  height: 44px;
   padding: 4px;
   color: var(--color-02);
   font-size: 16px;
   border-radius: 3px;
   background-color: var(--color-04);
-  border: 2px solid transparent;
   transition: 0.3s;
 
-  &:disabled {
+  &:disabled,
+  &[disabled] {
     background-color: var(--color-01);
     color: var(--color-12);
+    cursor: no-drop;
   }
 
   &:focus {
     outline: none;
-    border-color: var(--color-03);
+    border: 2px solid var(--color-03);;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--color-03);
   }
 
   &::placeholder {
@@ -116,7 +127,6 @@ div {
   }
 }
 
-
 button.main-but {
   border: none;
   padding: 10px 28px;
@@ -125,6 +135,19 @@ button.main-but {
   color: var(--color-04);
   border-radius: 5px;
   cursor: pointer;
+  transition: .3s;
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--color-03);
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: var(--color-01) !important;
+    color: var(--color-12) !important;
+    cursor: no-drop !important;
+  }
 }
 
 
@@ -165,12 +188,17 @@ button.main-but {
   }
 
   label.main-label {
-    font-size: 0.7rem;
+    font-size: 0.7rem;  
   }
 
-  input.main-input-text::placeholder {
-    font-size: 15px;
+  .main-input-text {
+    height: 40px;
+
+    &::placeholder {
+      font-size: 15px;
+    }
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

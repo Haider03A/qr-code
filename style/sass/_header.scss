@@ -1,3 +1,18 @@
+@keyframes berger-amin-on-clocse {
+  33% {
+    transform: translateX(20%);
+  }
+
+  66% {
+    transform: translateX(-20%);
+  }
+
+  99% {
+    transform: translateX(0%);
+  }
+}
+
+
 .header-of-page {
   height: 100px;
   width: 100%;
@@ -5,6 +20,7 @@
   align-items: center;
   position: relative;
   z-index: 10000;
+
   .background-blur {
     position: absolute;
     height: 100%;
@@ -14,29 +30,53 @@
     z-index: -1;
     filter: blur(1px);
   }
+
   nav {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: row nowrap;
+
     figure {
       a {
         display: flex;
         align-items: center;
+
         img {
           width: 100%;
         }
       }
     }
+
     .button-berger-icon {
       background-color: transparent;
-      border: none;
       cursor: pointer;
       border-radius: 5px;
       display: none;
+      padding: 5px;
+
+      &:hover {
+        .icon-box {
+          span {
+            animation-duration: .4s;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+            animation-name: berger-amin-on-clocse;
+
+            &:nth-of-type(2) {
+              animation-delay: .1s;
+            }
+
+            &:last-of-type {
+              animation-delay: .2s;
+            }
+          }
+        }
+      }
+
       .icon-box {
-        width: 30px;
+        width: 40px;
         height: 30px;
         display: flex;
         flex-flow: column nowrap;
@@ -44,38 +84,52 @@
         align-items: flex-end;
         pointer-events: none;
         position: relative;
+
         span {
           display: block;
-          height: 7px;
+          height: 5px;
           width: 100%;
-          border-radius: 7px;
+          border-radius: 2.2px;
           background-color: var(--color-01);
           transition: 0.3s;
         }
       }
 
       &[data-clicked="true"] {
+        &:hover {
+          .icon-box {
+            span {
+              animation: none;
+            }
+          }
+        }
+
         .icon-box {
           span:first-of-type {
             transform: rotate(45deg) translate(10px, 10px);
           }
+
           span:nth-of-type(2) {
             width: 0;
           }
+
           span:last-of-type {
             transform: rotate(-45deg) translate(10px, -10px);
           }
         }
       }
     }
+
     ul {
       display: flex;
       justify-content: center;
       align-items: center;
       column-gap: 5px;
+
       li {
         border-radius: 5px;
         overflow: hidden;
+
         a {
           padding: 8px 5px;
           color: var(--color-01);
@@ -83,12 +137,14 @@
           font-weight: 500;
           font-size: 20px;
           display: block;
+
           &:hover {
-            background-color: var(--color-01);
+            background-color: var(--color-05);
             color: var(--color-02);
           }
+
           &.active {
-            background-color: var(--color-01);
+            background-color: var(--color-05);
             color: var(--color-02);
           }
         }
@@ -96,16 +152,20 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .header-of-page {
     height: 50px;
+
     nav {
       figure {
         width: 90px;
       }
+
       .button-berger-icon {
         display: block;
       }
+
       ul {
         position: absolute;
         top: 50px;
@@ -120,7 +180,14 @@
         overflow: hidden;
         transition: 0.3s;
         padding: 0 20px;
+
+        &[data-show="true"] {
+          height: 300px;
+        }
+
         li {
+          width: 100%;
+
           a {
             padding: 10px;
             padding-left: 15px;
@@ -130,28 +197,21 @@
             font-size: 1.2rem;
             position: relative;
             overflow: hidden;
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0px;
-              left: 0;
-              width: 7px;
-              height: 100%;
-              background-color: var(--color-10);
-            }
+            width: 100%;
+
             &:hover {
               color: var(--color-10);
+              background-color: var(--color-14);
               padding-left: 20px;
             }
+
             &.active {
               padding-left: 20px;
+              background-color: var(--color-14);
               color: var(--color-10);
             }
           }
         }
-      }
-      .button-berger-icon[data-clicked="true"] ~ ul {
-        height: 300px;
       }
     }
   }

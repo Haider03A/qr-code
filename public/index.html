@@ -40,7 +40,7 @@
             </svg>
           </a>
         </figure>
-        <button class="button-berger-icon" data-clicked="false">
+        <button type="button" class="button-berger-icon main-but" data-clicked="false">
           <div class="icon-box">
             <span></span>
             <span></span>
@@ -69,10 +69,11 @@
   <main class="container">
     <!-- Header of main contentt -->
     <header>
-      <h1>Converter to Qr Code</h1>
       <figure>
         <img src="./images/qrcode.svg" alt="qrcode" />
       </figure>
+      <h1>Qr Code Generator</h1>
+      
     </header>
 
     <section class="perint-section">
@@ -82,7 +83,7 @@
       <!-- Section Enter manual-->
       <section class="enter-manual">
         <form name="enterManual" id="enter-manual">
-          <legend class="title-section">Enter manual</legend>
+          <legend class="title-section">Enter Values</legend>
 
           <div class="box-input-qr-data" data-notValid="false">
             <label for="input-qr-data" class="input-label-qr-data main-label">Value Qr-code:</label>
@@ -97,6 +98,7 @@
               placeholder="Title of Qr max 30(Option)" />
             <span class="input-message-box">Input Not Valid</span>
           </div>
+
           <div class="box-button-submit">
             <button type="submit" name="butGenerateQrcode" class="but-generate-qrcode main-but">
               Generate Qr-code
@@ -113,17 +115,17 @@
         </div>
 
         <div class="buttons">
-          <button class="save-qrcode main-but" data-clicked="false">
+          <button type="button" class="save-qrcode main-but" data-clicked="false">
             <i class="icon-save"></i>
           </button>
 
-          <button class="button-advanced main-but" data-clicked="false">
+          <button type="button" class="button-advanced main-but" data-clicked="false">
             <i class="icon-miscellaneous_services"></i>
           </button>
 
           <div class="box-advanced-settings" data-show="false">
             <h1>Advanced Settings</h1>
-            <button class="button-style main-but" data-clicked="false">Qr-code style</button>
+            <button type="button" class="button-open-box-style main-but" data-clicked="false">Qr-code style</button>
           </div>
 
         </div>
@@ -153,7 +155,7 @@
 
               <div class="box-input-margin-qrcode">
                 <label class="input-margin-qrcode color main-label" for="input-margin-qrcode">Title Color:</label>
-                <input id="input-margin-qrcode" type="number" class="input-margin-qrcode main-input-text color-pick" value="1"/>
+                <input id="input-margin-qrcode" type="number" class="input-margin-qrcode main-input-text" value="1" min="0" max="5"/>
                 <span class="input-message-box">Input Not Valid</span>
               </div>
 
@@ -166,8 +168,8 @@
             </div main-qrcode-style>
           </div>
 
-          <div class="but-close">
-            <button class="main-but"><i class="icon-remove"></i></button>
+          <div class="button-close-box-style">
+            <button type="button" class="main-but"><i class="icon-remove"></i></button>
           </div>
 
         </form>
